@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
-  
+  --font-mono: 'Courier New', 'JetBrains Mono', Courier, monospace;
+
   --color-cream: #fafafa;
-  --color-ink: #251717;
-  --color-muted: #555;
-  --color-subtle: #888;
-  --color-border: #ddd;
+  --color-ink: #09090b;
+  --color-muted: #71717a;
+  --color-subtle: #a1a1aa;
+  --color-border: #e4e4e7;
   --color-success: #2e7d32;
   --color-error: #c62828;
 }
@@ -17,7 +17,7 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
 
 body {

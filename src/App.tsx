@@ -14,7 +14,7 @@ function App() {
   } = useGallery(galleryItems)
 
   return (
-    <div className="min-h-screen px-4 md:px-6 py-3">
+    <div className="min-h-screen px-[30px] py-3">
       <Header
         title="Hi! I'm Wonjae from S.Korea"
         bio="Product designer looking to become a design engineer"

@@ -1,14 +1,15 @@
+import { Logo } from './Logo'
+import { SearchBar } from './SearchBar'
+
 interface HeaderProps {
-  title: string
-  bio: string
+  onSearch?: (query: string) => void
 }
 
-export function Header({ title, bio }: HeaderProps) {
+export function Header({ onSearch }: HeaderProps) {
   return (
-    <header className="mb-8">
-      <h1 className="text-2xl md:text-3xl font-semibold mb-2">{title}</h1>
-      <p className="text-muted max-w-xl">{bio}</p>
+    <header className="flex items-center justify-between py-[30px]">
+      <Logo />
+      <SearchBar onSearch={onSearch} />
     </header>
   )
 }
-
