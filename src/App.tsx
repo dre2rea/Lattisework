@@ -1,40 +1,39 @@
-import { Header, FilterButtons, Gallery, Lightbox, Footer } from './components'
-import { galleryItems, categories } from './data/galleryItems'
-import { useGallery } from './hooks/useGallery'
+import { Header, Sidebar, Gallery, Lightbox } from './components'
+import { useTerms } from './hooks/useTerms'
 
 function App() {
   const {
-    activeCategory,
-    setActiveCategory,
-    filteredItems,
+    activeFilter,
+    setActiveFilter,
+    galleryItems,
     selectedItem,
     isLightboxOpen,
     openLightbox,
     closeLightbox,
-  } = useGallery(galleryItems)
+  } = useTerms()
 
   return (
-    <div className="min-h-screen px-[30px] py-3">
-      <Header
-        title="Hi! I'm Wonjae from S.Korea"
-        bio="Product designer looking to become a design engineer"
-      />
+    <div className="min-h-screen px-[30px] pb-10">
+      <Header />
 
-      <FilterButtons
-        categories={categories}
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-      />
+      <div className="flex gap-[56px]">
+        {/* Sidebar */}
+        <Sidebar
+          activeFilter={activeFilter}
+          onFilterChange={setActiveFilter}
+        />
 
-      <Gallery items={filteredItems} onItemClick={openLightbox} />
+        {/* Main content */}
+        <main className="flex-1">
+          <Gallery items={galleryItems} onItemClick={openLightbox} />
+        </main>
+      </div>
 
       <Lightbox
         item={selectedItem}
         isOpen={isLightboxOpen}
         onClose={closeLightbox}
       />
-
-      <Footer />
     </div>
   )
 }

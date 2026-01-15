@@ -80,7 +80,7 @@ export const terms: Term[] = [
     label: 'Golden Hour',
     description: 'Warm, soft lighting that occurs shortly after sunrise or before sunset.',
     category: 'lighting-mood',
-    images: ['/3. Lighting & Mood/Golden hour/golden-hour-1.jpg'],
+    images: ['/3. Lighting & Mood/Golden hour/golden-hour-1.png'],
   },
   {
     id: 'rembrandt-lighting',

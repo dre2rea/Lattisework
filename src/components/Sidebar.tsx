@@ -12,8 +12,8 @@ export function Sidebar({ activeFilter, onFilterChange }: SidebarProps) {
         {/* All option */}
         <button
           onClick={() => onFilterChange('all')}
-          className={`relative text-left text-sm transition-colors ${
-            activeFilter === 'all' ? 'text-ink font-medium' : 'text-muted hover:text-ink'
+          className={`relative text-left text-sm transition-colors cursor-pointer ${
+            activeFilter === 'all' ? 'text-ink font-medium' : 'text-ink hover:text-muted'
           }`}
         >
           {activeFilter === 'all' && (
@@ -39,10 +39,10 @@ export function Sidebar({ activeFilter, onFilterChange }: SidebarProps) {
                   <button
                     key={category.id}
                     onClick={() => onFilterChange(category.id)}
-                    className={`relative text-left text-sm transition-colors ${
+                    className={`relative text-left text-sm transition-colors cursor-pointer ${
                       activeFilter === category.id
                         ? 'text-ink font-medium'
-                        : 'text-muted hover:text-ink'
+                        : 'text-ink hover:text-muted'
                     }`}
                   >
                     {activeFilter === category.id && (

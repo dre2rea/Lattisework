@@ -15,17 +15,17 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2.5">
+    <form onSubmit={handleSubmit} className="flex gap-1.5">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search something"
-        className="px-3 py-2 text-sm border border-ink w-[230px] font-mono bg-cream focus:outline-none focus:border-muted"
+        className="px-3 py-1.5 text-sm border border-ink w-[258px] font-mono bg-cream focus:outline-none focus:border-muted"
       />
       <button
         type="submit"
-        className="px-4 py-2 text-sm bg-ink text-cream border border-ink cursor-pointer transition-all duration-200 hover:bg-cream hover:text-ink"
+        className="px-4 py-1.5 text-sm bg-ink text-cream border border-ink cursor-pointer transition-all duration-200 hover:bg-cream hover:text-ink"
       >
         Search
       </button>
