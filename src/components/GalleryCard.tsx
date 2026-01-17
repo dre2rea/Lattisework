@@ -45,7 +45,7 @@ export function GalleryCard({ item, onClick, index }: GalleryCardProps) {
         <h3 className="text-[20px] font-bold tracking-[-0.2px] leading-[25px]">
           {item.title}
         </h3>
-        <p className="text-[14px] leading-[25px] text-muted">
+        <p className="text-[14px] leading-[20px] text-muted">
           {item.description}
         </p>
       </div>
