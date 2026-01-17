@@ -11,10 +11,21 @@ export function GalleryCard({ item, onClick, index }: GalleryCardProps) {
   return (
     <motion.article
       layout="position"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: index * 0.05,
+          duration: 0.4,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        },
+      }}
+      exit={{
+        opacity: 0,
+        y: -20,
+        transition: { duration: 0.2 },
+      }}
       className="group flex flex-col gap-[12px]"
     >
       <div
