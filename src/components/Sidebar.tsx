@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { metaSections, getCategoriesByMetaSection } from '../data/taxonomy'
 
 interface SidebarProps {
@@ -12,14 +13,24 @@ export function Sidebar({ activeFilter, onFilterChange }: SidebarProps) {
         {/* All option */}
         <button
           onClick={() => onFilterChange('all')}
-          className={`relative text-left text-sm transition-colors cursor-pointer ${
-            activeFilter === 'all' ? 'text-ink font-medium' : 'text-ink hover:text-muted'
-          }`}
+          className="group relative text-left text-sm text-ink cursor-pointer"
         >
           {activeFilter === 'all' && (
-            <span className="absolute -left-3 top-0 bottom-0 w-1 bg-ink" />
+            <motion.span
+              layoutId="active-indicator"
+              className="absolute left-0 top-0.5 bottom-0.5 w-1 bg-ink"
+              transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+            />
           )}
-          All
+          <span
+            className={`inline-block transition-transform duration-200 ease-out ${
+              activeFilter === 'all'
+                ? 'translate-x-2.5 font-bold'
+                : 'group-hover:translate-x-2.5'
+            }`}
+          >
+            All
+          </span>
         </button>
 
         {/* Meta-sections with categories */}
@@ -34,23 +45,35 @@ export function Sidebar({ activeFilter, onFilterChange }: SidebarProps) {
               </span>
 
               {/* Categories */}
-              <div className="flex flex-col gap-1">
-                {categories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => onFilterChange(category.id)}
-                    className={`relative text-left text-sm transition-colors cursor-pointer ${
-                      activeFilter === category.id
-                        ? 'text-ink font-medium'
-                        : 'text-ink hover:text-muted'
-                    }`}
-                  >
-                    {activeFilter === category.id && (
-                      <span className="absolute -left-3 top-0 bottom-0 w-1 bg-ink" />
-                    )}
-                    {category.label}
-                  </button>
-                ))}
+              <div className="flex flex-col gap-2">
+                {categories.map((category) => {
+                  const isActive = activeFilter === category.id
+
+                  return (
+                    <button
+                      key={category.id}
+                      onClick={() => onFilterChange(category.id)}
+                      className="group relative text-left text-sm text-ink cursor-pointer"
+                    >
+                      {isActive && (
+                        <motion.span
+                          layoutId="active-indicator"
+                          className="absolute left-0 top-0.5 bottom-0.5 w-1 bg-ink"
+                          transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                        />
+                      )}
+                      <span
+                        className={`inline-block transition-transform duration-200 ease-out ${
+                          isActive
+                            ? 'translate-x-2.5 font-bold'
+                            : 'group-hover:translate-x-2.5'
+                        }`}
+                      >
+                        {category.label}
+                      </span>
+                    </button>
+                  )
+                })}
               </div>
             </div>
           )
