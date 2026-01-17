@@ -5,6 +5,8 @@ function App() {
   const {
     activeFilter,
     setActiveFilter,
+    searchQuery,
+    setSearchQuery,
     galleryItems,
     selectedTerm,
     isLightboxOpen,
@@ -14,7 +16,7 @@ function App() {
 
   return (
     <div className="min-h-screen px-[30px] pb-10">
-      <Header />
+      <Header onSearchSubmit={setSearchQuery} />
 
       <div className="flex gap-[56px]">
         {/* Sidebar */}
@@ -25,7 +27,11 @@ function App() {
 
         {/* Main content */}
         <main className="flex-1">
-          <Gallery items={galleryItems} onItemClick={openLightbox} />
+          <Gallery
+            items={galleryItems}
+            onItemClick={openLightbox}
+            searchQuery={searchQuery}
+          />
         </main>
       </div>
 
