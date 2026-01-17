@@ -6,7 +6,7 @@ function App() {
     activeFilter,
     setActiveFilter,
     galleryItems,
-    selectedItem,
+    selectedTerm,
     isLightboxOpen,
     openLightbox,
     closeLightbox,
@@ -30,7 +30,7 @@ function App() {
       </div>
 
       <Lightbox
-        item={selectedItem}
+        term={selectedTerm}
         isOpen={isLightboxOpen}
         onClose={closeLightbox}
       />
