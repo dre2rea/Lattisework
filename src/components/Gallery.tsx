@@ -9,7 +9,7 @@ interface GalleryProps {
 
 export function Gallery({ items, onItemClick }: GalleryProps) {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[11px] gap-y-[44px]">
       <AnimatePresence mode="popLayout">
         {items.map((item, index) => (
           <GalleryCard
@@ -23,4 +23,3 @@ export function Gallery({ items, onItemClick }: GalleryProps) {
     </section>
   )
 }
-

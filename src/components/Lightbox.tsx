@@ -1,19 +1,50 @@
-import { useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import type { GalleryItem } from '../types'
+import type { Term } from '../types'
 
 interface LightboxProps {
-  item: GalleryItem | null
+  term: Term | null
   isOpen: boolean
   onClose: () => void
 }
 
-export function Lightbox({ item, isOpen, onClose }: LightboxProps) {
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose()
+export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const images = term?.images || []
+  const totalImages = images.length
+
+  // Reset to first image when term changes
+  useEffect(() => {
+    if (term) {
+      setCurrentIndex(0)
     }
-  }, [onClose])
+  }, [term?.id])
+
+  const goToPrevious = useCallback(() => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1)
+    }
+  }, [currentIndex])
+
+  const goToNext = useCallback(() => {
+    if (currentIndex < totalImages - 1) {
+      setCurrentIndex((prev) => prev + 1)
+    }
+  }, [currentIndex, totalImages])
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose()
+      } else if (e.key === 'ArrowLeft') {
+        goToPrevious()
+      } else if (e.key === 'ArrowRight') {
+        goToNext()
+      }
+    },
+    [onClose, goToPrevious, goToNext]
+  )
 
   useEffect(() => {
     if (isOpen) {
@@ -29,48 +60,102 @@ export function Lightbox({ item, isOpen, onClose }: LightboxProps) {
     }
   }, [isOpen, handleKeyDown])
 
+  const hasPrevious = currentIndex > 0
+  const hasNext = currentIndex < totalImages - 1
+
   return (
     <AnimatePresence>
-      {isOpen && item && (
+      {isOpen && term && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center flex-col"
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center flex-col"
           onClick={onClose}
         >
+          {/* Image counter */}
+          <div className="absolute top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono">
+            {currentIndex + 1} / {totalImages}
+          </div>
+
+          {/* Close button */}
           <button
-            onClick={onClose}
-            className="absolute top-5 right-8 text-white text-4xl bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-gray-300"
+            onClick={(e) => {
+              e.stopPropagation()
+              onClose()
+            }}
+            className="absolute top-5 right-8 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white"
+            aria-label="Close"
           >
-            ×
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
           </button>
 
-          <motion.img
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            src={item.src}
-            alt={item.title}
-            className="max-w-[90%] max-h-[70vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+          {/* Previous button - only show if not first image */}
+          {hasPrevious && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                goToPrevious()
+              }}
+              className="absolute left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              aria-label="Previous image"
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+          )}
 
+          {/* Next button - only show if not last image */}
+          {hasNext && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                goToNext()
+              }}
+              className="absolute right-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              aria-label="Next image"
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          )}
+
+          {/* Image container */}
+          <div className="flex items-center justify-center" style={{ minHeight: '60vh' }}>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.img
+                key={`${term.id}-${currentIndex}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.3 } }}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                src={images[currentIndex]}
+                alt={`${term.label} - Image ${currentIndex + 1}`}
+                className="max-w-[85vw] max-h-[70vh] object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </AnimatePresence>
+          </div>
+
+          {/* Term info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-white text-center mt-5 max-w-xl px-5"
+            onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="italic mb-2">{item.title}</h3>
-            <p className="text-sm text-gray-400">{item.description}</p>
+            <h3 className="italic mb-2">{term.label}</h3>
+            <p className="text-sm text-gray-400">{term.description}</p>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   )
 }
-
