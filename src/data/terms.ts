@@ -6,375 +6,321 @@ const placeholder = (seed: string, index: number) =>
 
 export const terms: Term[] = [
   // ============================================
-  // CAMERA ANGLES (1. Camera Angles)
+  // FRAMING & PERSPECTIVE
   // ============================================
   {
     id: 'birds-eye-view',
     label: "Bird's Eye View",
     description: 'A high-angle shot looking directly down from above, creating a map-like perspective.',
-    category: 'camera-angles',
+    category: 'framing-perspective',
     images: [
       "/1. Camera Angles/Bird's eye view/bird's-eye-view-1.png",
-      placeholder('birds-eye', 2),
-      placeholder('birds-eye', 3),
-      placeholder('birds-eye', 4),
+      "/1. Camera Angles/Bird's eye view/bird's-eye-view-2.jpg",
+      "/1. Camera Angles/Bird's eye view/bird's-eye-view-3..png",
+      "/1. Camera Angles/Bird's eye view/bird's-eye-view-4.JPEG",
     ],
   },
   {
     id: 'dutch-angle',
     label: 'Dutch Angle',
     description: 'A tilted camera angle that creates visual tension and disorientation.',
-    category: 'camera-angles',
+    category: 'framing-perspective',
     images: [
       '/1. Camera Angles/Dutch angle/dutch-angle-1.png',
-      placeholder('dutch-angle', 2),
-      placeholder('dutch-angle', 3),
-      placeholder('dutch-angle', 4),
-      placeholder('dutch-angle', 5),
+      '/1. Camera Angles/Dutch angle/dutch-angle-2.png',
+      '/1. Camera Angles/Dutch angle/dutch-angle-3.png',
     ],
   },
   {
     id: 'over-the-shoulder-shot',
     label: 'Over-the-Shoulder Shot',
     description: 'A shot framed from behind a person, showing their perspective of a scene.',
-    category: 'camera-angles',
+    category: 'framing-perspective',
     images: [
       '/1. Camera Angles/Over-the-shoulder shot/Over-the-shoulder-shot- 1.png',
       placeholder('ots-shot', 2),
-      placeholder('ots-shot', 3),
-      placeholder('ots-shot', 4),
     ],
   },
   {
     id: 'worms-eye-view',
     label: "Worm's Eye View",
     description: 'An extreme low-angle shot looking upward, making subjects appear powerful or towering.',
-    category: 'camera-angles',
+    category: 'framing-perspective',
     images: [
       "/1. Camera Angles/Worm's eye view/worm's-eye-view-1.png",
-      placeholder('worms-eye', 2),
-      placeholder('worms-eye', 3),
-      placeholder('worms-eye', 4),
-      placeholder('worms-eye', 5),
+      "/1. Camera Angles/Worm's eye view/worm's-eye-view-2.png",
+      "/1. Camera Angles/Worm's eye view/worm's-eye-view-3.png",
     ],
   },
-
-  // ============================================
-  // COMPOSITION (2. Composition)
-  // ============================================
   {
     id: 'leading-lines',
     label: 'Leading Lines',
     description: 'Lines within an image that guide the viewer\'s eye toward a focal point.',
-    category: 'composition',
+    category: 'framing-perspective',
     images: [
       '/2. Composition/Leading lines/leading-lines-1.png',
-      placeholder('leading-lines', 2),
-      placeholder('leading-lines', 3),
-      placeholder('leading-lines', 4),
+      '/2. Composition/Leading lines/leading-lines-2.png',
+      '/2. Composition/Leading lines/leading-lines-3.png',
     ],
   },
   {
     id: 'negative-space',
     label: 'Negative Space',
     description: 'Empty areas around the subject that create breathing room and visual balance.',
-    category: 'composition',
+    category: 'framing-perspective',
     images: [
       '/2. Composition/Negative space/negative-space-1.png',
       placeholder('negative-space', 2),
-      placeholder('negative-space', 3),
-      placeholder('negative-space', 4),
-      placeholder('negative-space', 5),
     ],
   },
   {
     id: 'rule-of-thirds',
     label: 'Rule of Thirds',
     description: 'Placing subjects along imaginary grid lines that divide the frame into nine equal parts.',
-    category: 'composition',
+    category: 'framing-perspective',
     images: [
       '/2. Composition/Rule of thirds/rule-of-thirds-1.png',
-      placeholder('rule-thirds', 2),
-      placeholder('rule-thirds', 3),
-      placeholder('rule-thirds', 4),
+      '/2. Composition/Rule of thirds/rule-of-thirds-2.png',
     ],
   },
 
   // ============================================
-  // LIGHTING & MOOD (3. Lighting & Mood)
+  // LENS & LIGHT
   // ============================================
   {
     id: 'backlighting',
     label: 'Backlighting',
     description: 'Light source positioned behind the subject, creating silhouettes or rim lighting.',
-    category: 'lighting-mood',
+    category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Backlighting/backlighting-1.jpg',
-      placeholder('backlighting', 2),
-      placeholder('backlighting', 3),
-      placeholder('backlighting', 4),
-      placeholder('backlighting', 5),
+      '/3. Lighting & Mood/Backlighting/backlighting-1.png',
+      '/3. Lighting & Mood/Backlighting/backlighting-2.jpg',
     ],
   },
   {
     id: 'chiaroscuro',
     label: 'Chiaroscuro',
     description: 'Strong contrast between light and dark areas, creating dramatic depth and volume.',
-    category: 'lighting-mood',
+    category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Chairoscuro/Chairoscuro-1.jpg',
-      placeholder('chiaroscuro', 2),
-      placeholder('chiaroscuro', 3),
-      placeholder('chiaroscuro', 4),
+      '/3. Lighting & Mood/Chiaroscuro/Chiaroscuro-1.png',
+      '/3. Lighting & Mood/Chiaroscuro/Chiaroscuro-2.png',
+      '/3. Lighting & Mood/Chiaroscuro/Chiaroscuro-3.png',
     ],
   },
   {
-    id: 'golden-hour',
-    label: 'Golden Hour',
-    description: 'Warm, soft lighting that occurs shortly after sunrise or before sunset.',
-    category: 'lighting-mood',
+    id: 'crepuscular-rays',
+    label: 'Crepuscular Rays',
+    description: 'Sunbeams streaming through gaps in clouds or foliage, creating dramatic light shafts.',
+    category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Golden hour/golden-hour-1.png',
-      placeholder('golden-hour', 2),
-      placeholder('golden-hour', 3),
-      placeholder('golden-hour', 4),
-      placeholder('golden-hour', 5),
-      placeholder('golden-hour', 6),
+      '/3. Lighting & Mood/Crepuscular Rays/Crepuscular-rays-1.jpg',
+      '/3. Lighting & Mood/Crepuscular Rays/Crepuscular-rays-2.png',
     ],
   },
   {
-    id: 'rembrandt-lighting',
-    label: 'Rembrandt Lighting',
-    description: 'Portrait lighting creating a triangle of light on the shadowed cheek.',
-    category: 'lighting-mood',
+    id: 'gobo-shadow',
+    label: 'Gobo Shadow',
+    description: 'Patterned shadows created by placing a cutout template in front of a light source.',
+    category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Rembrandt lighting/rembrandt-lighting-1.jpg',
-      placeholder('rembrandt', 2),
-      placeholder('rembrandt', 3),
-      placeholder('rembrandt', 4),
+      '/3. Lighting & Mood/Gobo Shadow/gobo-shadow-1.png',
+      '/3. Lighting & Mood/Gobo Shadow/gobo-shadow-2.png',
     ],
   },
-
-  // ============================================
-  // OPTICAL PHENOMENA (4. Optical Phenomena)
-  // ============================================
+  {
+    id: 'rim-lighting',
+    label: 'Rim Lighting',
+    description: 'Light that outlines the edge of a subject, separating them from the background.',
+    category: 'lens-light',
+    images: [
+      '/3. Lighting & Mood/Rim Lighting/rim-lighting-1.png',
+      placeholder('rim-lighting', 2),
+    ],
+  },
+  {
+    id: 'volumetric-light',
+    label: 'Volumetric Light',
+    description: 'Visible light beams caused by particles in the air like dust, fog, or smoke.',
+    category: 'lens-light',
+    images: [
+      '/3. Lighting & Mood/Volumetric Light/volumetric-light-1.png',
+      placeholder('volumetric', 2),
+    ],
+  },
   {
     id: 'bokeh',
     label: 'Bokeh',
     description: 'Aesthetic quality of out-of-focus blur, often showing soft circular highlights.',
-    category: 'optical-phenomena',
+    category: 'lens-light',
     images: [
       '/4. Optical Phenomena/Bokeh/bokeh-1.jpg',
-      placeholder('bokeh', 2),
-      placeholder('bokeh', 3),
-      placeholder('bokeh', 4),
-      placeholder('bokeh', 5),
+      '/4. Optical Phenomena/Bokeh/bokeh-2.png',
+      '/4. Optical Phenomena/Bokeh/bokeh-3.png',
     ],
   },
   {
     id: 'caustics',
     label: 'Caustics',
     description: 'Light patterns created by refraction through transparent or reflective surfaces.',
-    category: 'optical-phenomena',
+    category: 'lens-light',
     images: [
       '/4. Optical Phenomena/Caustics/caustics-1.jpg',
-      placeholder('caustics', 2),
-      placeholder('caustics', 3),
-      placeholder('caustics', 4),
+      '/4. Optical Phenomena/Caustics/caustics-2.png',
+      '/4. Optical Phenomena/Caustics/caustics-3.png',
     ],
   },
   {
     id: 'chromatic-aberration',
     label: 'Chromatic Aberration',
     description: 'Color fringing at edges caused by lens inability to focus all wavelengths.',
-    category: 'optical-phenomena',
+    category: 'lens-light',
     images: [
       '/4. Optical Phenomena/Chromatic aberration/chromatic-aberration-1.jpeg',
       placeholder('chromatic', 2),
-      placeholder('chromatic', 3),
-      placeholder('chromatic', 4),
-      placeholder('chromatic', 5),
     ],
   },
   {
     id: 'lens-flare',
     label: 'Lens Flare',
     description: 'Scattered light artifacts from bright sources hitting the camera lens.',
-    category: 'optical-phenomena',
+    category: 'lens-light',
     images: [
       '/4. Optical Phenomena/Lens flare/lens-flare-1.jpg',
       placeholder('lens-flare', 2),
-      placeholder('lens-flare', 3),
-      placeholder('lens-flare', 4),
     ],
   },
 
   // ============================================
-  // ART MOVEMENT (5. Art Movement)
+  // ART MOVEMENTS
   // ============================================
   {
     id: 'art-deco',
     label: 'Art Deco',
     description: 'Bold geometric patterns, rich colors, and luxurious ornamentation from the 1920s-30s.',
-    category: 'art-movement',
+    category: 'art-movements',
     images: [
       '/5. Art Movement/Art Deco/art-deco.jpg',
       placeholder('art-deco', 2),
-      placeholder('art-deco', 3),
-      placeholder('art-deco', 4),
-      placeholder('art-deco', 5),
     ],
   },
   {
     id: 'art-nouveau',
     label: 'Art Nouveau',
     description: 'Flowing organic lines, natural forms, and decorative elegance from the late 1800s.',
-    category: 'art-movement',
+    category: 'art-movements',
     images: [
       '/5. Art Movement/Art Nouveau/art-nouveau.jpg',
       placeholder('art-nouveau', 2),
-      placeholder('art-nouveau', 3),
-      placeholder('art-nouveau', 4),
     ],
   },
   {
     id: 'bauhaus',
     label: 'Bauhaus',
     description: 'Functional modernist design emphasizing geometric shapes and primary colors.',
-    category: 'art-movement',
+    category: 'art-movements',
     images: [
       '/5. Art Movement/Bauhaus/bauhaus-1.jpg',
       placeholder('bauhaus', 2),
-      placeholder('bauhaus', 3),
-      placeholder('bauhaus', 4),
-      placeholder('bauhaus', 5),
-      placeholder('bauhaus', 6),
     ],
   },
   {
     id: 'ukiyo-e',
     label: 'Ukiyo-e',
     description: 'Japanese woodblock print style with flat colors, bold outlines, and nature themes.',
-    category: 'art-movement',
+    category: 'art-movements',
     images: [
       '/5. Art Movement/Ukiyo-e/ukiyo-e-1.jpg',
       placeholder('ukiyo-e', 2),
-      placeholder('ukiyo-e', 3),
-      placeholder('ukiyo-e', 4),
     ],
   },
 
   // ============================================
-  // PRINTMAKING (6. Printmaking)
+  // TECHNIQUES
   // ============================================
   {
     id: 'linocut',
     label: 'Linocut',
     description: 'Relief printing from carved linoleum, producing bold contrasts and graphic shapes.',
-    category: 'printmaking',
+    category: 'techniques',
     images: [
       '/6. Printmaking/Linocut/linocut-1.jpg',
       placeholder('linocut', 2),
-      placeholder('linocut', 3),
-      placeholder('linocut', 4),
-      placeholder('linocut', 5),
     ],
   },
   {
     id: 'risograph',
     label: 'Risograph',
     description: 'Stencil-based printing with vibrant, slightly misregistered overlapping colors.',
-    category: 'printmaking',
+    category: 'techniques',
     images: [
       '/6. Printmaking/Risograph/risograph-1.jpg',
       placeholder('risograph', 2),
-      placeholder('risograph', 3),
-      placeholder('risograph', 4),
     ],
   },
   {
     id: 'screenprint',
     label: 'Screenprint',
     description: 'Ink pushed through mesh stencils, creating flat colors and graphic quality.',
-    category: 'printmaking',
+    category: 'techniques',
     images: [
       '/6. Printmaking/Screenprint/screenprint-1.jpg',
       placeholder('screenprint', 2),
-      placeholder('screenprint', 3),
-      placeholder('screenprint', 4),
-      placeholder('screenprint', 5),
     ],
   },
   {
     id: 'woodblock-print',
     label: 'Woodblock Print',
     description: 'Relief printing from carved wood blocks, showing wood grain texture.',
-    category: 'printmaking',
+    category: 'techniques',
     images: [
       '/6. Printmaking/Woodblock print/woodblock-print-1.jpg',
       placeholder('woodblock', 2),
-      placeholder('woodblock', 3),
-      placeholder('woodblock', 4),
     ],
   },
-
-  // ============================================
-  // PHOTO EFFECTS (7. Photo Effects)
-  // ============================================
   {
     id: 'double-exposure',
     label: 'Double Exposure',
     description: 'Two or more images superimposed, blending subjects into dreamlike composites.',
-    category: 'photo-effects',
+    category: 'techniques',
     images: [
       '/7. Photo Effects/Double exposure/double-exposure-1.jpg',
       placeholder('double-exp', 2),
-      placeholder('double-exp', 3),
-      placeholder('double-exp', 4),
-      placeholder('double-exp', 5),
     ],
   },
   {
     id: 'long-exposure',
     label: 'Long Exposure',
     description: 'Extended shutter time capturing motion as smooth trails or silky water.',
-    category: 'photo-effects',
+    category: 'techniques',
     images: [
       '/7. Photo Effects/Long exposure/long-exposure-1.jpg',
       placeholder('long-exp', 2),
-      placeholder('long-exp', 3),
-      placeholder('long-exp', 4),
     ],
   },
   {
     id: 'motion-blur',
     label: 'Motion Blur',
     description: 'Streaking effect from movement during exposure, conveying speed and action.',
-    category: 'photo-effects',
+    category: 'techniques',
     images: [
       '/7. Photo Effects/Motion blur/motion-blur-1.jpg',
-      placeholder('motion-blur', 2),
-      placeholder('motion-blur', 3),
-      placeholder('motion-blur', 4),
-      placeholder('motion-blur', 5),
-      placeholder('motion-blur', 6),
+      '/7. Photo Effects/Motion blur/motion-blur-2.png',
     ],
   },
   {
     id: 'tilt-shift',
     label: 'Tilt-Shift',
     description: 'Selective focus creating miniature model effect or corrected perspective.',
-    category: 'photo-effects',
+    category: 'techniques',
     images: [
       '/7. Photo Effects/Tilt-shift/tilt-shift-1.jpg',
       placeholder('tilt-shift', 2),
-      placeholder('tilt-shift', 3),
-      placeholder('tilt-shift', 4),
     ],
   },
 
   // ============================================
-  // MATERIALS & TEXTURES (8. Materials & Textures)
+  // MATERIALS & TEXTURES
   // ============================================
   {
     id: 'brushed-metal',
@@ -384,9 +330,6 @@ export const terms: Term[] = [
     images: [
       '/8. Materials & Textures/Brushed metal/brushed-metal-1.jpg',
       placeholder('brushed-metal', 2),
-      placeholder('brushed-metal', 3),
-      placeholder('brushed-metal', 4),
-      placeholder('brushed-metal', 5),
     ],
   },
   {
@@ -397,8 +340,6 @@ export const terms: Term[] = [
     images: [
       '/8. Materials & Textures/Marble veining/marble-veining-1.jpg',
       placeholder('marble', 2),
-      placeholder('marble', 3),
-      placeholder('marble', 4),
     ],
   },
   {
@@ -409,9 +350,6 @@ export const terms: Term[] = [
     images: [
       '/8. Materials & Textures/Weathered wood/weathered-wood-1.jpg',
       placeholder('weathered-wood', 2),
-      placeholder('weathered-wood', 3),
-      placeholder('weathered-wood', 4),
-      placeholder('weathered-wood', 5),
     ],
   },
 ]

@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
-import type { GalleryItem, Category } from '../types'
+import type { GalleryItem, FilterType } from '../types'
 
 export function useGallery(items: GalleryItem[]) {
-  const [activeCategory, setActiveCategory] = useState<Category>('all')
+  const [activeCategory, setActiveCategory] = useState<FilterType>('all')
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 

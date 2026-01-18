@@ -1,9 +1,9 @@
-import type { Category } from '../types'
+import type { FilterType } from '../types'
 
 interface FilterButtonsProps {
   categories: readonly string[]
-  activeCategory: Category
-  onCategoryChange: (category: Category) => void
+  activeCategory: FilterType
+  onCategoryChange: (category: FilterType) => void
 }
 
 export function FilterButtons({ categories, activeCategory, onCategoryChange }: FilterButtonsProps) {
