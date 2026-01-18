@@ -37,7 +37,14 @@ function App() {
 
       <footer className="mt-[60px] text-sm text-ink text-right">
         Created by{' '}
-        <span className="hover:text-muted hover:cursor-pointer transition-colors">Wonjae</span>
+        <a
+          href="https://x.com/narie_wjlee"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-muted transition-colors"
+        >
+          Wonjae
+        </a>
       </footer>
 
       <Lightbox
