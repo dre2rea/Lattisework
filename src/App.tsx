@@ -35,17 +35,19 @@ function App() {
         </main>
       </div>
 
-      <footer className="mt-[60px] text-sm text-ink text-right">
-        Created by{' '}
-        <a
-          href="https://x.com/narie_wjlee"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-muted transition-colors"
-        >
-          Wonjae
-        </a>
-      </footer>
+      {!searchQuery && (
+        <footer className="mt-[60px] text-sm text-ink text-right">
+          Created by{' '}
+          <a
+            href="https://x.com/narie_wjlee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-muted transition-colors"
+          >
+            Wonjae
+          </a>
+        </footer>
+      )}
 
       <Lightbox
         term={selectedTerm}
