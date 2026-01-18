@@ -1,76 +1,26 @@
-import type { MetaSection, Category } from '../types'
+import type { Category } from '../types'
 
-// Meta-sections: Top-level groupings
-export const metaSections: MetaSection[] = [
-  {
-    id: 'frame',
-    label: 'FRAME',
-    categories: ['camera-angles', 'composition'],
-  },
-  {
-    id: 'light',
-    label: 'LIGHT',
-    categories: ['lighting-mood', 'optical-phenomena'],
-  },
-  {
-    id: 'style',
-    label: 'STYLE',
-    categories: ['art-movement', 'printmaking', 'photo-effects', 'materials-textures'],
-  },
-]
-
-// Categories: Nested under meta-sections
+// Categories: Flat structure with 5 categories
 export const categories: Category[] = [
-  // FRAME
   {
-    id: 'camera-angles',
-    label: 'Camera Angles',
-    metaSection: 'frame',
-    folderName: '1. Camera Angles',
+    id: 'framing-perspective',
+    label: 'Framing & Perspective',
   },
   {
-    id: 'composition',
-    label: 'Composition',
-    metaSection: 'frame',
-    folderName: '2. Composition',
-  },
-  // LIGHT
-  {
-    id: 'lighting-mood',
-    label: 'Lighting & Mood',
-    metaSection: 'light',
-    folderName: '3. Lighting & Mood',
+    id: 'lens-light',
+    label: 'Lens & Light',
   },
   {
-    id: 'optical-phenomena',
-    label: 'Optical Phenomena',
-    metaSection: 'light',
-    folderName: '4. Optical Phenomena',
-  },
-  // STYLE
-  {
-    id: 'art-movement',
-    label: 'Art Movement',
-    metaSection: 'style',
-    folderName: '5. Art Movement',
+    id: 'art-movements',
+    label: 'Art Movements',
   },
   {
-    id: 'printmaking',
-    label: 'Printmaking',
-    metaSection: 'style',
-    folderName: '6. Printmaking',
-  },
-  {
-    id: 'photo-effects',
-    label: 'Photo Effects',
-    metaSection: 'style',
-    folderName: '7. Photo Effects',
+    id: 'techniques',
+    label: 'Techniques',
   },
   {
     id: 'materials-textures',
     label: 'Materials & Textures',
-    metaSection: 'style',
-    folderName: '8. Materials & Textures',
   },
 ]
 
@@ -79,12 +29,7 @@ export const getCategoryById = (id: string): Category | undefined => {
   return categories.find((cat) => cat.id === id)
 }
 
-// Helper: Get categories by meta-section ID
-export const getCategoriesByMetaSection = (metaSectionId: string): Category[] => {
-  return categories.filter((cat) => cat.metaSection === metaSectionId)
-}
-
-// Helper: Get meta-section by ID
-export const getMetaSectionById = (id: string): MetaSection | undefined => {
-  return metaSections.find((ms) => ms.id === id)
+// Helper: Get all categories
+export const getAllCategories = (): Category[] => {
+  return categories
 }
