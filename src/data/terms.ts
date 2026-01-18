@@ -12,8 +12,8 @@ export const terms: Term[] = [
     images: [
       "/1-framing-perspective/Bird's eye view/bird's-eye-view-1.png",
       "/1-framing-perspective/Bird's eye view/bird's-eye-view-2.jpg",
-      "/1-framing-perspective/Bird's eye view/bird's-eye-view-3..png",
-      "/1-framing-perspective/Bird's eye view/bird's-eye-view-4.JPEG",
+      "/1-framing-perspective/Bird's eye view/bird's-eye-view-3.jpg",
+      "/1-framing-perspective/Bird's eye view/bird's-eye-view-4.png",
     ],
   },
   {
