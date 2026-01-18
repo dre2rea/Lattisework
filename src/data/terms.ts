@@ -14,10 +14,10 @@ export const terms: Term[] = [
     description: 'A high-angle shot looking directly down from above, creating a map-like perspective.',
     category: 'framing-perspective',
     images: [
-      "/1. Camera Angles/Bird's eye view/bird's-eye-view-1.png",
-      "/1. Camera Angles/Bird's eye view/bird's-eye-view-2.jpg",
-      "/1. Camera Angles/Bird's eye view/bird's-eye-view-3..png",
-      "/1. Camera Angles/Bird's eye view/bird's-eye-view-4.JPEG",
+      "/framing-perspective/Bird's eye view/bird's-eye-view-1.png",
+      "/framing-perspective/Bird's eye view/bird's-eye-view-2.jpg",
+      "/framing-perspective/Bird's eye view/bird's-eye-view-3..png",
+      "/framing-perspective/Bird's eye view/bird's-eye-view-4.JPEG",
     ],
   },
   {
@@ -26,9 +26,9 @@ export const terms: Term[] = [
     description: 'A tilted camera angle that creates visual tension and disorientation.',
     category: 'framing-perspective',
     images: [
-      '/1. Camera Angles/Dutch angle/dutch-angle-1.png',
-      '/1. Camera Angles/Dutch angle/dutch-angle-2.png',
-      '/1. Camera Angles/Dutch angle/dutch-angle-3.png',
+      '/framing-perspective/Dutch angle/dutch-angle-1.png',
+      '/framing-perspective/Dutch angle/dutch-angle-2.png',
+      '/framing-perspective/Dutch angle/dutch-angle-3.png',
     ],
   },
   {
@@ -37,7 +37,7 @@ export const terms: Term[] = [
     description: 'A shot framed from behind a person, showing their perspective of a scene.',
     category: 'framing-perspective',
     images: [
-      '/1. Camera Angles/Over-the-shoulder shot/Over-the-shoulder-shot- 1.png',
+      '/framing-perspective/Over-the-shoulder shot/Over-the-shoulder-shot- 1.png',
       placeholder('ots-shot', 2),
     ],
   },
@@ -47,9 +47,9 @@ export const terms: Term[] = [
     description: 'An extreme low-angle shot looking upward, making subjects appear powerful or towering.',
     category: 'framing-perspective',
     images: [
-      "/1. Camera Angles/Worm's eye view/worm's-eye-view-1.png",
-      "/1. Camera Angles/Worm's eye view/worm's-eye-view-2.png",
-      "/1. Camera Angles/Worm's eye view/worm's-eye-view-3.png",
+      "/framing-perspective/Worm's eye view/worm's-eye-view-1.png",
+      "/framing-perspective/Worm's eye view/worm's-eye-view-2.png",
+      "/framing-perspective/Worm's eye view/worm's-eye-view-3.png",
     ],
   },
   {
@@ -58,9 +58,9 @@ export const terms: Term[] = [
     description: 'Lines within an image that guide the viewer\'s eye toward a focal point.',
     category: 'framing-perspective',
     images: [
-      '/2. Composition/Leading lines/leading-lines-1.png',
-      '/2. Composition/Leading lines/leading-lines-2.png',
-      '/2. Composition/Leading lines/leading-lines-3.png',
+      '/framing-perspective/Leading lines/leading-lines-1.png',
+      '/framing-perspective/Leading lines/leading-lines-2.png',
+      '/framing-perspective/Leading lines/leading-lines-3.png',
     ],
   },
   {
@@ -69,7 +69,7 @@ export const terms: Term[] = [
     description: 'Empty areas around the subject that create breathing room and visual balance.',
     category: 'framing-perspective',
     images: [
-      '/2. Composition/Negative space/negative-space-1.png',
+      '/framing-perspective/Negative space/negative-space-1.png',
       placeholder('negative-space', 2),
     ],
   },
@@ -79,8 +79,8 @@ export const terms: Term[] = [
     description: 'Placing subjects along imaginary grid lines that divide the frame into nine equal parts.',
     category: 'framing-perspective',
     images: [
-      '/2. Composition/Rule of thirds/rule-of-thirds-1.png',
-      '/2. Composition/Rule of thirds/rule-of-thirds-2.png',
+      '/framing-perspective/Rule of thirds/rule-of-thirds-1.png',
+      '/framing-perspective/Rule of thirds/rule-of-thirds-2.png',
     ],
   },
 
@@ -93,8 +93,8 @@ export const terms: Term[] = [
     description: 'Light source positioned behind the subject, creating silhouettes or rim lighting.',
     category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Backlighting/backlighting-1.png',
-      '/3. Lighting & Mood/Backlighting/backlighting-2.jpg',
+      '/lens-light/Backlighting/backlighting-1.png',
+      '/lens-light/Backlighting/backlighting-2.jpg',
     ],
   },
   {
@@ -103,9 +103,9 @@ export const terms: Term[] = [
     description: 'Strong contrast between light and dark areas, creating dramatic depth and volume.',
     category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Chiaroscuro/Chiaroscuro-1.png',
-      '/3. Lighting & Mood/Chiaroscuro/Chiaroscuro-2.png',
-      '/3. Lighting & Mood/Chiaroscuro/Chiaroscuro-3.png',
+      '/lens-light/Chiaroscuro/Chiaroscuro-1.png',
+      '/lens-light/Chiaroscuro/Chiaroscuro-2.png',
+      '/lens-light/Chiaroscuro/Chiaroscuro-3.png',
     ],
   },
   {
@@ -114,8 +114,8 @@ export const terms: Term[] = [
     description: 'Sunbeams streaming through gaps in clouds or foliage, creating dramatic light shafts.',
     category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Crepuscular Rays/Crepuscular-rays-1.jpg',
-      '/3. Lighting & Mood/Crepuscular Rays/Crepuscular-rays-2.png',
+      '/lens-light/Crepuscular Rays/Crepuscular-rays-1.jpg',
+      '/lens-light/Crepuscular Rays/Crepuscular-rays-2.png',
     ],
   },
   {
@@ -124,8 +124,8 @@ export const terms: Term[] = [
     description: 'Patterned shadows created by placing a cutout template in front of a light source.',
     category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Gobo Shadow/gobo-shadow-1.png',
-      '/3. Lighting & Mood/Gobo Shadow/gobo-shadow-2.png',
+      '/lens-light/Gobo Shadow/gobo-shadow-1.png',
+      '/lens-light/Gobo Shadow/gobo-shadow-2.png',
     ],
   },
   {
@@ -134,7 +134,7 @@ export const terms: Term[] = [
     description: 'Light that outlines the edge of a subject, separating them from the background.',
     category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Rim Lighting/rim-lighting-1.png',
+      '/lens-light/Rim Lighting/rim-lighting-1.png',
       placeholder('rim-lighting', 2),
     ],
   },
@@ -144,7 +144,7 @@ export const terms: Term[] = [
     description: 'Visible light beams caused by particles in the air like dust, fog, or smoke.',
     category: 'lens-light',
     images: [
-      '/3. Lighting & Mood/Volumetric Light/volumetric-light-1.png',
+      '/lens-light/Volumetric Light/volumetric-light-1.png',
       placeholder('volumetric', 2),
     ],
   },
@@ -154,9 +154,9 @@ export const terms: Term[] = [
     description: 'Aesthetic quality of out-of-focus blur, often showing soft circular highlights.',
     category: 'lens-light',
     images: [
-      '/4. Optical Phenomena/Bokeh/bokeh-1.jpg',
-      '/4. Optical Phenomena/Bokeh/bokeh-2.png',
-      '/4. Optical Phenomena/Bokeh/bokeh-3.png',
+      '/lens-light/Bokeh/bokeh-1.jpg',
+      '/lens-light/Bokeh/bokeh-2.png',
+      '/lens-light/Bokeh/bokeh-3.png',
     ],
   },
   {
@@ -165,9 +165,9 @@ export const terms: Term[] = [
     description: 'Light patterns created by refraction through transparent or reflective surfaces.',
     category: 'lens-light',
     images: [
-      '/4. Optical Phenomena/Caustics/caustics-1.jpg',
-      '/4. Optical Phenomena/Caustics/caustics-2.png',
-      '/4. Optical Phenomena/Caustics/caustics-3.png',
+      '/lens-light/Caustics/caustics-1.jpg',
+      '/lens-light/Caustics/caustics-2.png',
+      '/lens-light/Caustics/caustics-3.png',
     ],
   },
   {
@@ -176,7 +176,7 @@ export const terms: Term[] = [
     description: 'Color fringing at edges caused by lens inability to focus all wavelengths.',
     category: 'lens-light',
     images: [
-      '/4. Optical Phenomena/Chromatic aberration/chromatic-aberration-1.jpeg',
+      '/lens-light/Chromatic aberration/chromatic-aberration-1.jpeg',
       placeholder('chromatic', 2),
     ],
   },
@@ -186,7 +186,7 @@ export const terms: Term[] = [
     description: 'Scattered light artifacts from bright sources hitting the camera lens.',
     category: 'lens-light',
     images: [
-      '/4. Optical Phenomena/Lens flare/lens-flare-1.jpg',
+      '/lens-light/Lens flare/lens-flare-1.jpg',
       placeholder('lens-flare', 2),
     ],
   },
@@ -200,7 +200,7 @@ export const terms: Term[] = [
     description: 'Bold geometric patterns, rich colors, and luxurious ornamentation from the 1920s-30s.',
     category: 'art-movements',
     images: [
-      '/5. Art Movement/Art Deco/art-deco.jpg',
+      '/art-movements/Art Deco/art-deco.jpg',
       placeholder('art-deco', 2),
     ],
   },
@@ -210,7 +210,7 @@ export const terms: Term[] = [
     description: 'Flowing organic lines, natural forms, and decorative elegance from the late 1800s.',
     category: 'art-movements',
     images: [
-      '/5. Art Movement/Art Nouveau/art-nouveau.jpg',
+      '/art-movements/Art Nouveau/art-nouveau.jpg',
       placeholder('art-nouveau', 2),
     ],
   },
@@ -220,7 +220,7 @@ export const terms: Term[] = [
     description: 'Functional modernist design emphasizing geometric shapes and primary colors.',
     category: 'art-movements',
     images: [
-      '/5. Art Movement/Bauhaus/bauhaus-1.jpg',
+      '/art-movements/Bauhaus/bauhaus-1.jpg',
       placeholder('bauhaus', 2),
     ],
   },
@@ -230,7 +230,7 @@ export const terms: Term[] = [
     description: 'Japanese woodblock print style with flat colors, bold outlines, and nature themes.',
     category: 'art-movements',
     images: [
-      '/5. Art Movement/Ukiyo-e/ukiyo-e-1.jpg',
+      '/art-movements/Ukiyo-e/ukiyo-e-1.jpg',
       placeholder('ukiyo-e', 2),
     ],
   },
@@ -244,7 +244,7 @@ export const terms: Term[] = [
     description: 'Relief printing from carved linoleum, producing bold contrasts and graphic shapes.',
     category: 'techniques',
     images: [
-      '/6. Printmaking/Linocut/linocut-1.jpg',
+      '/techniques/Linocut/linocut-1.jpg',
       placeholder('linocut', 2),
     ],
   },
@@ -254,7 +254,7 @@ export const terms: Term[] = [
     description: 'Stencil-based printing with vibrant, slightly misregistered overlapping colors.',
     category: 'techniques',
     images: [
-      '/6. Printmaking/Risograph/risograph-1.jpg',
+      '/techniques/Risograph/risograph-1.jpg',
       placeholder('risograph', 2),
     ],
   },
@@ -264,7 +264,7 @@ export const terms: Term[] = [
     description: 'Ink pushed through mesh stencils, creating flat colors and graphic quality.',
     category: 'techniques',
     images: [
-      '/6. Printmaking/Screenprint/screenprint-1.jpg',
+      '/techniques/Screenprint/screenprint-1.jpg',
       placeholder('screenprint', 2),
     ],
   },
@@ -274,7 +274,7 @@ export const terms: Term[] = [
     description: 'Relief printing from carved wood blocks, showing wood grain texture.',
     category: 'techniques',
     images: [
-      '/6. Printmaking/Woodblock print/woodblock-print-1.jpg',
+      '/techniques/Woodblock print/woodblock-print-1.jpg',
       placeholder('woodblock', 2),
     ],
   },
@@ -284,7 +284,7 @@ export const terms: Term[] = [
     description: 'Two or more images superimposed, blending subjects into dreamlike composites.',
     category: 'techniques',
     images: [
-      '/7. Photo Effects/Double exposure/double-exposure-1.jpg',
+      '/techniques/Double exposure/double-exposure-1.jpg',
       placeholder('double-exp', 2),
     ],
   },
@@ -294,7 +294,7 @@ export const terms: Term[] = [
     description: 'Extended shutter time capturing motion as smooth trails or silky water.',
     category: 'techniques',
     images: [
-      '/7. Photo Effects/Long exposure/long-exposure-1.jpg',
+      '/techniques/Long exposure/long-exposure-1.jpg',
       placeholder('long-exp', 2),
     ],
   },
@@ -304,8 +304,8 @@ export const terms: Term[] = [
     description: 'Streaking effect from movement during exposure, conveying speed and action.',
     category: 'techniques',
     images: [
-      '/7. Photo Effects/Motion blur/motion-blur-1.jpg',
-      '/7. Photo Effects/Motion blur/motion-blur-2.png',
+      '/techniques/Motion blur/motion-blur-1.jpg',
+      '/techniques/Motion blur/motion-blur-2.png',
     ],
   },
   {
@@ -314,7 +314,7 @@ export const terms: Term[] = [
     description: 'Selective focus creating miniature model effect or corrected perspective.',
     category: 'techniques',
     images: [
-      '/7. Photo Effects/Tilt-shift/tilt-shift-1.jpg',
+      '/techniques/Tilt-shift/tilt-shift-1.jpg',
       placeholder('tilt-shift', 2),
     ],
   },
@@ -328,7 +328,7 @@ export const terms: Term[] = [
     description: 'Satin finish with fine parallel lines from mechanical polishing.',
     category: 'materials-textures',
     images: [
-      '/8. Materials & Textures/Brushed metal/brushed-metal-1.jpg',
+      '/materials-textures/Brushed metal/brushed-metal-1.jpg',
       placeholder('brushed-metal', 2),
     ],
   },
@@ -338,7 +338,7 @@ export const terms: Term[] = [
     description: 'Natural stone patterns with irregular veins and color variations.',
     category: 'materials-textures',
     images: [
-      '/8. Materials & Textures/Marble veining/marble-veining-1.jpg',
+      '/materials-textures/Marble veining/marble-veining-1.jpg',
       placeholder('marble', 2),
     ],
   },
@@ -348,7 +348,7 @@ export const terms: Term[] = [
     description: 'Aged timber showing grain, cracks, and natural patina from exposure.',
     category: 'materials-textures',
     images: [
-      '/8. Materials & Textures/Weathered wood/weathered-wood-1.jpg',
+      '/materials-textures/Weathered wood/weathered-wood-1.jpg',
       placeholder('weathered-wood', 2),
     ],
   },
