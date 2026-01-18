@@ -1,9 +1,5 @@
 import type { Term } from '../types'
 
-// Helper to generate placeholder image URLs using picsum.photos
-const placeholder = (seed: string, index: number) =>
-  `https://picsum.photos/seed/${seed}-${index}/800/600`
-
 export const terms: Term[] = [
   // ============================================
   // FRAMING & PERSPECTIVE
@@ -14,10 +10,10 @@ export const terms: Term[] = [
     description: 'A high-angle shot looking directly down from above, creating a map-like perspective.',
     category: 'framing-perspective',
     images: [
-      "/framing-perspective/Bird's eye view/bird's-eye-view-1.png",
-      "/framing-perspective/Bird's eye view/bird's-eye-view-2.jpg",
-      "/framing-perspective/Bird's eye view/bird's-eye-view-3..png",
-      "/framing-perspective/Bird's eye view/bird's-eye-view-4.JPEG",
+      "/1-framing-perspective/Bird's eye view/bird's-eye-view-1.png",
+      "/1-framing-perspective/Bird's eye view/bird's-eye-view-2.jpg",
+      "/1-framing-perspective/Bird's eye view/bird's-eye-view-3..png",
+      "/1-framing-perspective/Bird's eye view/bird's-eye-view-4.JPEG",
     ],
   },
   {
@@ -26,51 +22,31 @@ export const terms: Term[] = [
     description: 'A tilted camera angle that creates visual tension and disorientation.',
     category: 'framing-perspective',
     images: [
-      '/framing-perspective/Dutch angle/dutch-angle-1.png',
-      '/framing-perspective/Dutch angle/dutch-angle-2.png',
-      '/framing-perspective/Dutch angle/dutch-angle-3.png',
+      '/1-framing-perspective/Dutch angle/dutch-angle-1.png',
+      '/1-framing-perspective/Dutch angle/dutch-angle-2.png',
+      '/1-framing-perspective/Dutch angle/dutch-angle-3.png',
     ],
   },
   {
-    id: 'over-the-shoulder-shot',
-    label: 'Over-the-Shoulder Shot',
-    description: 'A shot framed from behind a person, showing their perspective of a scene.',
+    id: 'isometric',
+    label: 'Isometric',
+    description: 'A method of visual representation where three-dimensional objects are drawn with equal angles between axes.',
     category: 'framing-perspective',
     images: [
-      '/framing-perspective/Over-the-shoulder shot/Over-the-shoulder-shot- 1.png',
-      placeholder('ots-shot', 2),
-    ],
-  },
-  {
-    id: 'worms-eye-view',
-    label: "Worm's Eye View",
-    description: 'An extreme low-angle shot looking upward, making subjects appear powerful or towering.',
-    category: 'framing-perspective',
-    images: [
-      "/framing-perspective/Worm's eye view/worm's-eye-view-1.png",
-      "/framing-perspective/Worm's eye view/worm's-eye-view-2.png",
-      "/framing-perspective/Worm's eye view/worm's-eye-view-3.png",
+      '/1-framing-perspective/Isometric/isometric-1.jpg',
+      '/1-framing-perspective/Isometric/isometric-2.jpg',
+      '/1-framing-perspective/Isometric/isometric-3.jpg',
     ],
   },
   {
     id: 'leading-lines',
     label: 'Leading Lines',
-    description: 'Lines within an image that guide the viewer\'s eye toward a focal point.',
+    description: "Lines within an image that guide the viewer's eye toward a focal point.",
     category: 'framing-perspective',
     images: [
-      '/framing-perspective/Leading lines/leading-lines-1.png',
-      '/framing-perspective/Leading lines/leading-lines-2.png',
-      '/framing-perspective/Leading lines/leading-lines-3.png',
-    ],
-  },
-  {
-    id: 'negative-space',
-    label: 'Negative Space',
-    description: 'Empty areas around the subject that create breathing room and visual balance.',
-    category: 'framing-perspective',
-    images: [
-      '/framing-perspective/Negative space/negative-space-1.png',
-      placeholder('negative-space', 2),
+      '/1-framing-perspective/Leading lines/leading-lines-1.png',
+      '/1-framing-perspective/Leading lines/leading-lines-2.png',
+      '/1-framing-perspective/Leading lines/leading-lines-3.png',
     ],
   },
   {
@@ -79,8 +55,28 @@ export const terms: Term[] = [
     description: 'Placing subjects along imaginary grid lines that divide the frame into nine equal parts.',
     category: 'framing-perspective',
     images: [
-      '/framing-perspective/Rule of thirds/rule-of-thirds-1.png',
-      '/framing-perspective/Rule of thirds/rule-of-thirds-2.png',
+      '/1-framing-perspective/Rule of thirds/rule-of-thirds-1.png',
+      '/1-framing-perspective/Rule of thirds/rule-of-thirds-2.png',
+    ],
+  },
+  {
+    id: 'tilt-shift',
+    label: 'Tilt-Shift',
+    description: 'Selective focus creating miniature model effect or corrected perspective.',
+    category: 'framing-perspective',
+    images: [
+      '/1-framing-perspective/Tilt-shift/tilt-shift-2.jpg',
+    ],
+  },
+  {
+    id: 'worms-eye-view',
+    label: "Worm's Eye View",
+    description: 'An extreme low-angle shot looking upward, making subjects appear powerful or towering.',
+    category: 'framing-perspective',
+    images: [
+      "/1-framing-perspective/Worm's eye view/worm's-eye-view-1.png",
+      "/1-framing-perspective/Worm's eye view/worm's-eye-view-2.png",
+      "/1-framing-perspective/Worm's eye view/worm's-eye-view-3.png",
     ],
   },
 
@@ -93,59 +89,8 @@ export const terms: Term[] = [
     description: 'Light source positioned behind the subject, creating silhouettes or rim lighting.',
     category: 'lens-light',
     images: [
-      '/lens-light/Backlighting/backlighting-1.png',
-      '/lens-light/Backlighting/backlighting-2.jpg',
-    ],
-  },
-  {
-    id: 'chiaroscuro',
-    label: 'Chiaroscuro',
-    description: 'Strong contrast between light and dark areas, creating dramatic depth and volume.',
-    category: 'lens-light',
-    images: [
-      '/lens-light/Chiaroscuro/Chiaroscuro-1.png',
-      '/lens-light/Chiaroscuro/Chiaroscuro-2.png',
-      '/lens-light/Chiaroscuro/Chiaroscuro-3.png',
-    ],
-  },
-  {
-    id: 'crepuscular-rays',
-    label: 'Crepuscular Rays',
-    description: 'Sunbeams streaming through gaps in clouds or foliage, creating dramatic light shafts.',
-    category: 'lens-light',
-    images: [
-      '/lens-light/Crepuscular Rays/Crepuscular-rays-1.jpg',
-      '/lens-light/Crepuscular Rays/Crepuscular-rays-2.png',
-    ],
-  },
-  {
-    id: 'gobo-shadow',
-    label: 'Gobo Shadow',
-    description: 'Patterned shadows created by placing a cutout template in front of a light source.',
-    category: 'lens-light',
-    images: [
-      '/lens-light/Gobo Shadow/gobo-shadow-1.png',
-      '/lens-light/Gobo Shadow/gobo-shadow-2.png',
-    ],
-  },
-  {
-    id: 'rim-lighting',
-    label: 'Rim Lighting',
-    description: 'Light that outlines the edge of a subject, separating them from the background.',
-    category: 'lens-light',
-    images: [
-      '/lens-light/Rim Lighting/rim-lighting-1.png',
-      placeholder('rim-lighting', 2),
-    ],
-  },
-  {
-    id: 'volumetric-light',
-    label: 'Volumetric Light',
-    description: 'Visible light beams caused by particles in the air like dust, fog, or smoke.',
-    category: 'lens-light',
-    images: [
-      '/lens-light/Volumetric Light/volumetric-light-1.png',
-      placeholder('volumetric', 2),
+      '/2-lens-light/Backlighting/backlighting-1.png',
+      '/2-lens-light/Backlighting/backlighting-2.jpg',
     ],
   },
   {
@@ -154,9 +99,8 @@ export const terms: Term[] = [
     description: 'Aesthetic quality of out-of-focus blur, often showing soft circular highlights.',
     category: 'lens-light',
     images: [
-      '/lens-light/Bokeh/bokeh-1.jpg',
-      '/lens-light/Bokeh/bokeh-2.png',
-      '/lens-light/Bokeh/bokeh-3.png',
+      '/2-lens-light/Bokeh/bokeh-2.png',
+      '/2-lens-light/Bokeh/bokeh-3.png',
     ],
   },
   {
@@ -165,9 +109,20 @@ export const terms: Term[] = [
     description: 'Light patterns created by refraction through transparent or reflective surfaces.',
     category: 'lens-light',
     images: [
-      '/lens-light/Caustics/caustics-1.jpg',
-      '/lens-light/Caustics/caustics-2.png',
-      '/lens-light/Caustics/caustics-3.png',
+      '/2-lens-light/Caustics/caustics-1.jpg',
+      '/2-lens-light/Caustics/caustics-2.png',
+      '/2-lens-light/Caustics/caustics-3.png',
+    ],
+  },
+  {
+    id: 'chiaroscuro',
+    label: 'Chiaroscuro',
+    description: 'Strong contrast between light and dark areas, creating dramatic depth and volume.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Chiaroscuro/Chiaroscuro-1.png',
+      '/2-lens-light/Chiaroscuro/Chiaroscuro-2.png',
+      '/2-lens-light/Chiaroscuro/Chiaroscuro-3.png',
     ],
   },
   {
@@ -176,8 +131,40 @@ export const terms: Term[] = [
     description: 'Color fringing at edges caused by lens inability to focus all wavelengths.',
     category: 'lens-light',
     images: [
-      '/lens-light/Chromatic aberration/chromatic-aberration-1.jpeg',
-      placeholder('chromatic', 2),
+      '/2-lens-light/Chromatic aberration/chromatic-aberration-1.png',
+      '/2-lens-light/Chromatic aberration/chromatic-aberration-2.png',
+      '/2-lens-light/Chromatic aberration/chromatic-aberration-3.jpg',
+    ],
+  },
+  {
+    id: 'crepuscular-rays',
+    label: 'Crepuscular Rays',
+    description: 'Sunbeams streaming through gaps in clouds or foliage, creating dramatic light shafts.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Crepuscular Rays/Crepuscular-rays-1.png',
+      '/2-lens-light/Crepuscular Rays/Crepuscular-rays-2.png',
+      '/2-lens-light/Crepuscular Rays/Crepuscular-rays-3.jpg',
+    ],
+  },
+  {
+    id: 'gobo-shadow',
+    label: 'Gobo Shadow',
+    description: 'Patterned shadows created by placing a cutout template in front of a light source.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Gobo Shadow/gobo-shadow-1.png',
+      '/2-lens-light/Gobo Shadow/gobo-shadow-2.png',
+    ],
+  },
+  {
+    id: 'kaleidoscope',
+    label: 'Kaleidoscope',
+    description: 'Symmetrical patterns created by mirrors reflecting colorful objects or light.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Kaleidoscope/kaleidoscope-1.png',
+      '/2-lens-light/Kaleidoscope/kaleidoscope-2.png',
     ],
   },
   {
@@ -186,8 +173,31 @@ export const terms: Term[] = [
     description: 'Scattered light artifacts from bright sources hitting the camera lens.',
     category: 'lens-light',
     images: [
-      '/lens-light/Lens flare/lens-flare-1.jpg',
-      placeholder('lens-flare', 2),
+      '/2-lens-light/Lens flare/lens-flare-1.jpg',
+      '/2-lens-light/Lens flare/lens-flare-2.jpg',
+      '/2-lens-light/Lens flare/lens-flare-3.jpg',
+    ],
+  },
+  {
+    id: 'rim-lighting',
+    label: 'Rim Lighting',
+    description: 'Light that outlines the edge of a subject, separating them from the background.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Rim Lighting/rim-lighting-1.png',
+      '/2-lens-light/Rim Lighting/rim-lighting-2.jpg',
+      '/2-lens-light/Rim Lighting/rim-lighting-3.jpg',
+    ],
+  },
+  {
+    id: 'volumetric-light',
+    label: 'Volumetric Light',
+    description: 'Visible light beams caused by particles in the air like dust, fog, or smoke.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Volumetric Light/volumetric-light-1.jpg',
+      '/2-lens-light/Volumetric Light/volumetric-light-2.png',
+      '/2-lens-light/Volumetric Light/volumetric-light-3.jpg',
     ],
   },
 
@@ -200,8 +210,10 @@ export const terms: Term[] = [
     description: 'Bold geometric patterns, rich colors, and luxurious ornamentation from the 1920s-30s.',
     category: 'art-movements',
     images: [
-      '/art-movements/Art Deco/art-deco.jpg',
-      placeholder('art-deco', 2),
+      '/3-art-movements/Art Deco/art-deco-1.jpg',
+      '/3-art-movements/Art Deco/art-deco-2.jpg',
+      '/3-art-movements/Art Deco/art-deco-3.jpg',
+      '/3-art-movements/Art Deco/art-deco-4.jpg',
     ],
   },
   {
@@ -210,8 +222,10 @@ export const terms: Term[] = [
     description: 'Flowing organic lines, natural forms, and decorative elegance from the late 1800s.',
     category: 'art-movements',
     images: [
-      '/art-movements/Art Nouveau/art-nouveau.jpg',
-      placeholder('art-nouveau', 2),
+      '/3-art-movements/Art Nouveau/art-nouveau-1.jpg',
+      '/3-art-movements/Art Nouveau/art-nouveau-2.jpg',
+      '/3-art-movements/Art Nouveau/art-nouveau-3.jpg',
+      '/3-art-movements/Art Nouveau/art-nouveau-4.jpg',
     ],
   },
   {
@@ -220,8 +234,96 @@ export const terms: Term[] = [
     description: 'Functional modernist design emphasizing geometric shapes and primary colors.',
     category: 'art-movements',
     images: [
-      '/art-movements/Bauhaus/bauhaus-1.jpg',
-      placeholder('bauhaus', 2),
+      '/3-art-movements/Bauhaus/bauhaus-1.jpg',
+      '/3-art-movements/Bauhaus/bauhaus-2.jpg',
+      '/3-art-movements/Bauhaus/bauhaus-3.jpg',
+      '/3-art-movements/Bauhaus/bauhaus-4.jpg',
+      '/3-art-movements/Bauhaus/bauhaus-5.jpg',
+    ],
+  },
+  {
+    id: 'de-stijl',
+    label: 'De Stijl',
+    description: 'Dutch artistic movement using primary colors and geometric abstraction.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/De stijl/de-stijl-1.jpg',
+      '/3-art-movements/De stijl/de-stijl-2.jpg',
+      '/3-art-movements/De stijl/de-stijl-3.jpg',
+    ],
+  },
+  {
+    id: 'fauvist',
+    label: 'Fauvist',
+    description: 'Bold, vibrant colors and simplified forms emphasizing painterly qualities over realism.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Fauvist/fauvist-1.jpg',
+      '/3-art-movements/Fauvist/fauvist-2.jpg',
+      '/3-art-movements/Fauvist/fauvist-3.jpg',
+      '/3-art-movements/Fauvist/fauvist-4.jpg',
+    ],
+  },
+  {
+    id: 'glitch-art',
+    label: 'Glitch Art',
+    description: 'Digital or analog errors aesthetically exploited to create striking visual effects.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Glitch Art/glitch-art-1.jpg',
+      '/3-art-movements/Glitch Art/glitch-art-2.jpg',
+      '/3-art-movements/Glitch Art/glitch-art-3.jpg',
+      '/3-art-movements/Glitch Art/glitch-art-4.jpg',
+      '/3-art-movements/Glitch Art/glitch-art-5.jpg',
+    ],
+  },
+  {
+    id: 'impasto',
+    label: 'Impasto',
+    description: 'Thick application of paint that creates visible texture and three-dimensional surface.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Impasto/impasto-1.jpg',
+      '/3-art-movements/Impasto/impasto-2.jpg',
+      '/3-art-movements/Impasto/impasto-3.jpg',
+      '/3-art-movements/Impasto/impasto-4.jpg',
+    ],
+  },
+  {
+    id: 'neo-noir',
+    label: 'Neo-Noir',
+    description: 'Modern interpretation of film noir with high contrast, shadows, and moody atmosphere.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Neo-noir/neo-noir-1.jpg',
+      '/3-art-movements/Neo-noir/neo-noir-2.jpg',
+      '/3-art-movements/Neo-noir/neo-noir-3.jpg',
+      '/3-art-movements/Neo-noir/neo-noir-4.jpg',
+    ],
+  },
+  {
+    id: 'pointillism',
+    label: 'Pointillism',
+    description: 'Painting technique using small dots of color that blend optically when viewed from distance.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Pointillism/pointillism-1.png',
+      '/3-art-movements/Pointillism/pointillism-2.jpg',
+      '/3-art-movements/Pointillism/pointillism-3.jpg',
+      '/3-art-movements/Pointillism/pointillism-4.jpg',
+      '/3-art-movements/Pointillism/pointillism-5.jpg',
+    ],
+  },
+  {
+    id: 'trompe-loeil',
+    label: "Trompe-l'œil",
+    description: 'Realistic imagery creating optical illusion that depicted objects exist in three dimensions.',
+    category: 'art-movements',
+    images: [
+      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-1.jpg",
+      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-2.jpg",
+      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-3.jpg",
+      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-4.jpg",
     ],
   },
   {
@@ -230,8 +332,20 @@ export const terms: Term[] = [
     description: 'Japanese woodblock print style with flat colors, bold outlines, and nature themes.',
     category: 'art-movements',
     images: [
-      '/art-movements/Ukiyo-e/ukiyo-e-1.jpg',
-      placeholder('ukiyo-e', 2),
+      '/3-art-movements/Ukiyo-e/ukiyo-e-1.jpg',
+      '/3-art-movements/Ukiyo-e/ukiyo-e-2.jpg',
+      '/3-art-movements/Ukiyo-e/ukiyo-e-3.jpg',
+    ],
+  },
+  {
+    id: 'vaporwave',
+    label: 'Vaporwave',
+    description: 'Retro-futuristic aesthetic combining 80s/90s nostalgia with surreal digital imagery.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Vaporwave/vaporware-1.jpg',
+      '/3-art-movements/Vaporwave/vaporware-2.jpg',
+      '/3-art-movements/Vaporwave/vaporware-3.jpg',
     ],
   },
 
@@ -239,43 +353,25 @@ export const terms: Term[] = [
   // TECHNIQUES
   // ============================================
   {
-    id: 'linocut',
-    label: 'Linocut',
-    description: 'Relief printing from carved linoleum, producing bold contrasts and graphic shapes.',
+    id: 'cross-hatching',
+    label: 'Cross-Hatching',
+    description: 'Drawing technique using intersecting sets of parallel lines to create shading and texture.',
     category: 'techniques',
     images: [
-      '/techniques/Linocut/linocut-1.jpg',
-      placeholder('linocut', 2),
+      '/4-techniques/Cross-hatching/cross-hatching-1.jpg',
+      '/4-techniques/Cross-hatching/cross-hatching-3.jpg',
+      '/4-techniques/Cross-hatching/cross-hatching-4.jpg',
     ],
   },
   {
-    id: 'risograph',
-    label: 'Risograph',
-    description: 'Stencil-based printing with vibrant, slightly misregistered overlapping colors.',
+    id: 'cyanotype',
+    label: 'Cyanotype',
+    description: 'Photographic printing process producing cyan-blue prints using iron compounds.',
     category: 'techniques',
     images: [
-      '/techniques/Risograph/risograph-1.jpg',
-      placeholder('risograph', 2),
-    ],
-  },
-  {
-    id: 'screenprint',
-    label: 'Screenprint',
-    description: 'Ink pushed through mesh stencils, creating flat colors and graphic quality.',
-    category: 'techniques',
-    images: [
-      '/techniques/Screenprint/screenprint-1.jpg',
-      placeholder('screenprint', 2),
-    ],
-  },
-  {
-    id: 'woodblock-print',
-    label: 'Woodblock Print',
-    description: 'Relief printing from carved wood blocks, showing wood grain texture.',
-    category: 'techniques',
-    images: [
-      '/techniques/Woodblock print/woodblock-print-1.jpg',
-      placeholder('woodblock', 2),
+      '/4-techniques/Cyanotype/cyanotype-1.jpg',
+      '/4-techniques/Cyanotype/cyanotype-3.jpg',
+      '/4-techniques/Cyanotype/cyanotype-4.jpg',
     ],
   },
   {
@@ -284,8 +380,42 @@ export const terms: Term[] = [
     description: 'Two or more images superimposed, blending subjects into dreamlike composites.',
     category: 'techniques',
     images: [
-      '/techniques/Double exposure/double-exposure-1.jpg',
-      placeholder('double-exp', 2),
+      '/4-techniques/Double exposure/double-exposure-1.jpg',
+      '/4-techniques/Double exposure/double-exposure-2.jpg',
+      '/4-techniques/Double exposure/double-exposure-3.jpg',
+      '/4-techniques/Double exposure/double-exposure-4.jpg',
+      '/4-techniques/Double exposure/double-exposure-5.jpg',
+    ],
+  },
+  {
+    id: 'frottage',
+    label: 'Frottage',
+    description: 'Technique of rubbing pencil or crayon over textured surfaces to create patterns.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Frottage/frottage-2.jpg',
+      '/4-techniques/Frottage/frottage-3.jpg',
+    ],
+  },
+  {
+    id: 'linocut',
+    label: 'Linocut',
+    description: 'Relief printing from carved linoleum, producing bold contrasts and graphic shapes.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Linocut/linocut-1.jpg',
+      '/4-techniques/Linocut/linocut-2.jpg',
+      '/4-techniques/Linocut/linocut-3.jpg',
+    ],
+  },
+  {
+    id: 'lithography',
+    label: 'Lithography',
+    description: 'Printing process based on the immiscibility of oil and water on a flat stone or metal plate.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Lithography/lithography-2.jpg',
+      '/4-techniques/Lithography/lithography-3.jpg',
     ],
   },
   {
@@ -294,28 +424,20 @@ export const terms: Term[] = [
     description: 'Extended shutter time capturing motion as smooth trails or silky water.',
     category: 'techniques',
     images: [
-      '/techniques/Long exposure/long-exposure-1.jpg',
-      placeholder('long-exp', 2),
+      '/4-techniques/Long exposure/long-exposure-1.jpg',
+      '/4-techniques/Long exposure/long-exposure-2.png',
+      '/4-techniques/Long exposure/long-exposure-3.jpg',
     ],
   },
   {
-    id: 'motion-blur',
-    label: 'Motion Blur',
-    description: 'Streaking effect from movement during exposure, conveying speed and action.',
+    id: 'risograph',
+    label: 'Risograph',
+    description: 'Stencil-based printing with vibrant, slightly misregistered overlapping colors.',
     category: 'techniques',
     images: [
-      '/techniques/Motion blur/motion-blur-1.jpg',
-      '/techniques/Motion blur/motion-blur-2.png',
-    ],
-  },
-  {
-    id: 'tilt-shift',
-    label: 'Tilt-Shift',
-    description: 'Selective focus creating miniature model effect or corrected perspective.',
-    category: 'techniques',
-    images: [
-      '/techniques/Tilt-shift/tilt-shift-1.jpg',
-      placeholder('tilt-shift', 2),
+      '/4-techniques/Risograph/risograph-1.jpg',
+      '/4-techniques/Risograph/risograph-2.jpg',
+      '/4-techniques/Risograph/risograph-3.jpg',
     ],
   },
 
@@ -323,13 +445,55 @@ export const terms: Term[] = [
   // MATERIALS & TEXTURES
   // ============================================
   {
-    id: 'brushed-metal',
-    label: 'Brushed Metal',
-    description: 'Satin finish with fine parallel lines from mechanical polishing.',
+    id: 'chevron',
+    label: 'Chevron',
+    description: 'V-shaped pattern creating a zigzag design often used in textiles and decoration.',
     category: 'materials-textures',
     images: [
-      '/materials-textures/Brushed metal/brushed-metal-1.jpg',
-      placeholder('brushed-metal', 2),
+      '/5-materials-textures/Chevron/chevron-2.jpg',
+    ],
+  },
+  {
+    id: 'chrome',
+    label: 'Chrome',
+    description: 'Highly reflective metallic finish with mirror-like surface quality.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Chrome/chrome-1.jpg',
+      '/5-materials-textures/Chrome/chrome-2.jpg',
+      '/5-materials-textures/Chrome/chrome-3.jpg',
+      '/5-materials-textures/Chrome/chrome-4.jpg',
+    ],
+  },
+  {
+    id: 'felted',
+    label: 'Felted',
+    description: 'Soft, dense textile made from matted fibers with a fuzzy, warm appearance.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Felted/felted-1.jpg',
+      '/5-materials-textures/Felted/felted-2.jpg',
+      '/5-materials-textures/Felted/felted-3.jpg',
+    ],
+  },
+  {
+    id: 'frosted-glass',
+    label: 'Frosted Glass',
+    description: 'Translucent glass with a diffused, etched surface that scatters light.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Frosted Glass/frosted-glass-1.jpg',
+      '/5-materials-textures/Frosted Glass/frosted-glass-2.jpg',
+    ],
+  },
+  {
+    id: 'houndstooth',
+    label: 'Houndstooth',
+    description: 'Classic textile pattern with abstract four-pointed shapes resembling a broken check.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Houndstooth/houndstooth-1.jpg',
+      '/5-materials-textures/Houndstooth/houndstooth-2.jpg',
     ],
   },
   {
@@ -338,18 +502,52 @@ export const terms: Term[] = [
     description: 'Natural stone patterns with irregular veins and color variations.',
     category: 'materials-textures',
     images: [
-      '/materials-textures/Marble veining/marble-veining-1.jpg',
-      placeholder('marble', 2),
+      '/5-materials-textures/Marble veining/marble-veining-1.jpg',
+      '/5-materials-textures/Marble veining/marble-veining-2.jpg',
+      '/5-materials-textures/Marble veining/marble-veining-3.jpg',
     ],
   },
   {
-    id: 'weathered-wood',
-    label: 'Weathered Wood',
-    description: 'Aged timber showing grain, cracks, and natural patina from exposure.',
+    id: 'paisley',
+    label: 'Paisley',
+    description: 'Ornamental design featuring curved, teardrop-shaped motifs of Persian origin.',
     category: 'materials-textures',
     images: [
-      '/materials-textures/Weathered wood/weathered-wood-1.jpg',
-      placeholder('weathered-wood', 2),
+      '/5-materials-textures/Paisley/paisley-1.jpg',
+      '/5-materials-textures/Paisley/paisley-2.jpg',
+    ],
+  },
+  {
+    id: 'patina',
+    label: 'Patina',
+    description: 'Aged surface appearance developed over time through oxidation and wear.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Patina/patina-1.jpg',
+      '/5-materials-textures/Patina/patina-2.jpg',
+      '/5-materials-textures/Patina/patina-3.jpg',
+      '/5-materials-textures/Patina/patina-4.jpg',
+    ],
+  },
+  {
+    id: 'plaid',
+    label: 'Plaid',
+    description: 'Pattern of crossed horizontal and vertical bands in multiple colors.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Plaid/plaid-1.jpg',
+      '/5-materials-textures/Plaid/plaid-2.jpg',
+      '/5-materials-textures/Plaid/plaid-3.jpg',
+    ],
+  },
+  {
+    id: 'velvet',
+    label: 'Velvet',
+    description: 'Luxurious fabric with a soft, dense pile that creates rich light and shadow.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Velvet/velvet-1.jpg',
+      '/5-materials-textures/Velvet/velvet-2.jpg',
     ],
   },
 ]
