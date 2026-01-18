@@ -15,7 +15,7 @@ function App() {
   } = useTerms()
 
   return (
-    <div className="min-h-screen px-[30px] pb-10">
+    <div className="min-h-screen px-[30px] pb-[30px]">
       <Header onSearchSubmit={setSearchQuery} />
 
       <div className="flex gap-[56px]">
@@ -34,6 +34,11 @@ function App() {
           />
         </main>
       </div>
+
+      <footer className="mt-[60px] text-sm text-ink text-right">
+        Created by{' '}
+        <span className="hover:text-muted hover:cursor-pointer transition-colors">Wonjae</span>
+      </footer>
 
       <Lightbox
         term={selectedTerm}
