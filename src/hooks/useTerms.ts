@@ -15,21 +15,48 @@ export function termToGalleryItem(term: Term): GalleryItem {
 
 export function useTerms() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all')
+  const [searchQuery, setSearchQuery] = useState<string>('')
   const [selectedTerm, setSelectedTerm] = useState<Term | null>(null)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
-  // Filter terms based on active category
+  // Filter terms based on active category and search query
   const filteredTerms = useMemo(() => {
+    // If there's a search query, filter all terms by the query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase()
+      return getAllTermsSorted().filter((term) =>
+        term.label.toLowerCase().includes(query)
+      )
+    }
+
+    // Otherwise, filter by category
     if (activeFilter === 'all') {
       return getAllTermsSorted()
     }
     return getTermsByCategory(activeFilter)
-  }, [activeFilter])
+  }, [activeFilter, searchQuery])
 
   // Convert filtered terms to GalleryItems for Gallery component
   const galleryItems = useMemo(() => {
     return filteredTerms.map(termToGalleryItem)
   }, [filteredTerms])
+
+  // Handle filter change - clears search query
+  const handleFilterChange = useCallback((filter: FilterType) => {
+    setActiveFilter(filter)
+    setSearchQuery('') // Clear search when changing filter
+  }, [])
+
+  // Handle search - sets query and switches to "all"
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery(query)
+    setActiveFilter('all') // Switch to "all" when searching
+  }, [])
+
+  // Clear search
+  const clearSearch = useCallback(() => {
+    setSearchQuery('')
+  }, [])
 
   const openLightbox = useCallback((item: GalleryItem) => {
     // Find the original term by id
@@ -51,7 +78,10 @@ export function useTerms() {
 
   return {
     activeFilter,
-    setActiveFilter,
+    setActiveFilter: handleFilterChange,
+    searchQuery,
+    setSearchQuery: handleSearch,
+    clearSearch,
     filteredTerms,
     galleryItems,
     selectedTerm,
