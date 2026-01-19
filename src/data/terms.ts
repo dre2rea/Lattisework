@@ -424,9 +424,10 @@ export const terms: Term[] = [
     description: 'Extended shutter time capturing motion as smooth trails or silky water.',
     category: 'techniques',
     images: [
-      '/4-techniques/Long exposure/long-exposure-1.jpg',
+      '/4-techniques/Long exposure/long-exposure-1.png',
       '/4-techniques/Long exposure/long-exposure-2.png',
       '/4-techniques/Long exposure/long-exposure-3.jpg',
+      '/4-techniques/Long exposure/long-exposure-4.jpg',
     ],
   },
   {
