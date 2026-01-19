@@ -80,7 +80,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             onClick={() => onFilterChange('all')}
             className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors ${
               activeFilter === 'all'
-                ? 'bg-ink text-cream font-bold'
+                ? 'bg-ink text-cream'
                 : 'bg-cream text-ink'
             }`}
           >
@@ -97,7 +97,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 onClick={() => onFilterChange(category.id)}
                 className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors whitespace-nowrap ${
                   isActive
-                    ? 'bg-ink text-cream font-bold'
+                    ? 'bg-ink text-cream'
                     : 'bg-cream text-ink'
                 }`}
               >
@@ -174,7 +174,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             onClick={() => onFilterChange('all')}
             className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors ${
               activeFilter === 'all'
-                ? 'bg-ink text-cream font-bold'
+                ? 'bg-ink text-cream'
                 : 'bg-cream text-ink'
             }`}
           >
@@ -188,7 +188,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 onClick={() => onFilterChange(category.id)}
                 className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors whitespace-nowrap ${
                   isActive
-                    ? 'bg-ink text-cream font-bold'
+                    ? 'bg-ink text-cream'
                     : 'bg-cream text-ink'
                 }`}
               >
