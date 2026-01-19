@@ -14,12 +14,12 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
   const images = term?.images || []
   const totalImages = images.length
 
-  // Reset to first image when term changes
+  // Reset to first image when lightbox opens
   useEffect(() => {
-    if (term) {
+    if (isOpen) {
       setCurrentIndex(0)
     }
-  }, [term?.id])
+  }, [isOpen])
 
   const goToPrevious = useCallback(() => {
     if (currentIndex > 0) {
