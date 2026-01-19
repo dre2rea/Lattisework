@@ -1,4 +1,4 @@
-import { Header, Sidebar, Gallery, Lightbox } from './components'
+import { Header, Sidebar, Gallery, Lightbox, StructuredData } from './components'
 import { useTerms } from './hooks/useTerms'
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
 
   return (
     <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto">
+      <StructuredData />
+      <h1 className="sr-only">Lattisework – Midjourney Visual Glossary</h1>
       <Header onSearchSubmit={setSearchQuery} />
 
       {/* Mobile pill tabs - rendered above gallery */}
