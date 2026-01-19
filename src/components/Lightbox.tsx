@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Term } from '../types'
 
@@ -10,28 +10,68 @@ interface LightboxProps {
 
 export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isImageLoaded, setIsImageLoaded] = useState(false)
+  const [displayedIndex, setDisplayedIndex] = useState(0)
+  const preloadedImages = useRef<Set<string>>(new Set())
 
   const images = term?.images || []
   const totalImages = images.length
 
-  // Reset to first image when lightbox opens
+  // Preload an image
+  const preloadImage = useCallback((src: string) => {
+    if (preloadedImages.current.has(src)) return
+    const img = new Image()
+    img.src = src
+    preloadedImages.current.add(src)
+  }, [])
+
+  // Preload adjacent images when current image changes
+  useEffect(() => {
+    if (!isOpen || images.length === 0) return
+
+    // Preload current image
+    preloadImage(images[currentIndex])
+
+    // Preload next image
+    if (currentIndex < images.length - 1) {
+      preloadImage(images[currentIndex + 1])
+    }
+
+    // Preload previous image
+    if (currentIndex > 0) {
+      preloadImage(images[currentIndex - 1])
+    }
+  }, [currentIndex, images, isOpen, preloadImage])
+
+  // Reset states when lightbox opens or term changes
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(0)
+      setDisplayedIndex(0)
+      setIsImageLoaded(false)
+      preloadedImages.current.clear()
     }
-  }, [isOpen])
+  }, [isOpen, term])
 
   const goToPrevious = useCallback(() => {
     if (currentIndex > 0) {
+      setIsImageLoaded(false)
       setCurrentIndex((prev) => prev - 1)
     }
   }, [currentIndex])
 
   const goToNext = useCallback(() => {
     if (currentIndex < totalImages - 1) {
+      setIsImageLoaded(false)
       setCurrentIndex((prev) => prev + 1)
     }
   }, [currentIndex, totalImages])
+
+  // Handle image load - update displayed index when new image is ready
+  const handleImageLoad = useCallback(() => {
+    setIsImageLoaded(true)
+    setDisplayedIndex(currentIndex)
+  }, [currentIndex])
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -127,19 +167,37 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
           )}
 
           {/* Image container */}
-          <div className="flex items-center justify-center" style={{ minHeight: '60vh' }}>
+          <div className="flex items-center justify-center relative" style={{ minHeight: '60vh' }}>
+            {/* Loading indicator */}
+            {!isImageLoaded && currentIndex !== displayedIndex && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-6 h-6 border-2 border-white/20 border-t-white/70 rounded-full animate-spin" />
+              </div>
+            )}
+
+            {/* Current displayed image */}
             <AnimatePresence mode="wait" initial={false}>
               <motion.img
-                key={`${term.id}-${currentIndex}`}
+                key={`${term.id}-${displayedIndex}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 0.3 } }}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
-                src={images[currentIndex]}
-                alt={`${term.label} - Image ${currentIndex + 1}`}
+                src={images[displayedIndex]}
+                alt={`${term.label} - Image ${displayedIndex + 1}`}
                 className="max-w-[85vw] max-h-[70vh] object-contain"
                 onClick={(e) => e.stopPropagation()}
               />
             </AnimatePresence>
+
+            {/* Hidden preloader for next image */}
+            {currentIndex !== displayedIndex && (
+              <img
+                src={images[currentIndex]}
+                alt=""
+                className="sr-only"
+                onLoad={handleImageLoad}
+              />
+            )}
           </div>
 
           {/* Term info */}
