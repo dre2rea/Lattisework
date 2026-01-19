@@ -1,3 +1,4 @@
+import { AnimatePresence, LayoutGroup } from 'framer-motion'
 import { GalleryCard } from './GalleryCard'
 import type { GalleryItem } from '../types'
 
@@ -19,18 +20,22 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
         </h2>
       )}
 
-      {/* Gallery grid */}
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
-        {items.map((item, index) => (
-          <GalleryCard
-            key={item.id}
-            item={item}
-            onClick={() => onItemClick(item)}
-            index={index}
-            useLayoutAnimation={false}
-          />
-        ))}
-      </section>
+      {/* Gallery grid with FLIP animation */}
+      <LayoutGroup>
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
+          <AnimatePresence mode="popLayout">
+            {items.map((item, index) => (
+              <GalleryCard
+                key={item.id}
+                item={item}
+                onClick={() => onItemClick(item)}
+                index={index}
+                useLayoutAnimation={true}
+              />
+            ))}
+          </AnimatePresence>
+        </section>
+      </LayoutGroup>
     </div>
   )
 }
