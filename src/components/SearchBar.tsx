@@ -146,7 +146,9 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
   const highlightMatch = (text: string, searchQuery: string) => {
     if (!searchQuery.trim()) return <span>{text}</span>
 
-    const regex = new RegExp(`(${searchQuery})`, 'gi')
+    // Escape special regex characters to prevent errors
+    const escapedQuery = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const regex = new RegExp(`(${escapedQuery})`, 'gi')
     const parts = text.split(regex)
 
     return parts.map((part, index) => {

@@ -20,7 +20,7 @@ export function useTerms() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   // Filter terms based on active category and search query
-  const filteredTerms = useMemo(() => {
+  const getFilteredTerms = (): Term[] => {
     // If there's a search query, filter all terms by the query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase()
@@ -34,12 +34,12 @@ export function useTerms() {
       return getAllTermsSorted()
     }
     return getTermsByCategory(activeFilter)
-  }, [activeFilter, searchQuery])
+  }
+
+  const filteredTerms = getFilteredTerms()
 
   // Convert filtered terms to GalleryItems for Gallery component
-  const galleryItems = useMemo(() => {
-    return filteredTerms.map(termToGalleryItem)
-  }, [filteredTerms])
+  const galleryItems = filteredTerms.map(termToGalleryItem)
 
   // Handle filter change - clears search query
   const handleFilterChange = useCallback((filter: FilterType) => {
