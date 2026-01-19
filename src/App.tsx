@@ -15,7 +15,7 @@ function App() {
   } = useTerms()
 
   return (
-    <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px]">
+    <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto">
       <Header onSearchSubmit={setSearchQuery} />
 
       {/* Mobile pill tabs - rendered above gallery */}
