@@ -13,7 +13,9 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
       {/* Search results heading */}
       {searchQuery && (
         <h2 className="text-[20px] font-bold tracking-[-0.2px] leading-[25px]">
-          Search results for "{searchQuery}"
+          {items.length === 0
+            ? `No terms found matching "${searchQuery}"`
+            : `Search results for "${searchQuery}"`}
         </h2>
       )}
 

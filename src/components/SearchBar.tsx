@@ -181,7 +181,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder="Search terms"
-          className="px-3 py-1.5 text-sm border border-ink flex-1 md:flex-none md:w-[258px] font-mono bg-cream focus:outline-none focus:border-muted"
+          className="px-3 py-1.5 text-sm border border-ink flex-1 md:flex-none md:w-[258px] font-mono bg-cream focus:outline-none"
         />
         <button
           type="submit"
