@@ -85,7 +85,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               e.stopPropagation()
               onClose()
             }}
-            className="absolute top-5 right-8 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white"
+            className="absolute top-4 right-4 md:top-5 md:right-8 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
             aria-label="Close"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -101,7 +101,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
                 e.stopPropagation()
                 goToPrevious()
               }}
-              className="absolute left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Previous image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -117,7 +117,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
                 e.stopPropagation()
                 goToNext()
               }}
-              className="absolute right-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Next image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

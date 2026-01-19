@@ -15,18 +15,30 @@ function App() {
   } = useTerms()
 
   return (
-    <div className="min-h-screen px-[30px] pb-[30px]">
+    <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px]">
       <Header onSearchSubmit={setSearchQuery} />
 
-      <div className="flex gap-[56px]">
-        {/* Sidebar */}
+      {/* Mobile pill tabs - rendered above gallery */}
+      <div className="md:hidden">
         <Sidebar
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
+          variant="mobile"
         />
+      </div>
+
+      <div className="md:flex md:gap-[56px]">
+        {/* Desktop Sidebar */}
+        <div className="hidden md:block">
+          <Sidebar
+            activeFilter={activeFilter}
+            onFilterChange={setActiveFilter}
+            variant="desktop"
+          />
+        </div>
 
         {/* Main content */}
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
           <Gallery
             items={galleryItems}
             onItemClick={openLightbox}
@@ -36,7 +48,7 @@ function App() {
       </div>
 
       {!searchQuery && (
-        <footer className="mt-[60px] text-sm text-ink text-right">
+        <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right">
           Created by{' '}
           <a
             href="https://x.com/narie_wjlee"
