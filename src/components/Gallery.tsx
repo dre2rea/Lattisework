@@ -21,7 +21,7 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
       )}
 
       {/* Gallery grid */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[11px] gap-y-[44px]">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
         <AnimatePresence mode={isSearching ? 'wait' : 'popLayout'}>
           {items.map((item, index) => (
             <GalleryCard
