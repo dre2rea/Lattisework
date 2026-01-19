@@ -5,12 +5,13 @@ interface GalleryCardProps {
   item: GalleryItem
   onClick: () => void
   index: number
+  useLayoutAnimation?: boolean
 }
 
-export function GalleryCard({ item, onClick, index }: GalleryCardProps) {
+export function GalleryCard({ item, onClick, index, useLayoutAnimation = true }: GalleryCardProps) {
   return (
     <motion.article
-      layout="position"
+      layout={useLayoutAnimation ? 'position' : false}
       initial={{ opacity: 0, y: 40 }}
       animate={{
         opacity: 1,

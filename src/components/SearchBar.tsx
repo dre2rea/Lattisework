@@ -168,7 +168,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
   const activeIndex = keyboardActiveIndex ?? mouseActiveIndex
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative w-full md:w-auto">
       <form onSubmit={handleSubmit} className="flex gap-1.5">
         <input
           ref={inputRef}
@@ -179,11 +179,11 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder="Search terms"
-          className="px-3 py-1.5 text-sm border border-ink w-[258px] font-mono bg-cream focus:outline-none focus:border-muted"
+          className="px-3 py-1.5 text-sm border border-ink flex-1 md:flex-none md:w-[258px] font-mono bg-cream focus:outline-none focus:border-muted"
         />
         <button
           type="submit"
-          className="px-4 py-1.5 text-sm bg-ink text-cream border border-ink cursor-pointer transition-all duration-200 hover:bg-cream hover:text-ink"
+          className="px-4 py-1.5 text-sm bg-ink text-cream border border-ink cursor-pointer transition-all duration-200 hover:bg-cream hover:text-ink shrink-0"
         >
           Search
         </button>
@@ -191,7 +191,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
 
       {/* Suggestions dropdown */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 w-[258px] mt-0 bg-cream border border-ink border-t-0 z-50">
+        <div className="absolute top-full left-0 w-full md:w-[258px] mt-0 bg-cream border border-ink border-t-0 z-50">
           {suggestions.map((term, index) => (
             <button
               key={term.id}
