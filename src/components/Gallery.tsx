@@ -9,6 +9,19 @@ interface GalleryProps {
 }
 
 export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
+  // Use FLIP animation for filter navigation, slide-up for search results
+  const useFlipAnimation = !searchQuery
+
+  const gridContent = items.map((item, index) => (
+    <GalleryCard
+      key={item.id}
+      item={item}
+      onClick={() => onItemClick(item)}
+      index={index}
+      useLayoutAnimation={useFlipAnimation}
+    />
+  ))
+
   return (
     <div className="flex flex-col gap-[18px]">
       {/* Search results heading */}
@@ -20,22 +33,20 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
         </h2>
       )}
 
-      {/* Gallery grid with FLIP animation */}
-      <LayoutGroup>
+      {/* Gallery grid - FLIP animation for filters, simple slide-up for search */}
+      {useFlipAnimation ? (
+        <LayoutGroup>
+          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
+            <AnimatePresence mode="popLayout">
+              {gridContent}
+            </AnimatePresence>
+          </section>
+        </LayoutGroup>
+      ) : (
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
-          <AnimatePresence mode="popLayout">
-            {items.map((item, index) => (
-              <GalleryCard
-                key={item.id}
-                item={item}
-                onClick={() => onItemClick(item)}
-                index={index}
-                useLayoutAnimation={true}
-              />
-            ))}
-          </AnimatePresence>
+          {gridContent}
         </section>
-      </LayoutGroup>
+      )}
     </div>
   )
 }
