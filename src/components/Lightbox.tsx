@@ -115,7 +115,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
           onClick={onClose}
         >
           {/* Desktop-only progress indicator */}
-          <div className="hidden md:flex absolute top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-10 items-center">
+          <div className="hidden xl:flex absolute top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-10 items-center">
             {currentIndex + 1} / {totalImages}
           </div>
 
@@ -141,7 +141,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
                 e.stopPropagation()
                 goToPrevious()
               }}
-              className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="hidden xl:block absolute left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Previous image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -156,7 +156,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
                 e.stopPropagation()
                 goToNext()
               }}
-              className="hidden md:block absolute right-7 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="hidden xl:block absolute right-7 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Next image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -171,7 +171,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image container */}
-            <div className="flex items-center justify-center relative md:min-h-[60vh]">
+            <div className="flex items-center justify-center relative xl:min-h-[60vh]">
               {/* Loading indicator */}
               {!isImageLoaded && currentIndex !== displayedIndex && (
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -188,7 +188,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
                   exit={{ opacity: 0, transition: { duration: 0.2 } }}
                   src={images[displayedIndex]}
                   alt={`${term.label} - Image ${displayedIndex + 1}`}
-                  className="max-w-[90vw] md:max-w-[85vw] max-h-[50vh] md:max-h-[70vh] object-contain"
+                  className="max-w-[90vw] xl:max-w-[85vw] max-h-[50vh] xl:max-h-[70vh] object-contain"
                 />
               </AnimatePresence>
 
@@ -203,12 +203,12 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               )}
             </div>
 
-            {/* Mobile navigation row: [<] [2/4] [>] */}
-            <div className="flex md:hidden items-center justify-center gap-4 mt-3">
+            {/* Mobile/Tablet navigation row: [<] [2/4] [>] */}
+            <div className="flex xl:hidden items-center justify-center gap-4 mt-3">
               <button
                 onClick={goToPrevious}
                 disabled={!hasPrevious}
-                className={`p-2 transition-colors duration-200 ${
+                className={`p-2 transition-colors duration-200 cursor-pointer ${
                   hasPrevious ? 'text-white/70 hover:text-white' : 'text-white/20'
                 }`}
                 aria-label="Previous image"
@@ -223,7 +223,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               <button
                 onClick={goToNext}
                 disabled={!hasNext}
-                className={`p-2 transition-colors duration-200 ${
+                className={`p-2 transition-colors duration-200 cursor-pointer ${
                   hasNext ? 'text-white/70 hover:text-white' : 'text-white/20'
                 }`}
                 aria-label="Next image"
@@ -240,9 +240,9 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="text-white text-center mt-3 md:mt-5 max-w-xl px-1 md:px-5"
+              className="text-white text-center mt-3 xl:mt-5 max-w-xl px-1 xl:px-5"
             >
-              <h3 className="italic mb-1 md:mb-2">{term.label}</h3>
+              <h3 className="italic mb-1 xl:mb-2">{term.label}</h3>
               <p className="text-sm text-gray-400">{term.description}</p>
             </motion.div>
           </div>
