@@ -36,14 +36,14 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
       {/* Gallery grid - FLIP animation for filters, simple slide-up for search */}
       {useFlipAnimation ? (
         <LayoutGroup>
-          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
+          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px] transition-[gap] duration-300 ease-out">
             <AnimatePresence mode="popLayout">
               {gridContent}
             </AnimatePresence>
           </section>
         </LayoutGroup>
       ) : (
-        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px]">
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px] transition-[gap] duration-300 ease-out">
           {gridContent}
         </section>
       )}

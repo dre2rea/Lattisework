@@ -111,11 +111,11 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center flex-col"
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={onClose}
         >
-          {/* Image counter - vertically aligned with close button */}
-          <div className="absolute top-4 md:top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-10 flex items-center">
+          {/* Desktop-only progress indicator */}
+          <div className="hidden xl:flex absolute top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-10 items-center">
             {currentIndex + 1} / {totalImages}
           </div>
 
@@ -125,7 +125,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               e.stopPropagation()
               onClose()
             }}
-            className="absolute top-4 right-4 md:top-5 md:right-8 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+            className="absolute top-4 right-4 md:top-5 md:right-8 text-white/70 bg-transparent border-none cursor-pointer transition-[color,top,right] duration-300 ease-out hover:text-white p-2"
             aria-label="Close"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -134,14 +134,14 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
             </svg>
           </button>
 
-          {/* Previous button - only show if not first image */}
+          {/* Desktop-only side chevrons */}
           {hasPrevious && (
             <button
               onClick={(e) => {
                 e.stopPropagation()
                 goToPrevious()
               }}
-              className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="hidden xl:block absolute left-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Previous image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -150,14 +150,13 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
             </button>
           )}
 
-          {/* Next button - horizontally aligned with close button */}
           {hasNext && (
             <button
               onClick={(e) => {
                 e.stopPropagation()
                 goToNext()
               }}
-              className="absolute right-3 md:right-7 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="hidden xl:block absolute right-7 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Next image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -166,52 +165,87 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
             </button>
           )}
 
-          {/* Image container */}
-          <div className="flex items-center justify-center relative" style={{ minHeight: '60vh' }}>
-            {/* Loading indicator */}
-            {!isImageLoaded && currentIndex !== displayedIndex && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-white/20 border-t-white/70 rounded-full animate-spin" />
-              </div>
-            )}
-
-            {/* Current displayed image */}
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.img
-                key={`${term.id}-${displayedIndex}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 0.3 } }}
-                exit={{ opacity: 0, transition: { duration: 0.2 } }}
-                src={images[displayedIndex]}
-                alt={`${term.label} - Image ${displayedIndex + 1}`}
-                className="max-w-[85vw] max-h-[70vh] object-contain"
-                onClick={(e) => e.stopPropagation()}
-              />
-            </AnimatePresence>
-
-            {/* Hidden preloader for next image */}
-            {currentIndex !== displayedIndex && (
-              <img
-                src={images[currentIndex]}
-                alt=""
-                className="sr-only"
-                onLoad={handleImageLoad}
-              />
-            )}
-          </div>
-
-          {/* Term info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-            className="text-white text-center mt-5 max-w-xl px-5"
+          {/* Main content block - vertically centered as one unit */}
+          <div
+            className="flex flex-col items-center px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="italic mb-2">{term.label}</h3>
-            <p className="text-sm text-gray-400">{term.description}</p>
-          </motion.div>
+            {/* Image container */}
+            <div className="flex items-center justify-center relative xl:min-h-[60vh]">
+              {/* Loading indicator */}
+              {!isImageLoaded && currentIndex !== displayedIndex && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-white/20 border-t-white/70 rounded-full animate-spin" />
+                </div>
+              )}
+
+              {/* Current displayed image */}
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.img
+                  key={`${term.id}-${displayedIndex}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.3 } }}
+                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                  src={images[displayedIndex]}
+                  alt={`${term.label} - Image ${displayedIndex + 1}`}
+                  className="max-w-[90vw] xl:max-w-[85vw] max-h-[50vh] xl:max-h-[70vh] object-contain"
+                />
+              </AnimatePresence>
+
+              {/* Hidden preloader for next image */}
+              {currentIndex !== displayedIndex && (
+                <img
+                  src={images[currentIndex]}
+                  alt=""
+                  className="sr-only"
+                  onLoad={handleImageLoad}
+                />
+              )}
+            </div>
+
+            {/* Mobile/Tablet navigation row: [<] [2/4] [>] */}
+            <div className="flex xl:hidden items-center justify-center gap-4 mt-3">
+              <button
+                onClick={goToPrevious}
+                disabled={!hasPrevious}
+                className={`p-2 transition-colors duration-200 ${
+                  hasPrevious ? 'text-white/70 hover:text-white cursor-pointer' : 'text-white/20 cursor-default'
+                }`}
+                aria-label="Previous image"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <span className="text-white/70 text-sm font-mono min-w-[3rem] text-center">
+                {currentIndex + 1} / {totalImages}
+              </span>
+              <button
+                onClick={goToNext}
+                disabled={!hasNext}
+                className={`p-2 transition-colors duration-200 ${
+                  hasNext ? 'text-white/70 hover:text-white cursor-pointer' : 'text-white/20 cursor-default'
+                }`}
+                aria-label="Next image"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            {/* Term info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="text-white text-center mt-3 xl:mt-5 max-w-xl px-1 xl:px-5 transition-[margin,padding] duration-300 ease-out"
+            >
+              <h3 className="italic mb-1 xl:mb-2 transition-[margin] duration-300 ease-out">{term.label}</h3>
+              <p className="text-sm text-gray-400">{term.description}</p>
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
