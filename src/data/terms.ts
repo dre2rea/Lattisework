@@ -79,6 +79,51 @@ export const terms: Term[] = [
       "/1-framing-perspective/Worm's eye view/worm's-eye-view-3.png",
     ],
   },
+  {
+    id: 'cutaway',
+    label: 'Cutaway',
+    description: 'A view showing the interior of an object by removing a section of the exterior.',
+    category: 'framing-perspective',
+    images: [
+      '/1-framing-perspective/Cutaway/cutaway-1.jpg',
+      '/1-framing-perspective/Cutaway/cutaway-2.jpg',
+      '/1-framing-perspective/Cutaway/cutaway-3.jpeg',
+      '/1-framing-perspective/Cutaway/cutaway-4.jpg',
+      '/1-framing-perspective/Cutaway/cutaway-5.jpeg',
+    ],
+  },
+  {
+    id: 'diptych',
+    label: 'Diptych',
+    description: 'A work of art consisting of two panels or sections, often hinged together or displayed side by side.',
+    category: 'framing-perspective',
+    images: [
+      '/1-framing-perspective/Diptych/diptych-1.jpg',
+      '/1-framing-perspective/Diptych/diptych-2.jpeg',
+    ],
+  },
+  {
+    id: 'flat-lay',
+    label: 'Flat-Lay',
+    description: 'A photograph taken from directly above, with objects arranged on a flat surface.',
+    category: 'framing-perspective',
+    images: [
+      '/1-framing-perspective/Flat-lay/flat-lay-1.jpeg',
+      '/1-framing-perspective/Flat-lay/flat-lay-2.jpeg',
+      '/1-framing-perspective/Flat-lay/flat-lay-3.jpg',
+    ],
+  },
+  {
+    id: 'orthographic',
+    label: 'Orthographic',
+    description: 'A projection method showing objects without perspective distortion, used in technical drawings.',
+    category: 'framing-perspective',
+    images: [
+      '/1-framing-perspective/Orthographic/orthographic-1.jpg',
+      '/1-framing-perspective/Orthographic/orthographic-2.jpg',
+      '/1-framing-perspective/Orthographic/orthographic-3.jpg',
+    ],
+  },
 
   // ============================================
   // LENS & LIGHT
@@ -199,10 +244,67 @@ export const terms: Term[] = [
       '/2-lens-light/Volumetric Light/volumetric-light-3.jpg',
     ],
   },
+  {
+    id: 'anaglyph',
+    label: 'Anaglyph',
+    description: 'A stereoscopic 3D effect achieved by encoding each eye\'s image using filters of different colors.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Anaglyph/anaglyph-1.jpg',
+      '/2-lens-light/Anaglyph/anaglyph-2.jpg',
+      '/2-lens-light/Anaglyph/anaglyph-3.jpg',
+    ],
+  },
+  {
+    id: 'dappled-light',
+    label: 'Dappled Light',
+    description: 'Soft, mottled patterns of light and shadow created by sunlight filtering through leaves or openings.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Dappled light/dappled-light-1.jpg',
+      '/2-lens-light/Dappled light/dappled-light-2.jpg',
+      '/2-lens-light/Dappled light/dappled-light-3.jpg',
+      '/2-lens-light/Dappled light/dappled-light-4.jpeg',
+    ],
+  },
+  {
+    id: 'fisheye-view',
+    label: 'Fisheye View',
+    description: 'An ultra-wide-angle lens effect creating a hemispherical, barrel-distorted image.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Fisheye view/fisheye-view-1.jpg',
+      '/2-lens-light/Fisheye view/fisheye-view-2.jpeg',
+      '/2-lens-light/Fisheye view/fisheye-view-3.jpg',
+    ],
+  },
+  {
+    id: 'moire-pattern',
+    label: 'Moiré Pattern',
+    description: 'Visual interference pattern created when two grids or patterns overlap at an angle.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Moiré pattern/moire-pattern-1.jpg',
+      '/2-lens-light/Moiré pattern/moire-pattern-2.jpg',
+      '/2-lens-light/Moiré pattern/moire-pattern-3.jpg',
+    ],
+  },
 
   // ============================================
   // ART MOVEMENTS
   // ============================================
+  {
+    id: 'afrofuturism',
+    label: 'Afrofuturism',
+    description: 'A cultural aesthetic combining African diaspora culture with technology, science fiction, and futuristic themes.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Afrofuturism/afrofuturism-1.jpg',
+      '/3-art-movements/Afrofuturism/afrofuturism-2.jpg',
+      '/3-art-movements/Afrofuturism/afrofuturism-3.jpg',
+      '/3-art-movements/Afrofuturism/afrofuturism-4.jpg',
+    ],
+  },
   {
     id: 'art-deco',
     label: 'Art Deco',
@@ -264,28 +366,25 @@ export const terms: Term[] = [
     ],
   },
   {
-    id: 'glitch-art',
-    label: 'Glitch Art',
-    description: 'Digital or analog errors aesthetically exploited to create striking visual effects.',
+    id: 'hudson-river-school',
+    label: 'Hudson River School',
+    description: 'American art movement emphasizing romantic landscapes with dramatic light and natural beauty.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Glitch Art/glitch-art-1.jpg',
-      '/3-art-movements/Glitch Art/glitch-art-2.jpg',
-      '/3-art-movements/Glitch Art/glitch-art-3.jpg',
-      '/3-art-movements/Glitch Art/glitch-art-4.jpg',
-      '/3-art-movements/Glitch Art/glitch-art-5.jpg',
+      '/3-art-movements/Hudson River School/hudson-river-school-1.jpg',
+      '/3-art-movements/Hudson River School/hudson-river-school-2.jpeg',
+      '/3-art-movements/Hudson River School/hudson-river-school-3.jpg',
     ],
   },
   {
-    id: 'impasto',
-    label: 'Impasto',
-    description: 'Thick application of paint that creates visible texture and three-dimensional surface.',
+    id: 'memphis-design',
+    label: 'Memphis Design',
+    description: 'Bold, postmodern style featuring bright colors, geometric shapes, and playful patterns from the 1980s.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Impasto/impasto-1.jpg',
-      '/3-art-movements/Impasto/impasto-2.jpg',
-      '/3-art-movements/Impasto/impasto-3.jpg',
-      '/3-art-movements/Impasto/impasto-4.jpg',
+      '/3-art-movements/Memphis design/memphis-design-1.jpg',
+      '/3-art-movements/Memphis design/memphis-design-2.jpeg',
+      '/3-art-movements/Memphis design/memphis-design-3.jpeg',
     ],
   },
   {
@@ -311,6 +410,18 @@ export const terms: Term[] = [
       '/3-art-movements/Pointillism/pointillism-3.jpg',
       '/3-art-movements/Pointillism/pointillism-4.jpg',
       '/3-art-movements/Pointillism/pointillism-5.jpg',
+    ],
+  },
+  {
+    id: 'rococo',
+    label: 'Rococo',
+    description: 'Ornate 18th-century style featuring elaborate curves, pastel colors, and asymmetrical designs.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Rococo/rococo-1.jpg',
+      '/3-art-movements/Rococo/rococo-2.jpg',
+      '/3-art-movements/Rococo/rococo-3.jpg',
+      '/3-art-movements/Rococo/rococo-4.jpg',
     ],
   },
   {
@@ -345,6 +456,16 @@ export const terms: Term[] = [
       '/3-art-movements/Vaporwave/vaporware-1.jpg',
       '/3-art-movements/Vaporwave/vaporware-2.jpg',
       '/3-art-movements/Vaporwave/vaporware-3.jpg',
+    ],
+  },
+  {
+    id: 'y2k-aesthetics',
+    label: 'Y2K Aesthetics',
+    description: 'Late 90s/early 2000s visual style featuring chrome, translucent plastics, and techno-optimism.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Y2K aesthetics/y2k-aesthetics-1.jpg',
+      '/3-art-movements/Y2K aesthetics/y2k-aesthetics-2.jpg',
     ],
   },
 
@@ -438,6 +559,40 @@ export const terms: Term[] = [
       '/4-techniques/Risograph/risograph-1.jpg',
       '/4-techniques/Risograph/risograph-2.jpg',
       '/4-techniques/Risograph/risograph-3.jpg',
+    ],
+  },
+  {
+    id: 'glitch-art',
+    label: 'Glitch Art',
+    description: 'Digital or analog errors aesthetically exploited to create striking visual effects.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Glitch Art/glitch-art-1.jpg',
+      '/4-techniques/Glitch Art/glitch-art-2.jpg',
+      '/4-techniques/Glitch Art/glitch-art-3.jpg',
+      '/4-techniques/Glitch Art/glitch-art-4.jpg',
+      '/4-techniques/Glitch Art/glitch-art-5.jpg',
+    ],
+  },
+  {
+    id: 'impasto',
+    label: 'Impasto',
+    description: 'Thick application of paint that creates visible texture and three-dimensional surface.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Impasto/impasto-1.jpg',
+      '/4-techniques/Impasto/impasto-2.jpg',
+      '/4-techniques/Impasto/impasto-3.jpg',
+      '/4-techniques/Impasto/impasto-4.jpg',
+    ],
+  },
+  {
+    id: 'infrared',
+    label: 'Infrared',
+    description: 'Photography capturing infrared light, creating surreal images with white foliage and dark skies.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Infrared/0_1_640_N.jpeg',
     ],
   },
 
