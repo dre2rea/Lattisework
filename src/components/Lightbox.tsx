@@ -115,7 +115,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
           onClick={onClose}
         >
           {/* Image counter - vertically aligned with close button */}
-          <div className="absolute top-4 md:top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-[24px] flex items-center">
+          <div className="absolute top-4 md:top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-10 flex items-center">
             {currentIndex + 1} / {totalImages}
           </div>
 
