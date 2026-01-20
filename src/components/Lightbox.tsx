@@ -114,8 +114,8 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center flex-col"
           onClick={onClose}
         >
-          {/* Image counter */}
-          <div className="absolute top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono">
+          {/* Image counter - vertically aligned with close button */}
+          <div className="absolute top-4 md:top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-mono p-2 h-[24px] flex items-center">
             {currentIndex + 1} / {totalImages}
           </div>
 
@@ -150,14 +150,14 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
             </button>
           )}
 
-          {/* Next button - only show if not last image */}
+          {/* Next button - horizontally aligned with close button */}
           {hasNext && (
             <button
               onClick={(e) => {
                 e.stopPropagation()
                 goToNext()
               }}
-              className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+              className="absolute right-3 md:right-7 top-1/2 -translate-y-1/2 z-10 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
               aria-label="Next image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
