@@ -144,7 +144,6 @@ export const terms: Term[] = [
     images: [
       '/2-lens-light/Crepuscular Rays/Crepuscular-rays-1.png',
       '/2-lens-light/Crepuscular Rays/Crepuscular-rays-2.png',
-      '/2-lens-light/Crepuscular Rays/Crepuscular-rays-3.jpg',
     ],
   },
   {
