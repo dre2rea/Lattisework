@@ -15,7 +15,7 @@ function App() {
   } = useTerms()
 
   return (
-    <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto">
+    <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto transition-[padding] duration-300 ease-out">
       <StructuredData />
       <h1 className="sr-only">Lattisework – Midjourney Visual Glossary</h1>
       <Header onSearchSubmit={setSearchQuery} />
@@ -29,7 +29,7 @@ function App() {
         />
       </div>
 
-      <div className="md:flex md:gap-[56px]">
+      <div className="md:flex md:gap-[56px] transition-[gap] duration-300 ease-out">
         {/* Desktop Sidebar */}
         <div className="hidden md:block">
           <Sidebar
@@ -50,7 +50,7 @@ function App() {
       </div>
 
       {!searchQuery && (
-        <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right">
+        <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right transition-[margin] duration-300 ease-out">
           Created by{' '}
           <a
             href="https://x.com/narie_wjlee"

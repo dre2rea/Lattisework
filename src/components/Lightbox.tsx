@@ -125,7 +125,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               e.stopPropagation()
               onClose()
             }}
-            className="absolute top-4 right-4 md:top-5 md:right-8 text-white/70 bg-transparent border-none cursor-pointer transition-colors duration-200 hover:text-white p-2"
+            className="absolute top-4 right-4 md:top-5 md:right-8 text-white/70 bg-transparent border-none cursor-pointer transition-[color,top,right] duration-300 ease-out hover:text-white p-2"
             aria-label="Close"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -240,9 +240,9 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="text-white text-center mt-3 xl:mt-5 max-w-xl px-1 xl:px-5"
+              className="text-white text-center mt-3 xl:mt-5 max-w-xl px-1 xl:px-5 transition-[margin,padding] duration-300 ease-out"
             >
-              <h3 className="italic mb-1 xl:mb-2">{term.label}</h3>
+              <h3 className="italic mb-1 xl:mb-2 transition-[margin] duration-300 ease-out">{term.label}</h3>
               <p className="text-sm text-gray-400">{term.description}</p>
             </motion.div>
           </div>
