@@ -451,7 +451,9 @@ export const terms: Term[] = [
     description: 'V-shaped pattern creating a zigzag design often used in textiles and decoration.',
     category: 'materials-textures',
     images: [
+      '/5-materials-textures/Chevron/chevron-1.jpg',
       '/5-materials-textures/Chevron/chevron-2.jpg',
+      '/5-materials-textures/Chevron/chevron-3.png',
     ],
   },
   {
