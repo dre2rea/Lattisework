@@ -208,8 +208,8 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               <button
                 onClick={goToPrevious}
                 disabled={!hasPrevious}
-                className={`p-2 transition-colors duration-200 cursor-pointer ${
-                  hasPrevious ? 'text-white/70 hover:text-white' : 'text-white/20'
+                className={`p-2 transition-colors duration-200 ${
+                  hasPrevious ? 'text-white/70 hover:text-white cursor-pointer' : 'text-white/20 cursor-default'
                 }`}
                 aria-label="Previous image"
               >
@@ -223,8 +223,8 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               <button
                 onClick={goToNext}
                 disabled={!hasNext}
-                className={`p-2 transition-colors duration-200 cursor-pointer ${
-                  hasNext ? 'text-white/70 hover:text-white' : 'text-white/20'
+                className={`p-2 transition-colors duration-200 ${
+                  hasNext ? 'text-white/70 hover:text-white cursor-pointer' : 'text-white/20 cursor-default'
                 }`}
                 aria-label="Next image"
               >
