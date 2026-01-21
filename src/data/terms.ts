@@ -284,9 +284,9 @@ export const terms: Term[] = [
     description: 'Visual interference pattern created when two grids or patterns overlap at an angle.',
     category: 'lens-light',
     images: [
-      '/2-lens-light/Moiré pattern/moire-pattern-1.jpg',
-      '/2-lens-light/Moiré pattern/moire-pattern-2.jpg',
-      '/2-lens-light/Moiré pattern/moire-pattern-3.jpg',
+      '/2-lens-light/Moire pattern/moire-pattern-1.jpg',
+      '/2-lens-light/Moire pattern/moire-pattern-2.jpg',
+      '/2-lens-light/Moire pattern/moire-pattern-3.jpg',
     ],
   },
 
