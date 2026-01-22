@@ -731,6 +731,17 @@ export const terms: Term[] = [
     ],
   },
   {
+    id: 'terrazzo',
+    label: 'Terrazzo',
+    description: 'Composite material with marble, quartz, or glass chips set in cement or resin, creating speckled patterns.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Terrazzo/terrazzo-1.jpg',
+      '/5-materials-textures/Terrazzo/terrazzo-2.jpg',
+      '/5-materials-textures/Terrazzo/terrazzo-3.jpg',
+    ],
+  },
+  {
     id: 'velvet',
     label: 'Velvet',
     description: 'Luxurious fabric with a soft, dense pile that creates rich light and shadow.',
