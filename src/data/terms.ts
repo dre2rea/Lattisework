@@ -682,8 +682,8 @@ export const terms: Term[] = [
     description: 'Lightweight woven fabric with a checkered pattern of colored and white squares.',
     category: 'materials-textures',
     images: [
-      '/5-materials-textures/Gingham/Gingham-1.webp',
-      '/5-materials-textures/Gingham/Gingham-2.webp',
+      '/5-materials-textures/Gingham/Gingham-1.jpeg',
+      '/5-materials-textures/Gingham/Gingham-2.jpeg',
     ],
   },
   {
