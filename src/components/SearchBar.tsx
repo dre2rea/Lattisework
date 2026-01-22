@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { terms } from '../data/terms'
 import type { Term } from '../types'
 
@@ -8,35 +8,40 @@ interface SearchBarProps {
 
 export function SearchBar({ onSearchSubmit }: SearchBarProps) {
   const [query, setQuery] = useState('')
-  const [suggestions, setSuggestions] = useState<Term[]>([])
-  const [showSuggestions, setShowSuggestions] = useState(false)
+  const [dismissed, setDismissed] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
   const [keyboardActiveIndex, setKeyboardActiveIndex] = useState<number | null>(null)
   const [mouseActiveIndex, setMouseActiveIndex] = useState<number | null>(null)
+  const [prevQuery, setPrevQuery] = useState('')
 
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Update suggestions based on query
-  useEffect(() => {
-    if (query.trim() && isFocused) {
-      const searchQuery = query.toLowerCase()
-      const matches = terms
-        .filter((term) => term.label.toLowerCase().includes(searchQuery))
-        .slice(0, 5)
-      setSuggestions(matches)
-      setShowSuggestions(matches.length > 0)
-    } else {
-      setSuggestions([])
-      setShowSuggestions(false)
+  // Compute suggestions directly (derived state)
+  const suggestions = useMemo(() => {
+    if (!query.trim()) return []
+    const searchQuery = query.toLowerCase()
+    return terms
+      .filter((term) => term.label.toLowerCase().includes(searchQuery))
+      .slice(0, 5)
+  }, [query])
+
+  // Reset dismissed state when query changes (adjusting state during render)
+  if (query !== prevQuery) {
+    setPrevQuery(query)
+    if (dismissed) {
+      setDismissed(false)
     }
-  }, [query, isFocused])
+  }
+
+  // Derive showSuggestions from state
+  const showSuggestions = suggestions.length > 0 && isFocused && !dismissed
 
   // Click outside to close
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setShowSuggestions(false)
+        setDismissed(true)
       }
     }
 
@@ -48,7 +53,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && showSuggestions) {
-        setShowSuggestions(false)
+        setDismissed(true)
         inputRef.current?.blur()
       }
     }
@@ -61,7 +66,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
   const handleSuggestionSelect = useCallback(
     (term: Term) => {
       setQuery(term.label)
-      setShowSuggestions(false)
+      setDismissed(true)
       setKeyboardActiveIndex(null)
       setMouseActiveIndex(null)
       inputRef.current?.blur()
@@ -75,7 +80,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
   // Handle search submission (filters grid)
   const handleSearchSubmit = useCallback(
     (searchQuery: string) => {
-      setShowSuggestions(false)
+      setDismissed(true)
       setKeyboardActiveIndex(null)
       setMouseActiveIndex(null)
       inputRef.current?.blur()
@@ -125,9 +130,7 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
 
   const handleFocus = () => {
     setIsFocused(true)
-    if (query.trim() && suggestions.length > 0) {
-      setShowSuggestions(true)
-    }
+    setDismissed(false)
   }
 
   const handleBlur = () => {
