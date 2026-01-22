@@ -634,6 +634,17 @@ export const terms: Term[] = [
     ],
   },
   {
+    id: 'crystalline',
+    label: 'Crystalline',
+    description: 'Geometric mineral structures with faceted surfaces that refract and reflect light.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Crystalline/crystalline-1.webp',
+      '/5-materials-textures/Crystalline/crystalline-2.webp',
+      '/5-materials-textures/Crystalline/crystalline-3.webp',
+    ],
+  },
+  {
     id: 'felted',
     label: 'Felted',
     description: 'Soft, dense textile made from matted fibers with a fuzzy, warm appearance.',
@@ -663,6 +674,16 @@ export const terms: Term[] = [
       '/5-materials-textures/Geode/geode-1.jpg',
       '/5-materials-textures/Geode/geode-2.jpg',
       '/5-materials-textures/Geode/geode-3.jpg',
+    ],
+  },
+  {
+    id: 'gingham',
+    label: 'Gingham',
+    description: 'Lightweight woven fabric with a checkered pattern of colored and white squares.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Gingham/Gingham-1.webp',
+      '/5-materials-textures/Gingham/Gingham-2.webp',
     ],
   },
   {
@@ -728,6 +749,17 @@ export const terms: Term[] = [
       '/5-materials-textures/Plaid/plaid-1.jpg',
       '/5-materials-textures/Plaid/plaid-2.jpg',
       '/5-materials-textures/Plaid/plaid-3.jpg',
+    ],
+  },
+  {
+    id: 'rattan',
+    label: 'Rattan',
+    description: 'Woven palm fiber material with a natural, tropical aesthetic used in furniture and decor.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Rattan/rattan-1.jpg',
+      '/5-materials-textures/Rattan/rattan-2.jpg',
+      '/5-materials-textures/Rattan/rattan-3.jpeg',
     ],
   },
   {
