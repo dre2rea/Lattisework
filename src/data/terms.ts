@@ -473,6 +473,16 @@ export const terms: Term[] = [
   // TECHNIQUES
   // ============================================
   {
+    id: 'contour-drawing',
+    label: 'Contour Drawing',
+    description: 'Drawing technique focusing on the outline and edges of a subject without shading.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Contour drawing/contour-drawing-1.jpg',
+      '/4-techniques/Contour drawing/contour-drawing-2.jpg',
+    ],
+  },
+  {
     id: 'cross-hatching',
     label: 'Cross-Hatching',
     description: 'Drawing technique using intersecting sets of parallel lines to create shading and texture.',
@@ -645,6 +655,17 @@ export const terms: Term[] = [
     ],
   },
   {
+    id: 'geode',
+    label: 'Geode',
+    description: 'Crystalline rock formation with hollow cavities lined with colorful mineral crystals.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Geode/geode-1.jpg',
+      '/5-materials-textures/Geode/geode-2.jpg',
+      '/5-materials-textures/Geode/geode-3.jpg',
+    ],
+  },
+  {
     id: 'houndstooth',
     label: 'Houndstooth',
     description: 'Classic textile pattern with abstract four-pointed shapes resembling a broken check.',
@@ -663,6 +684,17 @@ export const terms: Term[] = [
       '/5-materials-textures/Marble veining/marble-veining-1.jpg',
       '/5-materials-textures/Marble veining/marble-veining-2.jpg',
       '/5-materials-textures/Marble veining/marble-veining-3.jpg',
+    ],
+  },
+  {
+    id: 'mycelium',
+    label: 'Mycelium',
+    description: 'Organic network of fungal threads creating intricate, web-like natural patterns.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Mycelium/mycelium-1.jpg',
+      '/5-materials-textures/Mycelium/mycelium-2.jpg',
+      '/5-materials-textures/Mycelium/mycelium-3.png',
     ],
   },
   {
