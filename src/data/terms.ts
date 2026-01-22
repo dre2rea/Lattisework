@@ -592,7 +592,8 @@ export const terms: Term[] = [
     description: 'Photography capturing infrared light, creating surreal images with white foliage and dark skies.',
     category: 'techniques',
     images: [
-      '/4-techniques/Infrared/0_1_640_N.jpeg',
+      '/4-techniques/Infrared/infrared-1.jpeg',
+      '/4-techniques/Infrared/infrared-2.jpg',
     ],
   },
 
