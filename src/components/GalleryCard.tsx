@@ -6,22 +6,27 @@ interface GalleryCardProps {
   onClick: () => void
   index: number
   useLayoutAnimation?: boolean
+  ready?: boolean
 }
 
-export function GalleryCard({ item, onClick, index, useLayoutAnimation = true }: GalleryCardProps) {
+export function GalleryCard({ item, onClick, index, useLayoutAnimation = true, ready = true }: GalleryCardProps) {
   return (
     <motion.article
       layout={useLayoutAnimation ? 'position' : false}
       initial={{ opacity: 0, y: 40 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay: index * 0.05,
-          duration: 0.4,
-          ease: [0.25, 0.46, 0.45, 0.94],
-        },
-      }}
+      animate={
+        ready
+          ? {
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: index * 0.05,
+                duration: 0.4,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              },
+            }
+          : { opacity: 0, y: 40 }
+      }
       exit={{
         opacity: 0,
         y: -20,

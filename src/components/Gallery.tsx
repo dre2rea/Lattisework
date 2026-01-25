@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import { AnimatePresence, LayoutGroup } from 'framer-motion'
 import { GalleryCard } from './GalleryCard'
+import { useImagePreload } from '../hooks/useImagePreload'
 import type { GalleryItem } from '../types'
 
 interface GalleryProps {
@@ -12,6 +14,10 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
   // Use FLIP animation for filter navigation, slide-up for search results
   const useFlipAnimation = !searchQuery
 
+  // Preload all images before triggering animations
+  const imageUrls = useMemo(() => items.map((item) => item.src), [items])
+  const imagesReady = useImagePreload(imageUrls)
+
   const gridContent = items.map((item, index) => (
     <GalleryCard
       key={item.id}
@@ -19,6 +25,7 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
       onClick={() => onItemClick(item)}
       index={index}
       useLayoutAnimation={useFlipAnimation}
+      ready={imagesReady}
     />
   ))
 
