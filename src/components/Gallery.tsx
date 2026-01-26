@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { AnimatePresence, LayoutGroup } from 'framer-motion'
 import { GalleryCard } from './GalleryCard'
+import { LoadingAnimation } from './LoadingAnimation'
 import { useImagePreload } from '../hooks/useImagePreload'
 import type { GalleryItem } from '../types'
 
@@ -40,8 +41,11 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
         </h2>
       )}
 
+      {/* Loading state */}
+      {!imagesReady && items.length > 0 && <LoadingAnimation />}
+
       {/* Gallery grid - FLIP animation for filters, simple slide-up for search */}
-      {useFlipAnimation ? (
+      {imagesReady && useFlipAnimation ? (
         <LayoutGroup>
           <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px] transition-[gap] duration-300 ease-out">
             <AnimatePresence mode="popLayout">
@@ -49,11 +53,11 @@ export function Gallery({ items, onItemClick, searchQuery }: GalleryProps) {
             </AnimatePresence>
           </section>
         </LayoutGroup>
-      ) : (
+      ) : imagesReady ? (
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px] transition-[gap] duration-300 ease-out">
           {gridContent}
         </section>
-      )}
+      ) : null}
     </div>
   )
 }
