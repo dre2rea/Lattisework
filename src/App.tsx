@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import { Header, Sidebar, Gallery, Lightbox, StructuredData } from './components'
 import { useTerms } from './hooks/useTerms'
+import { useImagePreload } from './hooks/useImagePreload'
 
 function App() {
   const {
@@ -13,6 +15,10 @@ function App() {
     openLightbox,
     closeLightbox,
   } = useTerms()
+
+  // Preload images at App level so footer can be hidden during loading
+  const imageUrls = useMemo(() => galleryItems.map((item) => item.src), [galleryItems])
+  const imagesReady = useImagePreload(imageUrls)
 
   return (
     <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto transition-[padding] duration-300 ease-out">
@@ -45,11 +51,12 @@ function App() {
             items={galleryItems}
             onItemClick={openLightbox}
             searchQuery={searchQuery}
+            imagesReady={imagesReady}
           />
         </main>
       </div>
 
-      {!searchQuery && (
+      {!searchQuery && imagesReady && (
         <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right transition-[margin] duration-300 ease-out">
           Created by{' '}
           <a
