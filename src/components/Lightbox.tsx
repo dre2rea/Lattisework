@@ -176,12 +176,12 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
           )}
 
           {/* Main content block - vertically centered as one unit */}
-          <div
-            className="flex flex-col items-center px-4"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="flex flex-col items-center w-[90vw] xl:w-[85vw]">
             {/* Image container */}
-            <div className="flex items-center justify-center relative xl:min-h-[60vh]">
+            <div
+              className="flex items-center justify-center relative xl:min-h-[60vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Loading indicator */}
               {!isImageLoaded && currentIndex !== displayedIndex && (
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -214,7 +214,10 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
             </div>
 
             {/* Mobile/Tablet navigation row: [<] [2/4] [>] */}
-            <div className="flex xl:hidden items-center justify-center gap-4 mt-3">
+            <div
+              className="flex xl:hidden items-center justify-center gap-4 mt-3"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={goToPrevious}
                 disabled={!hasPrevious}
@@ -251,6 +254,7 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: 0.1 }}
               className="text-white text-center mt-3 xl:mt-5 max-w-xl px-1 xl:px-5 transition-[margin,padding] duration-300 ease-out"
+              onClick={(e) => e.stopPropagation()}
             >
               <h3 className="italic mb-1 xl:mb-2 transition-[margin] duration-300 ease-out">{term.label}</h3>
               <p className="text-sm text-gray-400">{term.description}</p>
