@@ -124,6 +124,17 @@ export const terms: Term[] = [
       '/1-framing-perspective/Orthographic/orthographic-3.jpg',
     ],
   },
+  {
+    id: 'hero-shot',
+    label: 'Hero Shot',
+    description: 'A dramatic, prominently featured image showcasing a subject at its most impressive angle.',
+    category: 'framing-perspective',
+    images: [
+      '/1-framing-perspective/Hero shot/hero-shot-1.jpeg',
+      '/1-framing-perspective/Hero shot/hero-shot-2.jpg',
+      '/1-framing-perspective/Hero shot/hero-shot-3.jpg',
+    ],
+  },
 
   // ============================================
   // LENS & LIGHT
@@ -466,6 +477,39 @@ export const terms: Term[] = [
     images: [
       '/3-art-movements/Y2K aesthetics/y2k-aesthetics-1.jpg',
       '/3-art-movements/Y2K aesthetics/y2k-aesthetics-2.jpg',
+    ],
+  },
+  {
+    id: 'cottagecore',
+    label: 'Cottagecore',
+    description: 'Romanticized rural aesthetic celebrating traditional crafts, nature, and simple pastoral living.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Cottagecore/cottagecore-1.jpg',
+      '/3-art-movements/Cottagecore/cottagecore-2.jpg',
+      '/3-art-movements/Cottagecore/cottagecore-3.jpg',
+    ],
+  },
+  {
+    id: 'dark-academia',
+    label: 'Dark Academia',
+    description: 'Gothic scholarly aesthetic featuring classical literature, vintage fashion, and moody academic settings.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Dark academia/dark-academia-1.jpg',
+      '/3-art-movements/Dark academia/dark-academia-2.jpg',
+      '/3-art-movements/Dark academia/dark-academia-3.jpg',
+    ],
+  },
+  {
+    id: 'frutiger-aero',
+    label: 'Frutiger Aero',
+    description: 'Mid-2000s design aesthetic featuring glossy surfaces, nature imagery, skeuomorphism, and humanist typography.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Frutiger Aero/frutiger-aero-1.jpg',
+      '/3-art-movements/Frutiger Aero/frutiger-aero-2.jpg',
+      '/3-art-movements/Frutiger Aero/frutiger-aero-3.jpg',
     ],
   },
 
