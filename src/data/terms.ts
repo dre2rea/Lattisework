@@ -602,8 +602,19 @@ export const terms: Term[] = [
     description: 'Photography capturing infrared light, creating surreal images with white foliage and dark skies.',
     category: 'techniques',
     images: [
-      '/4-techniques/Infrared/infrared-1.jpeg',
+      '/4-techniques/Infrared/infrared-1.jpg',
       '/4-techniques/Infrared/infrared-2.jpg',
+      '/4-techniques/Infrared/infrared-3.jpeg',
+    ],
+  },
+  {
+    id: 'pixel-sort',
+    label: 'Pixel Sort',
+    description: 'Digital glitch art technique that rearranges pixels based on their values, creating streaked distortion effects.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Pixel sort/pixel-sort-1.jpg',
+      '/4-techniques/Pixel sort/pixel-sort-2.jpg',
     ],
   },
 
