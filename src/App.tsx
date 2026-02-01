@@ -89,7 +89,7 @@ function App() {
         onClose={closeLightbox}
       />
 
-      <BackToTop />
+      {!isLightboxOpen && <BackToTop />}
     </div>
   )
 }
