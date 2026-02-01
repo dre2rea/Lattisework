@@ -1,9 +1,19 @@
-import { useMemo } from 'react'
-import { Header, Sidebar, Gallery, Lightbox, StructuredData } from './components'
+import { useMemo, useEffect } from 'react'
+import { Header, Sidebar, Gallery, Lightbox, StructuredData, BackToTop } from './components'
 import { useTerms } from './hooks/useTerms'
 import { useImagePreload } from './hooks/useImagePreload'
 
 function App() {
+  // Reset scroll position on page load/refresh
+  useEffect(() => {
+    // Disable browser's automatic scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    // Force scroll to top on mount
+    window.scrollTo(0, 0)
+  }, [])
+
   const {
     activeFilter,
     setActiveFilter,
@@ -78,6 +88,8 @@ function App() {
         isOpen={isLightboxOpen}
         onClose={closeLightbox}
       />
+
+      <BackToTop />
     </div>
   )
 }
