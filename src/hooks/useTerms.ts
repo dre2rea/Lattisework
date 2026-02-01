@@ -36,7 +36,7 @@ export function useTerms() {
     if (activeFilter === 'all') {
       return getAllTermsSorted()
     }
-    return getTermsByCategory(activeFilter)
+    return getTermsByCategory(activeFilter).sort((a, b) => a.label.localeCompare(b.label))
   }
 
   const filteredTerms = getFilteredTerms()
