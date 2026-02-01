@@ -300,6 +300,28 @@ export const terms: Term[] = [
       '/2-lens-light/Moire pattern/moire-pattern-3.jpg',
     ],
   },
+  {
+    id: 'blue-hour',
+    label: 'Blue Hour',
+    description: 'The period of twilight when the sun is below the horizon and the sky takes on a deep blue hue.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Blue hour/blue-hour-1.jpg',
+      '/2-lens-light/Blue hour/blue-hour-2.jpg',
+      '/2-lens-light/Blue hour/blue-hour-3.jpg',
+    ],
+  },
+  {
+    id: 'golden-hour',
+    label: 'Golden Hour',
+    description: 'The period shortly after sunrise or before sunset when sunlight is warm, soft, and diffused.',
+    category: 'lens-light',
+    images: [
+      '/2-lens-light/Golden hour/golden-hour-1.jpg',
+      '/2-lens-light/Golden hour/golden-hour-2.jpg',
+      '/2-lens-light/Golden hour/golden-hour-3.jpg',
+    ],
+  },
 
   // ============================================
   // ART MOVEMENTS
