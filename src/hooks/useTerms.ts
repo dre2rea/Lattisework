@@ -19,6 +19,9 @@ export function useTerms() {
   const [selectedTerm, setSelectedTerm] = useState<Term | null>(null)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
+  // Track if user has interacted with filters (for animation differentiation)
+  const [isInitialMount, setIsInitialMount] = useState(true)
+
   // Filter terms based on active category and search query
   const getFilteredTerms = (): Term[] => {
     // If there's a search query, filter all terms by the query
@@ -42,15 +45,19 @@ export function useTerms() {
   const galleryItems = filteredTerms.map(termToGalleryItem)
 
   // Handle filter change - clears search query
+  // Order matters: change data first, then animation state, to avoid intermediate renders
   const handleFilterChange = useCallback((filter: FilterType) => {
     setActiveFilter(filter)
     setSearchQuery('') // Clear search when changing filter
+    setIsInitialMount(false)
   }, [])
 
   // Handle search - sets query and switches to "all"
+  // Order matters: change data first, then animation state, to avoid intermediate renders
   const handleSearch = useCallback((query: string) => {
     setSearchQuery(query)
     setActiveFilter('all') // Switch to "all" when searching
+    setIsInitialMount(false)
   }, [])
 
   // Clear search
@@ -89,5 +96,6 @@ export function useTerms() {
     isLightboxOpen,
     openLightbox,
     closeLightbox,
+    isInitialMount,
   }
 }

@@ -1,37 +1,25 @@
-import { motion } from 'framer-motion'
 import type { GalleryItem } from '../types'
 
 interface GalleryCardProps {
   item: GalleryItem
   onClick: () => void
   index: number
-  useLayoutAnimation?: boolean
   ready?: boolean
+  isInitialMount?: boolean
 }
 
-export function GalleryCard({ item, onClick, index, useLayoutAnimation = true, ready = true }: GalleryCardProps) {
-  return (
-    <motion.article
-      layout={useLayoutAnimation ? 'position' : false}
-      initial={{ opacity: 0, y: 40 }}
-      animate={
-        ready
-          ? {
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: index * 0.05,
-                duration: 0.4,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              },
-            }
-          : { opacity: 0, y: 40 }
+export function GalleryCard({ item, onClick, index, ready = true, isInitialMount = true }: GalleryCardProps) {
+  // Use CSS animations for initial load, plain HTML for filter changes
+  // This eliminates Framer Motion's internal state as a flicker source
+  const animationStyle = isInitialMount && ready
+    ? {
+        animation: `slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.05}s both`,
       }
-      exit={{
-        opacity: 0,
-        y: -20,
-        transition: { duration: 0.2 },
-      }}
+    : undefined
+
+  return (
+    <article
+      style={animationStyle}
       className="group flex flex-col gap-[12px]"
     >
       <div
@@ -55,6 +43,6 @@ export function GalleryCard({ item, onClick, index, useLayoutAnimation = true, r
           {item.description}
         </p>
       </div>
-    </motion.article>
+    </article>
   )
 }

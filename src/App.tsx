@@ -14,11 +14,13 @@ function App() {
     isLightboxOpen,
     openLightbox,
     closeLightbox,
+    isInitialMount,
   } = useTerms()
 
-  // Preload images at App level so footer can be hidden during loading
+  // Preload images only on initial load - skip for filter changes to prevent flicker
   const imageUrls = useMemo(() => galleryItems.map((item) => item.src), [galleryItems])
-  const imagesReady = useImagePreload(imageUrls)
+  const preloadReady = useImagePreload(imageUrls)
+  const imagesReady = isInitialMount ? preloadReady : true
 
   return (
     <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto transition-[padding] duration-300 ease-out">
@@ -52,6 +54,7 @@ function App() {
             onItemClick={openLightbox}
             searchQuery={searchQuery}
             imagesReady={imagesReady}
+            isInitialMount={isInitialMount}
           />
         </main>
       </div>
