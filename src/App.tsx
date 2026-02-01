@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import { Header, Sidebar, Gallery, Lightbox, StructuredData, BackToTop } from './components'
 import { useTerms } from './hooks/useTerms'
 import { useImagePreload } from './hooks/useImagePreload'
@@ -27,9 +27,34 @@ function App() {
     isInitialMount,
   } = useTerms()
 
-  // Preload images only on initial load - skip for filter changes to prevent flicker
-  const imageUrls = useMemo(() => galleryItems.map((item) => item.src), [galleryItems])
-  const preloadReady = useImagePreload(imageUrls)
+  const galleryItemsKey = useMemo(() => galleryItems.map((item) => item.id).join(','), [galleryItems])
+  const [displayItems, setDisplayItems] = useState(galleryItems)
+  const [displayKey, setDisplayKey] = useState(galleryItemsKey)
+  const [pendingItems, setPendingItems] = useState<typeof galleryItems | null>(null)
+  const [pendingKey, setPendingKey] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (galleryItemsKey !== displayKey) {
+      setPendingItems(galleryItems)
+      setPendingKey(galleryItemsKey)
+    }
+  }, [galleryItems, galleryItemsKey, displayKey])
+
+  const pendingUrls = useMemo(() => (pendingItems ? pendingItems.map((item) => item.src) : []), [pendingItems])
+  const pendingReady = useImagePreload(pendingUrls)
+
+  useEffect(() => {
+    if (pendingItems && pendingReady) {
+      setDisplayItems(pendingItems)
+      setDisplayKey(pendingKey ?? galleryItemsKey)
+      setPendingItems(null)
+      setPendingKey(null)
+    }
+  }, [pendingItems, pendingReady, pendingKey, galleryItemsKey])
+
+  // Preload images only on initial load for the current view
+  const displayImageUrls = useMemo(() => displayItems.map((item) => item.src), [displayItems])
+  const preloadReady = useImagePreload(displayImageUrls)
   const imagesReady = isInitialMount ? preloadReady : true
 
   return (
@@ -60,7 +85,7 @@ function App() {
         {/* Main content */}
         <main className="flex-1 min-w-0">
           <Gallery
-            items={galleryItems}
+            items={displayItems}
             onItemClick={openLightbox}
             searchQuery={searchQuery}
             imagesReady={imagesReady}
