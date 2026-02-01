@@ -49,3 +49,15 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
+/* Card slide-up animation for initial page load */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

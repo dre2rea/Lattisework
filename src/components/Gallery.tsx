@@ -1,4 +1,3 @@
-import { AnimatePresence, LayoutGroup } from 'framer-motion'
 import { GalleryCard } from './GalleryCard'
 import { LoadingAnimation } from './LoadingAnimation'
 import type { GalleryItem } from '../types'
@@ -8,23 +7,10 @@ interface GalleryProps {
   onItemClick: (item: GalleryItem) => void
   searchQuery?: string
   imagesReady: boolean
+  isInitialMount?: boolean
 }
 
-export function Gallery({ items, onItemClick, searchQuery, imagesReady }: GalleryProps) {
-  // Use FLIP animation for filter navigation, slide-up for search results
-  const useFlipAnimation = !searchQuery
-
-  const gridContent = items.map((item, index) => (
-    <GalleryCard
-      key={item.id}
-      item={item}
-      onClick={() => onItemClick(item)}
-      index={index}
-      useLayoutAnimation={useFlipAnimation}
-      ready={imagesReady}
-    />
-  ))
-
+export function Gallery({ items, onItemClick, searchQuery, imagesReady, isInitialMount = true }: GalleryProps) {
   return (
     <div className="flex flex-col gap-[18px]">
       {/* Search results heading */}
@@ -39,20 +25,21 @@ export function Gallery({ items, onItemClick, searchQuery, imagesReady }: Galler
       {/* Loading state */}
       {!imagesReady && items.length > 0 && <LoadingAnimation />}
 
-      {/* Gallery grid - FLIP animation for filters, simple slide-up for search */}
-      {imagesReady && useFlipAnimation ? (
-        <LayoutGroup>
-          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px] transition-[gap] duration-300 ease-out">
-            <AnimatePresence mode="popLayout">
-              {gridContent}
-            </AnimatePresence>
-          </section>
-        </LayoutGroup>
-      ) : imagesReady ? (
+      {/* Gallery grid - consistent structure to prevent remounting */}
+      {imagesReady && (
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[11px] gap-y-[44px] transition-[gap] duration-300 ease-out">
-          {gridContent}
+          {items.map((item, index) => (
+            <GalleryCard
+              key={item.id}
+              item={item}
+              onClick={() => onItemClick(item)}
+              index={index}
+              ready={imagesReady}
+              isInitialMount={isInitialMount}
+            />
+          ))}
         </section>
-      ) : null}
+      )}
     </div>
   )
 }
