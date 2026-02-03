@@ -1,5 +1,5 @@
 import { useMemo, useEffect, useState } from 'react'
-import { Header, Sidebar, Gallery, Lightbox, StructuredData, BackToTop } from './components'
+import { Header, Sidebar, Gallery, Lightbox, StructuredData, BackToTop, AboutModal } from './components'
 import { useTerms } from './hooks/useTerms'
 import { useImagePreload } from './hooks/useImagePreload'
 
@@ -32,6 +32,7 @@ function App() {
   const [displayKey, setDisplayKey] = useState(galleryItemsKey)
   const [pendingItems, setPendingItems] = useState<typeof galleryItems | null>(null)
   const [pendingKey, setPendingKey] = useState<string | null>(null)
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
 
   useEffect(() => {
     if (galleryItemsKey !== displayKey) {
@@ -96,17 +97,17 @@ function App() {
 
       {!searchQuery && imagesReady && (
         <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right transition-[margin] duration-300 ease-out">
-          Created by{' '}
-          <a
-            href="https://x.com/narie_wjlee"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-muted transition-colors"
+          About{' '}
+          <button
+            onClick={() => setIsAboutOpen(true)}
+            className="hover:text-muted transition-colors cursor-pointer bg-transparent border-none p-0 text-sm"
           >
-            Wonjae
-          </a>
+            Lattisework
+          </button>
         </footer>
       )}
+
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
       <Lightbox
         term={selectedTerm}
