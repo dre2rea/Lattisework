@@ -50,8 +50,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col gap-1.5 text-sm text-ink leading-[25px]">
-              <p>Lattisework is a visual glossary for AI image generation.</p>
-              <p>Lattisework and all images are created by Wonjae.</p>
+              <p>Lattisework is a visual glossary for AI image generation. All images are created by <a href="https://x.com/narie_wjlee" target="_blank" rel="noopener noreferrer" className="hover:text-muted transition-colors">Wonjae</a>.</p>
             </div>
           </motion.div>
         </motion.div>
