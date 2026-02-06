@@ -46,11 +46,19 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="bg-cream p-8 max-w-[574px] w-full"
+            className="bg-cream px-[30px] py-6 max-w-[574px] w-full flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex flex-col gap-1.5 text-sm text-ink leading-[25px]">
-              <p>Lattisework is a visual glossary for AI image generation. All images are created by <a href="https://x.com/narie_wjlee" target="_blank" rel="noopener noreferrer" className="hover:text-muted transition-colors">Wonjae</a>.</p>
+            <div className="text-sm text-ink leading-[25px] mt-5">
+              <p>Lattisework is a visual glossary for AI image generation. All images are created in Midjourney by <a href="https://x.com/narie_wjlee" target="_blank" rel="noopener noreferrer" className="hover:text-muted transition-colors">Wonjae</a>.</p>
+            </div>
+            <div className="flex justify-end mt-2">
+              <button
+                onClick={onClose}
+                className="px-3.5 py-2 text-sm bg-cream text-ink border border-ink cursor-pointer transition-all duration-200 "
+              >
+                Close
+              </button>
             </div>
           </motion.div>
         </motion.div>
