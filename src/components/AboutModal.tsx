@@ -55,7 +55,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <div className="flex justify-end mt-2">
               <button
                 onClick={onClose}
-                className="px-3.5 py-2 text-sm bg-cream text-ink border border-ink cursor-pointer transition-all duration-200 "
+                className="px-3.5 py-1.5 text-sm bg-cream text-ink border border-ink cursor-pointer transition-all duration-200 "
               >
                 Close
               </button>
