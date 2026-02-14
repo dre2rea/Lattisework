@@ -534,6 +534,18 @@ export const terms: Term[] = [
       '/3-art-movements/Frutiger Aero/frutiger-aero-3.jpg',
     ],
   },
+  {
+    id: 'dreamcore',
+    label: 'Dreamcore',
+    description: 'Surreal internet aesthetic featuring liminal spaces, nostalgic imagery, and dreamlike atmospheres with unsettling undertones.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Dreamcore/dreamcore-1.png',
+      '/3-art-movements/Dreamcore/dreamcore-2.jpg',
+      '/3-art-movements/Dreamcore/dreamcore-3.jpg',
+      '/3-art-movements/Dreamcore/dreamcore-4.png',
+    ],
+  },
 
   // ============================================
   // TECHNIQUES
