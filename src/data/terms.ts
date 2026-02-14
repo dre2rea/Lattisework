@@ -486,9 +486,10 @@ export const terms: Term[] = [
     description: 'Retro-futuristic aesthetic combining 80s/90s nostalgia with surreal digital imagery.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Vaporwave/vaporware-1.jpg',
-      '/3-art-movements/Vaporwave/vaporware-2.jpg',
-      '/3-art-movements/Vaporwave/vaporware-3.jpg',
+      '/3-art-movements/Vaporwave/vaporwave-1.jpg',
+      '/3-art-movements/Vaporwave/vaporwave-2.jpg',
+      '/3-art-movements/Vaporwave/vaporwave-3.jpg',
+      '/3-art-movements/Vaporwave/vaporwave-4.jpg',
     ],
   },
   {
