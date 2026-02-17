@@ -59,10 +59,10 @@ function App() {
   const imagesReady = isInitialMount ? preloadReady : true
 
   return (
-    <div className="min-h-screen px-4 pb-6 md:px-[30px] md:pb-[30px] max-w-[1920px] mx-auto transition-[padding] duration-300 ease-out">
+    <div className="min-h-screen px-4 pb-6 md:px-[20px] md:pb-[20px] max-w-[1920px] mx-auto transition-[padding] duration-300 ease-out">
       <StructuredData />
       <h1 className="sr-only">Lattisework – Midjourney Visual Glossary</h1>
-      <Header onSearchSubmit={setSearchQuery} />
+      <Header searchQuery={searchQuery} onSearchSubmit={setSearchQuery} />
 
       {/* Mobile pill tabs - rendered above gallery */}
       <div className="md:hidden">

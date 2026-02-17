@@ -3,11 +3,12 @@ import { terms } from '../data/terms'
 import type { Term } from '../types'
 
 interface SearchBarProps {
+  searchQuery?: string
   onSearchSubmit?: (query: string) => void // All search methods → filters grid
 }
 
-export function SearchBar({ onSearchSubmit }: SearchBarProps) {
-  const [query, setQuery] = useState('')
+export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) {
+  const [query, setQuery] = useState(searchQuery)
   const [dismissed, setDismissed] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
   const [keyboardActiveIndex, setKeyboardActiveIndex] = useState<number | null>(null)
@@ -16,6 +17,11 @@ export function SearchBar({ onSearchSubmit }: SearchBarProps) {
 
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  // Sync local query with parent searchQuery when it changes externally (e.g., filter clicked)
+  useEffect(() => {
+    setQuery(searchQuery)
+  }, [searchQuery])
 
   // Compute suggestions directly (derived state)
   const suggestions = useMemo(() => {

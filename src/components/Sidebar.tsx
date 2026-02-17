@@ -34,7 +34,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
               <motion.span
                 layoutId="active-indicator"
                 className="absolute left-0 top-0.5 bottom-0.5 w-1 bg-ink"
-                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
               />
             )}
             <span
@@ -63,7 +63,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                   <motion.span
                     layoutId="active-indicator"
                     className="absolute left-0 top-0.5 bottom-0.5 w-1 bg-ink"
-                    transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                    transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
                   />
                 )}
                 <span
@@ -138,7 +138,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
               <motion.span
                 layoutId="active-indicator"
                 className="absolute left-0 top-0.5 bottom-0.5 w-1 bg-ink"
-                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
               />
             )}
             <span
@@ -164,7 +164,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                   <motion.span
                     layoutId="active-indicator"
                     className="absolute left-0 top-0.5 bottom-0.5 w-1 bg-ink"
-                    transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                    transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
                   />
                 )}
                 <span

@@ -33,13 +33,13 @@ export function GalleryCard({ item, onClick, index, ready = true, isInitialMount
       className="flex flex-col gap-[12px]"
     >
       <div
-        className="group relative overflow-hidden cursor-pointer"
+        className="group relative overflow-hidden cursor-pointer will-change-transform transform-gpu"
         onClick={onClick}
       >
         <img
           src={item.src}
           alt={item.title}
-          className="w-full aspect-[1.618/1] object-cover block transition-transform duration-300 ease-out group-hover:scale-105"
+          className="w-full aspect-[1.618/1] object-cover block transform-gpu backface-hidden scale-100 transition-transform duration-300 ease-out group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
           <span className="text-border text-sm font-light">View more</span>
