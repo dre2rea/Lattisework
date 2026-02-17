@@ -40,8 +40,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             <span
               className={`inline-block transition-transform duration-200 ease-out ${
                 activeFilter === 'all'
-                  ? 'translate-x-2.5 font-bold'
-                  : 'group-hover:translate-x-2.5'
+                  ? 'translate-x-2.5 font-medium'
+                  : 'font-light group-hover:translate-x-2.5'
               }`}
             >
               All ({totalCount})
@@ -69,8 +69,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 <span
                   className={`inline-block transition-transform duration-200 ease-out ${
                     isActive
-                      ? 'translate-x-2.5 font-bold'
-                      : 'group-hover:translate-x-2.5'
+                      ? 'translate-x-2.5 font-medium'
+                      : 'font-light group-hover:translate-x-2.5'
                   }`}
                 >
                   {category.label} ({count})
@@ -93,8 +93,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             onClick={() => onFilterChange('all')}
             className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors ${
               activeFilter === 'all'
-                ? 'bg-ink text-cream'
-                : 'bg-cream text-ink'
+                ? 'bg-ink text-cream font-medium'
+                : 'bg-cream text-ink font-light'
             }`}
           >
             All ({totalCount})
@@ -111,8 +111,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 onClick={() => onFilterChange(category.id)}
                 className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors whitespace-nowrap ${
                   isActive
-                    ? 'bg-ink text-cream'
-                    : 'bg-cream text-ink'
+                    ? 'bg-ink text-cream font-medium'
+                    : 'bg-cream text-ink font-light'
                 }`}
               >
                 {category.label} ({count})
@@ -144,8 +144,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             <span
               className={`inline-block transition-transform duration-200 ease-out ${
                 activeFilter === 'all'
-                  ? 'translate-x-2.5 font-bold'
-                  : 'group-hover:translate-x-2.5'
+                  ? 'translate-x-2.5 font-medium'
+                  : 'font-light group-hover:translate-x-2.5'
               }`}
             >
               All ({totalCount})
@@ -170,8 +170,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 <span
                   className={`inline-block transition-transform duration-200 ease-out ${
                     isActive
-                      ? 'translate-x-2.5 font-bold'
-                      : 'group-hover:translate-x-2.5'
+                      ? 'translate-x-2.5 font-medium'
+                      : 'font-light group-hover:translate-x-2.5'
                   }`}
                 >
                   {category.label} ({count})
@@ -189,8 +189,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             onClick={() => onFilterChange('all')}
             className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors ${
               activeFilter === 'all'
-                ? 'bg-ink text-cream'
-                : 'bg-cream text-ink'
+                ? 'bg-ink text-cream font-medium'
+                : 'bg-cream text-ink font-light'
             }`}
           >
             All ({totalCount})
@@ -204,8 +204,8 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 onClick={() => onFilterChange(category.id)}
                 className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors whitespace-nowrap ${
                   isActive
-                    ? 'bg-ink text-cream'
-                    : 'bg-cream text-ink'
+                    ? 'bg-ink text-cream font-medium'
+                    : 'bg-cream text-ink font-light'
                 }`}
               >
                 {category.label} ({count})
