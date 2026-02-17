@@ -1,5 +1,5 @@
 import { useMemo, useEffect, useState } from 'react'
-import { Header, Hero, Sidebar, Gallery, Lightbox, StructuredData, BackToTop, AboutModal } from './components'
+import { Header, Sidebar, Gallery, Lightbox, StructuredData, BackToTop, AboutModal } from './components'
 import { useTerms } from './hooks/useTerms'
 import { useImagePreload } from './hooks/useImagePreload'
 
@@ -72,13 +72,6 @@ function App() {
           variant="mobile"
         />
       </div>
-
-      {/* Hero - only show when no search query and on initial view */}
-      {!searchQuery && (
-        <div className="hidden md:flex justify-end mb-8 md:mb-12">
-          <Hero />
-        </div>
-      )}
 
       <div className="md:flex md:gap-[56px] transition-[gap] duration-300 ease-out">
         {/* Desktop Sidebar */}
