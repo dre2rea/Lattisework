@@ -15,10 +15,10 @@ export function Gallery({ items, onItemClick, searchQuery, imagesReady, isInitia
     <div className="flex flex-col gap-[18px]">
       {/* Search results heading */}
       {searchQuery && (
-        <h2 className="text-[20px] font-bold tracking-[-0.2px] leading-[25px]">
+        <h2 className="text-[16px] font-light tracking-[-0.2px] leading-[25px]">
           {items.length === 0
-            ? `No terms found matching "${searchQuery}"`
-            : `Search results for "${searchQuery}"`}
+            ? `No terms found matching '${searchQuery}'`
+            : `Search results for '${searchQuery}'`}
         </h2>
       )}
 
