@@ -1,4 +1,5 @@
 export { Header } from './Header'
+export { Hero } from './Hero'
 export { Logo } from './Logo'
 export { SearchBar } from './SearchBar'
 export { Sidebar } from './Sidebar'
