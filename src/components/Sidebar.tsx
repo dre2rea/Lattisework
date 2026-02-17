@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { categories } from '../data/taxonomy'
+import { terms } from '../data/terms'
 
 interface SidebarProps {
   activeFilter: string // "all" | category-id
@@ -8,6 +10,16 @@ interface SidebarProps {
 }
 
 export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps) {
+  // Calculate term counts per category
+  const termCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    for (const term of terms) {
+      counts[term.category] = (counts[term.category] || 0) + 1
+    }
+    return counts
+  }, [])
+
+  const totalCount = terms.length
   // Desktop Sidebar
   if (variant === 'desktop') {
     return (
@@ -32,13 +44,14 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                   : 'group-hover:translate-x-2.5'
               }`}
             >
-              All
+              All ({totalCount})
             </span>
           </button>
 
           {/* Categories */}
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
 
             return (
               <button
@@ -60,7 +73,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                       : 'group-hover:translate-x-2.5'
                   }`}
                 >
-                  {category.label}
+                  {category.label} ({count})
                 </span>
               </button>
             )
@@ -84,12 +97,13 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 : 'bg-cream text-ink'
             }`}
           >
-            All
+            All ({totalCount})
           </button>
 
           {/* Category pills */}
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
 
             return (
               <button
@@ -101,7 +115,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                     : 'bg-cream text-ink'
                 }`}
               >
-                {category.label}
+                {category.label} ({count})
               </button>
             )
           })}
@@ -134,11 +148,12 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                   : 'group-hover:translate-x-2.5'
               }`}
             >
-              All
+              All ({totalCount})
             </span>
           </button>
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
             return (
               <button
                 key={category.id}
@@ -159,7 +174,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                       : 'group-hover:translate-x-2.5'
                   }`}
                 >
-                  {category.label}
+                  {category.label} ({count})
                 </span>
               </button>
             )
@@ -178,10 +193,11 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 : 'bg-cream text-ink'
             }`}
           >
-            All
+            All ({totalCount})
           </button>
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
             return (
               <button
                 key={category.id}
@@ -192,7 +208,7 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                     : 'bg-cream text-ink'
                 }`}
               >
-                {category.label}
+                {category.label} ({count})
               </button>
             )
           })}

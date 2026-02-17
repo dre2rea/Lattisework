@@ -36,7 +36,7 @@ export function GalleryCard({ item, onClick, index, ready = true, isInitialMount
         </div>
       </div>
       <div className="flex flex-col gap-[6px]">
-        <h3 className="text-[20px] font-bold tracking-[-0.2px] leading-[25px]">
+        <h3 className="text-[18px] font-bold tracking-[-0.2px] leading-[25px]">
           {item.title}
         </h3>
         <p className="text-[14px] leading-[20px] text-muted">
