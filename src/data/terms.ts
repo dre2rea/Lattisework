@@ -546,6 +546,7 @@ export const terms: Term[] = [
       '/3-art-movements/Dreamcore/dreamcore-3.jpg',
       '/3-art-movements/Dreamcore/dreamcore-4.png',
     ],
+    addedDate: '2026-02-13',
   },
 
   // ============================================
