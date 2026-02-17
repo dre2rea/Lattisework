@@ -10,6 +10,7 @@ export function termToGalleryItem(term: Term): GalleryItem {
     title: term.label,
     description: term.description,
     category: term.category,
+    addedDate: term.addedDate,
   }
 }
 

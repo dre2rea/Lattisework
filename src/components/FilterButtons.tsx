@@ -22,7 +22,7 @@ export function FilterButtons({ categories, activeCategory, onCategoryChange }: 
           key={category}
           onClick={() => onCategoryChange(category)}
           className={`
-            px-4 py-2 text-sm border border-ink cursor-pointer
+            px-4 py-2 text-sm border font-light border-ink cursor-pointer
             transition-all duration-200 ease-out
             ${activeCategory === category
               ? 'bg-ink text-cream'

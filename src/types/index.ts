@@ -11,6 +11,7 @@ export interface Term {
   description: string // Educational description
   category: string // "lens-light"
   images: string[] // ["/4. Optical Phenomena/Caustics/caustics-1.jpg", ...]
+  addedDate?: string // ISO date string, e.g. "2026-02-13"
 }
 
 // Legacy interface for Lightbox compatibility
@@ -20,6 +21,7 @@ export interface GalleryItem {
   title: string
   description: string
   category: string
+  addedDate?: string // ISO date string, e.g. "2026-02-13"
 }
 
 // Filter type for navigation

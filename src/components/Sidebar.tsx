@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { categories } from '../data/taxonomy'
+import { terms } from '../data/terms'
 
 interface SidebarProps {
   activeFilter: string // "all" | category-id
@@ -8,6 +10,16 @@ interface SidebarProps {
 }
 
 export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps) {
+  // Calculate term counts per category
+  const termCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    for (const term of terms) {
+      counts[term.category] = (counts[term.category] || 0) + 1
+    }
+    return counts
+  }, [])
+
+  const totalCount = terms.length
   // Desktop Sidebar
   if (variant === 'desktop') {
     return (
@@ -28,17 +40,18 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             <span
               className={`inline-block transition-transform duration-200 ease-out ${
                 activeFilter === 'all'
-                  ? 'translate-x-2.5 font-bold'
-                  : 'group-hover:translate-x-2.5'
+                  ? 'translate-x-2.5 font-medium'
+                  : 'font-light group-hover:translate-x-2.5'
               }`}
             >
-              All
+              All ({totalCount})
             </span>
           </button>
 
           {/* Categories */}
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
 
             return (
               <button
@@ -56,11 +69,11 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 <span
                   className={`inline-block transition-transform duration-200 ease-out ${
                     isActive
-                      ? 'translate-x-2.5 font-bold'
-                      : 'group-hover:translate-x-2.5'
+                      ? 'translate-x-2.5 font-medium'
+                      : 'font-light group-hover:translate-x-2.5'
                   }`}
                 >
-                  {category.label}
+                  {category.label} ({count})
                 </span>
               </button>
             )
@@ -80,16 +93,17 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             onClick={() => onFilterChange('all')}
             className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors ${
               activeFilter === 'all'
-                ? 'bg-ink text-cream'
-                : 'bg-cream text-ink'
+                ? 'bg-ink text-cream font-medium'
+                : 'bg-cream text-ink font-light'
             }`}
           >
-            All
+            All ({totalCount})
           </button>
 
           {/* Category pills */}
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
 
             return (
               <button
@@ -97,11 +111,11 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 onClick={() => onFilterChange(category.id)}
                 className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors whitespace-nowrap ${
                   isActive
-                    ? 'bg-ink text-cream'
-                    : 'bg-cream text-ink'
+                    ? 'bg-ink text-cream font-medium'
+                    : 'bg-cream text-ink font-light'
                 }`}
               >
-                {category.label}
+                {category.label} ({count})
               </button>
             )
           })}
@@ -130,15 +144,16 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             <span
               className={`inline-block transition-transform duration-200 ease-out ${
                 activeFilter === 'all'
-                  ? 'translate-x-2.5 font-bold'
-                  : 'group-hover:translate-x-2.5'
+                  ? 'translate-x-2.5 font-medium'
+                  : 'font-light group-hover:translate-x-2.5'
               }`}
             >
-              All
+              All ({totalCount})
             </span>
           </button>
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
             return (
               <button
                 key={category.id}
@@ -155,11 +170,11 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
                 <span
                   className={`inline-block transition-transform duration-200 ease-out ${
                     isActive
-                      ? 'translate-x-2.5 font-bold'
-                      : 'group-hover:translate-x-2.5'
+                      ? 'translate-x-2.5 font-medium'
+                      : 'font-light group-hover:translate-x-2.5'
                   }`}
                 >
-                  {category.label}
+                  {category.label} ({count})
                 </span>
               </button>
             )
@@ -174,25 +189,26 @@ export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps)
             onClick={() => onFilterChange('all')}
             className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors ${
               activeFilter === 'all'
-                ? 'bg-ink text-cream'
-                : 'bg-cream text-ink'
+                ? 'bg-ink text-cream font-medium'
+                : 'bg-cream text-ink font-light'
             }`}
           >
-            All
+            All ({totalCount})
           </button>
           {categories.map((category) => {
             const isActive = activeFilter === category.id
+            const count = termCounts[category.id] || 0
             return (
               <button
                 key={category.id}
                 onClick={() => onFilterChange(category.id)}
                 className={`shrink-0 px-2.5 py-1 text-sm border border-ink cursor-pointer transition-colors whitespace-nowrap ${
                   isActive
-                    ? 'bg-ink text-cream'
-                    : 'bg-cream text-ink'
+                    ? 'bg-ink text-cream font-medium'
+                    : 'bg-cream text-ink font-light'
                 }`}
               >
-                {category.label}
+                {category.label} ({count})
               </button>
             )
           })}
