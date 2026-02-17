@@ -192,11 +192,11 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder="Search terms"
-          className="px-3 py-1.5 text-sm font-light border border-ink flex-1 md:flex-none md:w-[258px] bg-cream focus:outline-none"
+          className="px-3 py-1 text-[13px] font-light border border-ink flex-1 md:flex-none md:w-[210px] bg-cream focus:outline-none"
         />
         <button
           type="submit"
-          className="px-4 py-1.5 text-sm font-light bg-ink text-cream border border-ink cursor-pointer transition-all duration-200 hover:bg-cream hover:text-ink shrink-0"
+          className="px-3 py-1 text-[13px] font-light bg-ink text-cream border border-ink cursor-pointer transition-all duration-200 hover:bg-cream hover:text-ink shrink-0"
         >
           Search
         </button>
@@ -204,7 +204,7 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
 
       {/* Suggestions dropdown */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 w-full md:w-[258px] mt-0 bg-cream border border-ink border-t-0 z-50">
+        <div className="absolute top-full left-0 w-full md:w-[210px] mt-0 bg-cream border border-ink border-t-0 z-50">
           {suggestions.map((term, index) => (
             <button
               key={term.id}
@@ -218,7 +218,7 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
                 setKeyboardActiveIndex(null)
               }}
               onMouseLeave={() => setMouseActiveIndex(null)}
-              className={`w-full px-3 py-2 text-left text-sm font-light cursor-pointer transition-colors duration-100 flex items-center gap-2 ${
+              className={`w-full px-3 py-1 text-left text-[13px] font-light cursor-pointer transition-colors duration-100 flex items-center gap-2 ${
                 index === activeIndex ? 'bg-ink/5' : 'bg-cream'
               } ${index < suggestions.length - 1 ? 'border-b border-border' : ''}`}
             >
@@ -235,13 +235,13 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
                   cy="9"
                   r="6"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="1.0"
                   className="text-muted"
                 />
                 <path
                   d="M13.5 13.5L17 17"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="1.0"
                   strokeLinecap="round"
                   className="text-muted"
                 />
