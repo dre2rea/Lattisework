@@ -32,10 +32,11 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
       .slice(0, 5)
   }, [query])
 
-  // Reset dismissed state when query changes (adjusting state during render)
+  // Reset dismissed state when query changes from user typing (not from selection)
+  // Only reset if input is focused, indicating active typing
   if (query !== prevQuery) {
     setPrevQuery(query)
-    if (dismissed) {
+    if (dismissed && isFocused) {
       setDismissed(false)
     }
   }
@@ -71,8 +72,9 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
   // Handle autocomplete selection (filters grid with selected term)
   const handleSuggestionSelect = useCallback(
     (term: Term) => {
-      setQuery(term.label)
+      setIsFocused(false) // Set immediately to prevent dismissed reset
       setDismissed(true)
+      setQuery(term.label)
       setKeyboardActiveIndex(null)
       setMouseActiveIndex(null)
       inputRef.current?.blur()
