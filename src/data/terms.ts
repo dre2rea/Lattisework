@@ -272,10 +272,11 @@ export const terms: Term[] = [
     description: 'Soft, mottled patterns of light and shadow created by sunlight filtering through leaves or openings.',
     category: 'lens-light',
     images: [
-      '/2-lens-light/Dappled light/dappled-light-1.jpg',
+      '/2-lens-light/Dappled light/dappled-light-1.png',
       '/2-lens-light/Dappled light/dappled-light-2.jpg',
       '/2-lens-light/Dappled light/dappled-light-3.jpg',
-      '/2-lens-light/Dappled light/dappled-light-4.jpeg',
+      '/2-lens-light/Dappled light/dappled-light-4.jpg',
+      '/2-lens-light/Dappled light/dappled-light-5.jpeg',
     ],
   },
   {
