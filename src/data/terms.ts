@@ -548,6 +548,29 @@ export const terms: Term[] = [
     ],
     addedDate: '2026-02-13',
   },
+  {
+    id: 'ascii-art',
+    label: 'ASCII Art',
+    description: 'Visual art created using text characters from the ASCII standard, forming images through careful arrangement of letters, numbers, and symbols.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/ASCII Art/ascii-art-1.png',
+      '/3-art-movements/ASCII Art/ascii-art-2.png',
+      '/3-art-movements/ASCII Art/ascii-art-3.png',
+      '/3-art-movements/ASCII Art/ascii-art-4.png',
+    ],
+  },
+  {
+    id: 'dadaism',
+    label: 'Dadaism',
+    description: 'Early 20th-century avant-garde movement rejecting logic and reason, embracing absurdity, chaos, and anti-art sentiment.',
+    category: 'art-movements',
+    images: [
+      '/3-art-movements/Dadaism/dadaism-1.jpeg',
+      '/3-art-movements/Dadaism/dadaism-2.jpg',
+      '/3-art-movements/Dadaism/dadaism-3.jpg',
+    ],
+  },
 
   // ============================================
   // TECHNIQUES
