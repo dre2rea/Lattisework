@@ -96,11 +96,11 @@ function App() {
       </div>
 
       {!searchQuery && imagesReady && (
-        <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right transition-[margin] duration-300 ease-out">
+        <footer className="mt-10 md:mt-[60px] text-sm text-ink text-right font-light transition-[margin] duration-300 ease-out">
           About{' '}
           <button
             onClick={() => setIsAboutOpen(true)}
-            className="hover:text-muted transition-colors cursor-pointer bg-transparent border-none p-0 text-sm"
+            className="hover:text-muted transition-colors cursor-pointer bg-transparent border-none p-0 text-sm font-light"
           >
             Lattisework
           </button>
