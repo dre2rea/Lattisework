@@ -51,7 +51,7 @@ export function GalleryCard({ item, onClick, index, ready = true, isInitialMount
             {item.title}
           </h3>
           {isNew && (
-            <span className="bg-ink text-cream text-[11px] font-regular-[20px] px-[6px] flex items-center justify-center">
+            <span className="bg-ink text-cream text-[11px] leading-none px-[6px] pt-px h-[18px] flex items-center justify-center">
               NEW
             </span>
           )}
