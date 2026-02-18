@@ -140,7 +140,7 @@ export function BackToTop() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
           onClick={handleClick}
-          className="fixed bottom-[30px] left-1/2 -translate-x-1/2 md:left-[30px] md:translate-x-0 z-50 flex items-center justify-center w-9 h-9 md:w-10 md:h-10 bg-ink text-cream border border-ink cursor-pointer transition-colors duration-200 hover:bg-cream hover:text-ink"
+          className="fixed bottom-[30px] left-1/2 -translate-x-1/2 md:left-5 md:translate-x-0 z-50 flex items-center justify-center w-9 h-9 md:w-10 md:h-10 bg-ink text-cream border border-ink cursor-pointer transition-colors duration-200 hover:bg-cream hover:text-ink"
           aria-label="Back to top"
         >
           <svg
