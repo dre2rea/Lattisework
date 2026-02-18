@@ -559,6 +559,7 @@ export const terms: Term[] = [
       '/3-art-movements/ASCII Art/ascii-art-3.png',
       '/3-art-movements/ASCII Art/ascii-art-4.png',
     ],
+    addedDate: '2026-02-18',
   },
   {
     id: 'dadaism',
@@ -570,6 +571,7 @@ export const terms: Term[] = [
       '/3-art-movements/Dadaism/dadaism-2.jpg',
       '/3-art-movements/Dadaism/dadaism-3.jpg',
     ],
+    addedDate: '2026-02-18',
   },
 
   // ============================================
