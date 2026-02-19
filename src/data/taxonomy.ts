@@ -12,7 +12,7 @@ export const categories: Category[] = [
   },
   {
     id: 'art-movements',
-    label: 'Art Movements',
+    label: 'Art Style',
   },
   {
     id: 'techniques',
