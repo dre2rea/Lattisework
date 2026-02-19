@@ -283,11 +283,11 @@ export const terms: Term[] = [
     id: 'fisheye-view',
     label: 'Fisheye View',
     description: 'An ultra-wide-angle lens effect creating a hemispherical, barrel-distorted image.',
-    category: 'lens-light',
+    category: 'framing-perspective',
     images: [
-      '/2-lens-light/Fisheye view/fisheye-view-1.jpg',
-      '/2-lens-light/Fisheye view/fisheye-view-2.jpeg',
-      '/2-lens-light/Fisheye view/fisheye-view-3.jpg',
+      '/1-framing-perspective/Fisheye view/fisheye-view-1.jpg',
+      '/1-framing-perspective/Fisheye view/fisheye-view-2.jpeg',
+      '/1-framing-perspective/Fisheye view/fisheye-view-3.jpg',
     ],
   },
   {
