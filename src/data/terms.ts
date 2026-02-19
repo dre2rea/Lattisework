@@ -333,10 +333,10 @@ export const terms: Term[] = [
     description: 'A cultural aesthetic combining African diaspora culture with technology, science fiction, and futuristic themes.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Afrofuturism/afrofuturism-1.jpg',
-      '/3-art-movements/Afrofuturism/afrofuturism-2.jpg',
-      '/3-art-movements/Afrofuturism/afrofuturism-3.jpg',
-      '/3-art-movements/Afrofuturism/afrofuturism-4.jpg',
+      '/3-art-style/Afrofuturism/afrofuturism-1.jpg',
+      '/3-art-style/Afrofuturism/afrofuturism-2.jpg',
+      '/3-art-style/Afrofuturism/afrofuturism-3.jpg',
+      '/3-art-style/Afrofuturism/afrofuturism-4.jpg',
     ],
   },
   {
@@ -345,10 +345,10 @@ export const terms: Term[] = [
     description: 'Bold geometric patterns, rich colors, and luxurious ornamentation from the 1920s-30s.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Art Deco/art-deco-1.jpg',
-      '/3-art-movements/Art Deco/art-deco-2.jpg',
-      '/3-art-movements/Art Deco/art-deco-3.jpg',
-      '/3-art-movements/Art Deco/art-deco-4.jpg',
+      '/3-art-style/Art Deco/art-deco-1.jpg',
+      '/3-art-style/Art Deco/art-deco-2.jpg',
+      '/3-art-style/Art Deco/art-deco-3.jpg',
+      '/3-art-style/Art Deco/art-deco-4.jpg',
     ],
   },
   {
@@ -357,10 +357,10 @@ export const terms: Term[] = [
     description: 'Flowing organic lines, natural forms, and decorative elegance from the late 1800s.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Art Nouveau/art-nouveau-1.jpg',
-      '/3-art-movements/Art Nouveau/art-nouveau-2.jpg',
-      '/3-art-movements/Art Nouveau/art-nouveau-3.jpg',
-      '/3-art-movements/Art Nouveau/art-nouveau-4.jpg',
+      '/3-art-style/Art Nouveau/art-nouveau-1.jpg',
+      '/3-art-style/Art Nouveau/art-nouveau-2.jpg',
+      '/3-art-style/Art Nouveau/art-nouveau-3.jpg',
+      '/3-art-style/Art Nouveau/art-nouveau-4.jpg',
     ],
   },
   {
@@ -369,11 +369,11 @@ export const terms: Term[] = [
     description: 'Functional modernist design emphasizing geometric shapes and primary colors.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Bauhaus/bauhaus-1.jpg',
-      '/3-art-movements/Bauhaus/bauhaus-2.jpg',
-      '/3-art-movements/Bauhaus/bauhaus-3.jpg',
-      '/3-art-movements/Bauhaus/bauhaus-4.jpg',
-      '/3-art-movements/Bauhaus/bauhaus-5.jpg',
+      '/3-art-style/Bauhaus/bauhaus-1.jpg',
+      '/3-art-style/Bauhaus/bauhaus-2.jpg',
+      '/3-art-style/Bauhaus/bauhaus-3.jpg',
+      '/3-art-style/Bauhaus/bauhaus-4.jpg',
+      '/3-art-style/Bauhaus/bauhaus-5.jpg',
     ],
   },
   {
@@ -382,9 +382,9 @@ export const terms: Term[] = [
     description: 'Dutch artistic movement using primary colors and geometric abstraction.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/De stijl/de-stijl-1.jpg',
-      '/3-art-movements/De stijl/de-stijl-2.jpg',
-      '/3-art-movements/De stijl/de-stijl-3.jpg',
+      '/3-art-style/De stijl/de-stijl-1.jpg',
+      '/3-art-style/De stijl/de-stijl-2.jpg',
+      '/3-art-style/De stijl/de-stijl-3.jpg',
     ],
   },
   {
@@ -393,10 +393,10 @@ export const terms: Term[] = [
     description: 'Bold, vibrant colors and simplified forms emphasizing painterly qualities over realism.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Fauvist/fauvist-1.jpg',
-      '/3-art-movements/Fauvist/fauvist-2.jpg',
-      '/3-art-movements/Fauvist/fauvist-3.jpg',
-      '/3-art-movements/Fauvist/fauvist-4.jpg',
+      '/3-art-style/Fauvist/fauvist-1.jpg',
+      '/3-art-style/Fauvist/fauvist-2.jpg',
+      '/3-art-style/Fauvist/fauvist-3.jpg',
+      '/3-art-style/Fauvist/fauvist-4.jpg',
     ],
   },
   {
@@ -405,9 +405,9 @@ export const terms: Term[] = [
     description: 'American art movement emphasizing romantic landscapes with dramatic light and natural beauty.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Hudson River School/hudson-river-school-1.jpg',
-      '/3-art-movements/Hudson River School/hudson-river-school-2.jpeg',
-      '/3-art-movements/Hudson River School/hudson-river-school-3.jpg',
+      '/3-art-style/Hudson River School/hudson-river-school-1.jpg',
+      '/3-art-style/Hudson River School/hudson-river-school-2.jpeg',
+      '/3-art-style/Hudson River School/hudson-river-school-3.jpg',
     ],
   },
   {
@@ -416,9 +416,9 @@ export const terms: Term[] = [
     description: 'Bold, postmodern style featuring bright colors, geometric shapes, and playful patterns from the 1980s.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Memphis design/memphis-design-1.jpg',
-      '/3-art-movements/Memphis design/memphis-design-2.jpeg',
-      '/3-art-movements/Memphis design/memphis-design-3.jpeg',
+      '/3-art-style/Memphis design/memphis-design-1.jpg',
+      '/3-art-style/Memphis design/memphis-design-2.jpeg',
+      '/3-art-style/Memphis design/memphis-design-3.jpeg',
     ],
   },
   {
@@ -427,10 +427,10 @@ export const terms: Term[] = [
     description: 'Modern interpretation of film noir with high contrast, shadows, and moody atmosphere.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Neo-noir/neo-noir-1.jpg',
-      '/3-art-movements/Neo-noir/neo-noir-2.jpg',
-      '/3-art-movements/Neo-noir/neo-noir-3.jpg',
-      '/3-art-movements/Neo-noir/neo-noir-4.jpg',
+      '/3-art-style/Neo-noir/neo-noir-1.jpg',
+      '/3-art-style/Neo-noir/neo-noir-2.jpg',
+      '/3-art-style/Neo-noir/neo-noir-3.jpg',
+      '/3-art-style/Neo-noir/neo-noir-4.jpg',
     ],
   },
   {
@@ -439,11 +439,11 @@ export const terms: Term[] = [
     description: 'Painting technique using small dots of color that blend optically when viewed from distance.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Pointillism/pointillism-1.png',
-      '/3-art-movements/Pointillism/pointillism-2.jpg',
-      '/3-art-movements/Pointillism/pointillism-3.jpg',
-      '/3-art-movements/Pointillism/pointillism-4.jpg',
-      '/3-art-movements/Pointillism/pointillism-5.jpg',
+      '/3-art-style/Pointillism/pointillism-1.png',
+      '/3-art-style/Pointillism/pointillism-2.jpg',
+      '/3-art-style/Pointillism/pointillism-3.jpg',
+      '/3-art-style/Pointillism/pointillism-4.jpg',
+      '/3-art-style/Pointillism/pointillism-5.jpg',
     ],
   },
   {
@@ -452,10 +452,10 @@ export const terms: Term[] = [
     description: 'Ornate 18th-century style featuring elaborate curves, pastel colors, and asymmetrical designs.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Rococo/rococo-1.jpg',
-      '/3-art-movements/Rococo/rococo-2.jpg',
-      '/3-art-movements/Rococo/rococo-3.jpg',
-      '/3-art-movements/Rococo/rococo-4.jpg',
+      '/3-art-style/Rococo/rococo-1.jpg',
+      '/3-art-style/Rococo/rococo-2.jpg',
+      '/3-art-style/Rococo/rococo-3.jpg',
+      '/3-art-style/Rococo/rococo-4.jpg',
     ],
   },
   {
@@ -464,10 +464,10 @@ export const terms: Term[] = [
     description: 'Realistic imagery creating optical illusion that depicted objects exist in three dimensions.',
     category: 'art-movements',
     images: [
-      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-1.jpg",
-      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-2.jpg",
-      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-3.jpg",
-      "/3-art-movements/Trompe-l'œil/Trompe-l'œil-4.jpg",
+      "/3-art-style/Trompe-l'œil/Trompe-l'œil-1.jpg",
+      "/3-art-style/Trompe-l'œil/Trompe-l'œil-2.jpg",
+      "/3-art-style/Trompe-l'œil/Trompe-l'œil-3.jpg",
+      "/3-art-style/Trompe-l'œil/Trompe-l'œil-4.jpg",
     ],
   },
   {
@@ -476,9 +476,9 @@ export const terms: Term[] = [
     description: 'Japanese woodblock print style with flat colors, bold outlines, and nature themes.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Ukiyo-e/ukiyo-e-1.jpg',
-      '/3-art-movements/Ukiyo-e/ukiyo-e-2.jpg',
-      '/3-art-movements/Ukiyo-e/ukiyo-e-3.jpg',
+      '/3-art-style/Ukiyo-e/ukiyo-e-1.jpg',
+      '/3-art-style/Ukiyo-e/ukiyo-e-2.jpg',
+      '/3-art-style/Ukiyo-e/ukiyo-e-3.jpg',
     ],
   },
   {
@@ -487,10 +487,10 @@ export const terms: Term[] = [
     description: 'Retro-futuristic aesthetic combining 80s/90s nostalgia with surreal digital imagery.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Vaporwave/vaporwave-1.jpg',
-      '/3-art-movements/Vaporwave/vaporwave-2.jpg',
-      '/3-art-movements/Vaporwave/vaporwave-3.jpg',
-      '/3-art-movements/Vaporwave/vaporwave-4.jpg',
+      '/3-art-style/Vaporwave/vaporwave-1.jpg',
+      '/3-art-style/Vaporwave/vaporwave-2.jpg',
+      '/3-art-style/Vaporwave/vaporwave-3.jpg',
+      '/3-art-style/Vaporwave/vaporwave-4.jpg',
     ],
   },
   {
@@ -499,8 +499,8 @@ export const terms: Term[] = [
     description: 'Late 90s/early 2000s visual style featuring chrome, translucent plastics, and techno-optimism.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Y2K aesthetics/y2k-aesthetics-1.jpg',
-      '/3-art-movements/Y2K aesthetics/y2k-aesthetics-2.jpg',
+      '/3-art-style/Y2K aesthetics/y2k-aesthetics-1.jpg',
+      '/3-art-style/Y2K aesthetics/y2k-aesthetics-2.jpg',
     ],
   },
   {
@@ -509,9 +509,9 @@ export const terms: Term[] = [
     description: 'Romanticized rural aesthetic celebrating traditional crafts, nature, and simple pastoral living.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Cottagecore/cottagecore-1.jpg',
-      '/3-art-movements/Cottagecore/cottagecore-2.jpg',
-      '/3-art-movements/Cottagecore/cottagecore-3.jpg',
+      '/3-art-style/Cottagecore/cottagecore-1.jpg',
+      '/3-art-style/Cottagecore/cottagecore-2.jpg',
+      '/3-art-style/Cottagecore/cottagecore-3.jpg',
     ],
   },
   {
@@ -520,9 +520,9 @@ export const terms: Term[] = [
     description: 'Gothic scholarly aesthetic featuring classical literature, vintage fashion, and moody academic settings.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Dark academia/dark-academia-1.jpg',
-      '/3-art-movements/Dark academia/dark-academia-2.jpg',
-      '/3-art-movements/Dark academia/dark-academia-3.jpg',
+      '/3-art-style/Dark academia/dark-academia-1.jpg',
+      '/3-art-style/Dark academia/dark-academia-2.jpg',
+      '/3-art-style/Dark academia/dark-academia-3.jpg',
     ],
   },
   {
@@ -531,9 +531,9 @@ export const terms: Term[] = [
     description: 'Mid-2000s design aesthetic featuring glossy surfaces, nature imagery, skeuomorphism, and humanist typography.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Frutiger Aero/frutiger-aero-1.jpg',
-      '/3-art-movements/Frutiger Aero/frutiger-aero-2.jpg',
-      '/3-art-movements/Frutiger Aero/frutiger-aero-3.jpg',
+      '/3-art-style/Frutiger Aero/frutiger-aero-1.jpg',
+      '/3-art-style/Frutiger Aero/frutiger-aero-2.jpg',
+      '/3-art-style/Frutiger Aero/frutiger-aero-3.jpg',
     ],
   },
   {
@@ -542,10 +542,10 @@ export const terms: Term[] = [
     description: 'Surreal internet aesthetic featuring liminal spaces, nostalgic imagery, and dreamlike atmospheres with unsettling undertones.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Dreamcore/dreamcore-1.png',
-      '/3-art-movements/Dreamcore/dreamcore-2.jpg',
-      '/3-art-movements/Dreamcore/dreamcore-3.jpg',
-      '/3-art-movements/Dreamcore/dreamcore-4.png',
+      '/3-art-style/Dreamcore/dreamcore-1.png',
+      '/3-art-style/Dreamcore/dreamcore-2.jpg',
+      '/3-art-style/Dreamcore/dreamcore-3.jpg',
+      '/3-art-style/Dreamcore/dreamcore-4.png',
     ],
     addedDate: '2026-02-13',
   },
@@ -555,10 +555,10 @@ export const terms: Term[] = [
     description: 'Visual art created using text characters from the ASCII standard, forming images through careful arrangement of letters, numbers, and symbols.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/ASCII Art/ascii-art-1.png',
-      '/3-art-movements/ASCII Art/ascii-art-2.png',
-      '/3-art-movements/ASCII Art/ascii-art-3.png',
-      '/3-art-movements/ASCII Art/ascii-art-4.png',
+      '/3-art-style/ASCII Art/ascii-art-1.png',
+      '/3-art-style/ASCII Art/ascii-art-2.png',
+      '/3-art-style/ASCII Art/ascii-art-3.png',
+      '/3-art-style/ASCII Art/ascii-art-4.png',
     ],
     addedDate: '2026-02-18',
   },
@@ -568,11 +568,39 @@ export const terms: Term[] = [
     description: 'Early 20th-century avant-garde movement rejecting logic and reason, embracing absurdity, chaos, and anti-art sentiment.',
     category: 'art-movements',
     images: [
-      '/3-art-movements/Dadaism/dadaism-1.jpeg',
-      '/3-art-movements/Dadaism/dadaism-2.jpg',
-      '/3-art-movements/Dadaism/dadaism-3.jpg',
+      '/3-art-style/Dadaism/dadaism-1.jpeg',
+      '/3-art-style/Dadaism/dadaism-2.jpg',
+      '/3-art-style/Dadaism/dadaism-3.jpg',
     ],
     addedDate: '2026-02-18',
+  },
+  {
+    id: 'low-poly',
+    label: 'Low Poly',
+    description: 'Digital art style using simple geometric shapes with minimal polygons, creating a faceted, crystalline aesthetic.',
+    category: 'art-movements',
+    images: [
+      '/3-art-style/Low poly/low-poly-1.jpg',
+      '/3-art-style/Low poly/low-poly-2.jpg',
+      '/3-art-style/Low poly/low-poly-3.jpg',
+      '/3-art-style/Low poly/low-poly-4.jpg',
+      '/3-art-style/Low poly/low-poly-5.jpg',
+    ],
+    addedDate: '2026-02-19',
+  },
+  {
+    id: 'manga',
+    label: 'Manga',
+    description: 'Japanese comic art style characterized by expressive characters, dynamic action lines, and distinctive visual storytelling techniques.',
+    category: 'art-movements',
+    images: [
+      '/3-art-style/Manga/manga-1.jpg',
+      '/3-art-style/Manga/manga-2.jpg',
+      '/3-art-style/Manga/manga-3.jpg',
+      '/3-art-style/Manga/manga-4.jpg',
+      '/3-art-style/Manga/manga-5.jpg',
+    ],
+    addedDate: '2026-02-19',
   },
 
   // ============================================
@@ -658,12 +686,12 @@ export const terms: Term[] = [
     id: 'long-exposure',
     label: 'Long Exposure',
     description: 'Extended shutter time capturing motion as smooth trails or silky water.',
-    category: 'techniques',
+    category: 'lens-light',
     images: [
-      '/4-techniques/Long exposure/long-exposure-1.png',
-      '/4-techniques/Long exposure/long-exposure-2.png',
-      '/4-techniques/Long exposure/long-exposure-3.jpg',
-      '/4-techniques/Long exposure/long-exposure-4.jpg',
+      '/2-lens-light/Long exposure/long-exposure-1.jpg',
+      '/2-lens-light/Long exposure/long-exposure-2.jpeg',
+      '/2-lens-light/Long exposure/long-exposure-3.jpg',
+      '/2-lens-light/Long exposure/long-exposure-4.jpg',
     ],
   },
   {
