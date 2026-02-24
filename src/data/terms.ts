@@ -908,6 +908,17 @@ export const terms: Term[] = [
     ],
   },
   {
+    id: 'satin',
+    label: 'Satin',
+    description: 'Smooth, glossy fabric with a lustrous surface created by a weave that reflects light beautifully.',
+    category: 'materials-textures',
+    images: [
+      '/5-materials-textures/Satin/satin-1.jpg',
+      '/5-materials-textures/Satin/satin-2.jpg',
+    ],
+    addedDate: '2026-02-24',
+  },
+  {
     id: 'terrazzo',
     label: 'Terrazzo',
     description: 'Composite material with marble, quartz, or glass chips set in cement or resin, creating speckled patterns.',
