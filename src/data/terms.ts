@@ -751,6 +751,18 @@ export const terms: Term[] = [
       '/4-techniques/Pixel sort/pixel-sort-2.jpg',
     ],
   },
+  {
+    id: 'collage',
+    label: 'Collage',
+    description: 'Artistic technique assembling diverse materials like photographs, paper, and found objects into a unified composition.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Collage/collage-1.jpg',
+      '/4-techniques/Collage/collage-2.jpeg',
+      '/4-techniques/Collage/collage-3.jpg',
+    ],
+    addedDate: '2026-02-25',
+  },
 
   // ============================================
   // MATERIALS & TEXTURES
