@@ -602,6 +602,18 @@ export const terms: Term[] = [
     ],
     addedDate: '2026-02-19',
   },
+  {
+    id: 'dark-fantasy',
+    label: 'Dark Fantasy',
+    description: 'A subgenre blending fantasy elements with darker, gothic, and horror themes, featuring ominous atmospheres and morally complex narratives.',
+    category: 'art-movements',
+    images: [
+      '/3-art-style/Dark fantasy/dark-fantasy-1.jpg',
+      '/3-art-style/Dark fantasy/dark-fantasy-2.jpg',
+      '/3-art-style/Dark fantasy/dark-fantasy-3.jpg',
+    ],
+    addedDate: '2026-02-27',
+  },
 
   // ============================================
   // TECHNIQUES
@@ -762,6 +774,19 @@ export const terms: Term[] = [
       '/4-techniques/Collage/collage-3.jpg',
     ],
     addedDate: '2026-02-25',
+  },
+  {
+    id: 'cel-shading',
+    label: 'Cel Shading',
+    description: 'A rendering technique that mimics the flat, bold look of hand-drawn animation with hard-edged shadows and minimal gradients.',
+    category: 'techniques',
+    images: [
+      '/4-techniques/Cel shading/cel-shading-1.jpg',
+      '/4-techniques/Cel shading/cel-shading-2.jpg',
+      '/4-techniques/Cel shading/cel-shading-3.jpg',
+      '/4-techniques/Cel shading/cel-shading-4.jpg',
+    ],
+    addedDate: '2026-02-27',
   },
 
   // ============================================
