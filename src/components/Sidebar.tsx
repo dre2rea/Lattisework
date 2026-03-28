@@ -1,25 +1,16 @@
-import { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { categories } from '../data/taxonomy'
-import { terms } from '../data/terms'
+import type { Category, CategoryId, FilterType } from '../types'
 
 interface SidebarProps {
-  activeFilter: string // "all" | category-id
-  onFilterChange: (filter: string) => void
+  categories: Category[]
+  termCounts: Record<CategoryId, number>
+  totalCount: number
+  activeFilter: FilterType // "all" | category-id
+  onFilterChange: (filter: FilterType) => void
   variant?: 'desktop' | 'mobile'
 }
 
-export function Sidebar({ activeFilter, onFilterChange, variant }: SidebarProps) {
-  // Calculate term counts per category
-  const termCounts = useMemo(() => {
-    const counts: Record<string, number> = {}
-    for (const term of terms) {
-      counts[term.category] = (counts[term.category] || 0) + 1
-    }
-    return counts
-  }, [])
-
-  const totalCount = terms.length
+export function Sidebar({ categories, termCounts, totalCount, activeFilter, onFilterChange, variant }: SidebarProps) {
   // Desktop Sidebar
   if (variant === 'desktop') {
     return (

@@ -1,7 +1,8 @@
-import { useMemo, useEffect, useState } from 'react'
+import { useMemo, useEffect, useState, useCallback } from 'react'
 import { Header, Sidebar, Gallery, Lightbox, StructuredData, BackToTop, AboutModal } from './components'
 import { useTerms } from './hooks/useTerms'
 import { useImagePreload } from './hooks/useImagePreload'
+import type { FilterType } from './types'
 
 function App() {
   // Reset scroll position on page load/refresh
@@ -15,6 +16,11 @@ function App() {
   }, [])
 
   const {
+    allTerms,
+    categories,
+    termCounts,
+    totalCount,
+    getSuggestions,
     activeFilter,
     setActiveFilter,
     searchQuery,
@@ -27,48 +33,49 @@ function App() {
     isInitialMount,
   } = useTerms()
 
-  const galleryItemsKey = useMemo(() => galleryItems.map((item) => item.id).join(','), [galleryItems])
   const [displayItems, setDisplayItems] = useState(galleryItems)
-  const [displayKey, setDisplayKey] = useState(galleryItemsKey)
-  const [pendingItems, setPendingItems] = useState<typeof galleryItems | null>(null)
-  const [pendingKey, setPendingKey] = useState<string | null>(null)
   const [isAboutOpen, setIsAboutOpen] = useState(false)
 
-  useEffect(() => {
-    if (galleryItemsKey !== displayKey) {
-      setPendingItems(galleryItems)
-      setPendingKey(galleryItemsKey)
-    }
-  }, [galleryItems, galleryItemsKey, displayKey])
-
-  const pendingUrls = useMemo(() => (pendingItems ? pendingItems.map((item) => item.src) : []), [pendingItems])
+  const pendingUrls = useMemo(() => galleryItems.map((item) => item.src), [galleryItems])
   const pendingReady = useImagePreload(pendingUrls)
+  const resolvedItems = useMemo(
+    () => (pendingReady ? galleryItems : displayItems),
+    [pendingReady, galleryItems, displayItems]
+  )
 
-  useEffect(() => {
-    if (pendingItems && pendingReady) {
-      setDisplayItems(pendingItems)
-      setDisplayKey(pendingKey ?? galleryItemsKey)
-      setPendingItems(null)
-      setPendingKey(null)
-    }
-  }, [pendingItems, pendingReady, pendingKey, galleryItemsKey])
+  const handleFilterChange = useCallback((filter: FilterType) => {
+    setDisplayItems(resolvedItems)
+    setActiveFilter(filter)
+  }, [resolvedItems, setActiveFilter])
+
+  const handleSearchSubmit = useCallback((query: string) => {
+    setDisplayItems(resolvedItems)
+    setSearchQuery(query)
+  }, [resolvedItems, setSearchQuery])
 
   // Preload images only on initial load for the current view
-  const displayImageUrls = useMemo(() => displayItems.map((item) => item.src), [displayItems])
+  const displayImageUrls = useMemo(() => resolvedItems.map((item) => item.src), [resolvedItems])
   const preloadReady = useImagePreload(displayImageUrls)
   const imagesReady = isInitialMount ? preloadReady : true
 
   return (
     <div className="min-h-screen px-4 pb-6 md:px-[20px] md:pb-[20px] max-w-[1920px] mx-auto transition-[padding] duration-300 ease-out">
-      <StructuredData />
+      <StructuredData terms={allTerms} />
       <h1 className="sr-only">Lattisework – Midjourney Visual Glossary</h1>
-      <Header searchQuery={searchQuery} onSearchSubmit={setSearchQuery} />
+      <Header
+        searchQuery={searchQuery}
+        onSearchSubmit={handleSearchSubmit}
+        getSuggestions={getSuggestions}
+      />
 
       {/* Mobile pill tabs - rendered above gallery */}
       <div className="md:hidden">
         <Sidebar
+          categories={categories}
+          termCounts={termCounts}
+          totalCount={totalCount}
           activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
+          onFilterChange={handleFilterChange}
           variant="mobile"
         />
       </div>
@@ -77,8 +84,11 @@ function App() {
         {/* Desktop Sidebar */}
         <div className="hidden md:block">
           <Sidebar
+            categories={categories}
+            termCounts={termCounts}
+            totalCount={totalCount}
             activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
+            onFilterChange={handleFilterChange}
             variant="desktop"
           />
         </div>
@@ -86,7 +96,7 @@ function App() {
         {/* Main content */}
         <main className="flex-1 min-w-0">
           <Gallery
-            items={displayItems}
+            items={resolvedItems}
             onItemClick={openLightbox}
             searchQuery={searchQuery}
             imagesReady={imagesReady}
@@ -110,6 +120,7 @@ function App() {
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
       <Lightbox
+        key={selectedTerm ? `${selectedTerm.id}-${isLightboxOpen ? 'open' : 'closed'}` : 'lightbox-none'}
         term={selectedTerm}
         isOpen={isLightboxOpen}
         onClose={closeLightbox}
