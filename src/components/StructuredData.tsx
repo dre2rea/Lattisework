@@ -1,6 +1,10 @@
-import { terms } from '../data/terms'
+import type { Term } from '../types'
 
-export function StructuredData() {
+interface StructuredDataProps {
+  terms: Term[]
+}
+
+export function StructuredData({ terms }: StructuredDataProps) {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',

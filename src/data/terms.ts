@@ -1,4 +1,4 @@
-import type { Term } from '../types'
+import type { CategoryId, Term } from '../types'
 
 export const terms: Term[] = [
   // ============================================
@@ -979,7 +979,7 @@ export const terms: Term[] = [
 ]
 
 // Helper: Get terms by category ID
-export const getTermsByCategory = (categoryId: string): Term[] => {
+export const getTermsByCategory = (categoryId: CategoryId): Term[] => {
   return terms.filter((term) => term.category === categoryId)
 }
 

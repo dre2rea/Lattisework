@@ -13,28 +13,14 @@ export function Lightbox({ term, isOpen, onClose }: LightboxProps) {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
   const [displayedIndex, setDisplayedIndex] = useState(0)
   const preloadedImages = useRef<Set<string>>(new Set())
-  const [lastOpenedTermId, setLastOpenedTermId] = useState<string | null>(null)
 
   const images = useMemo(() => term?.images || [], [term?.images])
   const totalImages = images.length
 
-  // Reset states when lightbox opens or term changes (adjusting state during render)
-  if (isOpen && term && term.id !== lastOpenedTermId) {
-    setLastOpenedTermId(term.id)
-    setCurrentIndex(0)
-    setDisplayedIndex(0)
-    setIsImageLoaded(false)
-  }
-
-  // Clear tracked term when closing
-  if (!isOpen && lastOpenedTermId !== null) {
-    setLastOpenedTermId(null)
-  }
-
   // Clear preloaded images cache when term changes (refs must be accessed in effects)
   useEffect(() => {
     preloadedImages.current.clear()
-  }, [lastOpenedTermId])
+  }, [term?.id])
 
   // Preload an image
   const preloadImage = useCallback((src: string) => {

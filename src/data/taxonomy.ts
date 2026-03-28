@@ -1,4 +1,4 @@
-import type { Category } from '../types'
+import type { Category, CategoryId } from '../types'
 
 // Categories: Flat structure with 5 categories
 export const categories: Category[] = [
@@ -25,7 +25,7 @@ export const categories: Category[] = [
 ]
 
 // Helper: Get category by ID
-export const getCategoryById = (id: string): Category | undefined => {
+export const getCategoryById = (id: CategoryId): Category | undefined => {
   return categories.find((cat) => cat.id === id)
 }
 

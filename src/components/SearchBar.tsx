@@ -1,19 +1,18 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-import { terms } from '../data/terms'
 import type { Term } from '../types'
 
 interface SearchBarProps {
   searchQuery?: string
   onSearchSubmit?: (query: string) => void // All search methods → filters grid
+  getSuggestions?: (query: string) => Term[]
 }
 
-export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) {
+export function SearchBar({ searchQuery = '', onSearchSubmit, getSuggestions }: SearchBarProps) {
   const [query, setQuery] = useState(searchQuery)
   const [dismissed, setDismissed] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
   const [keyboardActiveIndex, setKeyboardActiveIndex] = useState<number | null>(null)
   const [mouseActiveIndex, setMouseActiveIndex] = useState<number | null>(null)
-  const [prevQuery, setPrevQuery] = useState('')
 
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -25,21 +24,9 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
 
   // Compute suggestions directly (derived state)
   const suggestions = useMemo(() => {
-    if (!query.trim()) return []
-    const searchQuery = query.toLowerCase()
-    return terms
-      .filter((term) => term.label.toLowerCase().includes(searchQuery))
-      .slice(0, 5)
-  }, [query])
-
-  // Reset dismissed state when query changes from user typing (not from selection)
-  // Only reset if input is focused, indicating active typing
-  if (query !== prevQuery) {
-    setPrevQuery(query)
-    if (dismissed && isFocused) {
-      setDismissed(false)
-    }
-  }
+    if (!getSuggestions) return []
+    return getSuggestions(query)
+  }, [query, getSuggestions])
 
   // Derive showSuggestions from state
   const showSuggestions = suggestions.length > 0 && isFocused && !dismissed
@@ -101,6 +88,9 @@ export function SearchBar({ searchQuery = '', onSearchSubmit }: SearchBarProps) 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value)
+    if (dismissed && isFocused) {
+      setDismissed(false)
+    }
     setKeyboardActiveIndex(null)
     setMouseActiveIndex(null)
   }
